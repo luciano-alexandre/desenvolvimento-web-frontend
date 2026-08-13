@@ -1,21 +1,21 @@
-# Encontro 11 — Componentização visual
+# Encontro 11 — Atividade Prática 2: interface temática com Tailwind CSS
 
 **Carga horária:** 1,5h  
-**Entrega prevista:** Biblioteca de componentes
+**Entrega prevista:** Atividade Prática 2 — 20 pontos
 
 ## Visão Geral
 
-Este encontro desenvolve **componentização visual** como continuidade direta dos conhecimentos anteriores. A aula parte de um problema observável, apresenta os recursos necessários e termina com uma entrega que pode ser executada e verificada.
+Este encontro desenvolve **atividade prática 2 com Tailwind CSS** como continuidade direta dos conhecimentos anteriores. A aula parte de um problema observável, apresenta os recursos necessários e termina com uma entrega que pode ser executada e verificada.
 
 Ao final, o estudante deverá conseguir explicar o propósito de cada recurso, implementar uma solução incremental, testar o comportamento e justificar as decisões adotadas.
 
 ## Conceitos Essenciais
 
-- Padrões repetidos.
-- Extração.
-- Composição.
-- CSS autoral.
-- Manutenibilidade.
+- Leitura de referência.
+- Decomposição.
+- Fidelidade.
+- Responsividade.
+- Autoria.
 
 ## 1) Contexto do encontro
 
@@ -30,25 +30,25 @@ Durante a aula, use quatro perguntas para orientar as decisões:
 
 ## 2) Conceitos em detalhe
 
-### 1) Padrões repetidos
+### 1) Leitura de referência
 
-Padrões repetidos deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
+Leitura de referência deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
 
-### 2) Extração
+### 2) Decomposição
 
-Extração deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
+Decomposição deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
 
-### 3) Composição
+### 3) Fidelidade
 
-Composição deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
+Fidelidade deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
 
-### 4) CSS autoral
+### 4) Responsividade
 
-CSS autoral deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
+Responsividade deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
 
-### 5) Manutenibilidade
+### 5) Autoria
 
-Manutenibilidade deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
+Autoria deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
 
 ## 3) Exemplo inicial
 
@@ -81,7 +81,7 @@ Digite e execute o exemplo antes de modificá-lo. Depois, altere um elemento por
 
 ## 5) Prática guiada
 
-**Proposta:** Criar biblioteca de botão, alerta e cartão.
+**Proposta:** Reproduzir uma interface e documentar decisões.
 
 ### Etapas
 
@@ -99,11 +99,11 @@ Construa uma segunda variação sem acompanhar o exemplo linha a linha. A soluç
 
 ### Requisitos mínimos
 
-- demonstrar uso consciente de padrões repetidos;
-- demonstrar uso consciente de extração;
-- demonstrar uso consciente de composição;
-- demonstrar uso consciente de CSS autoral;
-- demonstrar uso consciente de manutenibilidade;
+- demonstrar uso consciente de leitura de referência;
+- demonstrar uso consciente de decomposição;
+- demonstrar uso consciente de fidelidade;
+- demonstrar uso consciente de responsividade;
+- demonstrar uso consciente de autoria;
 - manter nomes claros e organização consistente;
 - não apresentar erros de compilação ou console;
 - explicar no README como executar e testar;
@@ -141,11 +141,11 @@ Implemente um estado alternativo relevante, como vazio, erro, carregamento, tela
 
 ## Checklist de compreensão
 
-- [ ] Consigo explicar e aplicar **padrões repetidos**.
-- [ ] Consigo explicar e aplicar **extração**.
-- [ ] Consigo explicar e aplicar **composição**.
-- [ ] Consigo explicar e aplicar **CSS autoral**.
-- [ ] Consigo explicar e aplicar **manutenibilidade**.
+- [ ] Consigo explicar e aplicar **leitura de referência**.
+- [ ] Consigo explicar e aplicar **decomposição**.
+- [ ] Consigo explicar e aplicar **fidelidade**.
+- [ ] Consigo explicar e aplicar **responsividade**.
+- [ ] Consigo explicar e aplicar **autoria**.
 - [ ] Consigo executar e modificar o exemplo.
 - [ ] Consigo realizar a prática sem cópia integral.
 - [ ] Consigo identificar um erro e explicar a correção.
@@ -153,23 +153,23 @@ Implemente um estado alternativo relevante, como vazio, erro, carregamento, tela
 
 ## Resumo final
 
-Neste encontro, **componentização visual** foi tratado como parte de uma solução frontend completa. Conceitos, código, validação e comunicação técnica foram combinados para gerar um resultado reutilizável nos encontros seguintes e no projeto final.
+Neste encontro, **atividade prática 2 com Tailwind CSS** foi tratado como parte de uma solução frontend completa. Conceitos, código, validação e comunicação técnica foram combinados para gerar um resultado reutilizável nos encontros seguintes e no projeto final.
 
 ## Questões de fixação
 
-1. Como **padrões repetidos** contribui para a solução desenvolvida?
-<!-- Gabarito: definir padrões repetidos, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
+1. Como **leitura de referência** contribui para a solução desenvolvida?
+<!-- Gabarito: definir leitura de referência, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
 
-2. Como **extração** contribui para a solução desenvolvida?
-<!-- Gabarito: definir extração, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
+2. Como **decomposição** contribui para a solução desenvolvida?
+<!-- Gabarito: definir decomposição, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
 
-3. Como **composição** contribui para a solução desenvolvida?
-<!-- Gabarito: definir composição, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
+3. Como **fidelidade** contribui para a solução desenvolvida?
+<!-- Gabarito: definir fidelidade, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
 
-4. Como **CSS autoral** contribui para a solução desenvolvida?
-<!-- Gabarito: definir CSS autoral, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
+4. Como **responsividade** contribui para a solução desenvolvida?
+<!-- Gabarito: definir responsividade, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
 
-5. Como **manutenibilidade** contribui para a solução desenvolvida?
-<!-- Gabarito: definir manutenibilidade, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
+5. Como **autoria** contribui para a solução desenvolvida?
+<!-- Gabarito: definir autoria, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
 
 [Voltar ao cronograma](../01-cronograma-60h.md)

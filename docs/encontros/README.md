@@ -26,33 +26,31 @@ Após o encontro:
 
 ## Unidade 1 — Revisão, Tailwind CSS e TypeScript
 
-### Revisão de Padrões Web
-
 1. [Revisão integrada de HTML, acessibilidade e CSS](encontro-1.md)
-2. [Oficina diagnóstica de HTML e CSS](encontro-2.md)
-3. [Git, GitHub e DevTools](encontro-3.md)
 
 ### Tailwind CSS
 
-4. [Introdução ao Tailwind CSS](encontro-4.md)
-5. [Utilitários fundamentais](encontro-5.md)
-6. [Layouts com Tailwind](encontro-6.md)
-7. [Responsividade mobile-first](encontro-7.md)
-8. [Atividade Prática 1 — Tailwind responsivo](encontro-8.md)
-9. [Estados e dark mode](encontro-9.md)
-10. [Tema e tokens de design](encontro-10.md)
-11. [Componentização visual](encontro-11.md)
-12. [Formulários e tabelas](encontro-12.md)
-13. [Atividade Prática 2 — interface temática](encontro-13.md)
-14. [Refatoração e auditoria de interfaces](encontro-14.md)
+2. [Introdução ao Tailwind CSS](encontro-2.md)
+3. [Utilitários fundamentais](encontro-3.md)
+4. [Layouts com Tailwind](encontro-4.md)
+5. [Responsividade mobile-first](encontro-5.md)
+6. [Atividade Prática 1 — Tailwind responsivo](encontro-6.md)
+7. [Estados e dark mode](encontro-7.md)
+8. [Tema e tokens de design](encontro-8.md)
+9. [Componentização visual](encontro-9.md)
+10. [Formulários e tabelas](encontro-10.md)
+11. [Atividade Prática 2 — interface temática](encontro-11.md)
+12. [Refatoração e auditoria de interfaces](encontro-12.md)
 
 ### JavaScript, TypeScript e avaliação
 
-15. [JavaScript moderno](encontro-15.md)
-16. [Fundamentos de TypeScript](encontro-16.md)
-17. [Atividade Prática 3 — TypeScript aplicado](encontro-17.md)
-18. [Preparação para Angular](encontro-18.md)
-19. [Estudo de caso — planejamento](encontro-19.md)
+13. [JavaScript moderno](encontro-13.md)
+14. [Fundamentos de TypeScript](encontro-14.md)
+15. [TypeScript aplicado ao DOM](encontro-15.md)
+16. [Atividade Prática 3 — TypeScript aplicado](encontro-16.md)
+17. [Preparação para Angular](encontro-17.md)
+18. [Estudo de caso — planejamento](encontro-18.md)
+19. [Estudo de caso — desenvolvimento](encontro-19.md)
 20. [Estudo de caso — entrega](encontro-20.md)
 
 ## Unidade 2 — Angular e Projeto Final

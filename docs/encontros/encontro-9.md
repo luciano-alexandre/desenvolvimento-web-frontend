@@ -1,21 +1,21 @@
-# Encontro 9 — Estados e dark mode
+# Encontro 9 — Componentização visual
 
 **Carga horária:** 1,5h  
-**Entrega prevista:** Componente interativo
+**Entrega prevista:** Biblioteca de componentes
 
 ## Visão Geral
 
-Este encontro desenvolve **estados e dark mode** como continuidade direta dos conhecimentos anteriores. A aula parte de um problema observável, apresenta os recursos necessários e termina com uma entrega que pode ser executada e verificada.
+Este encontro desenvolve **componentização visual** como continuidade direta dos conhecimentos anteriores. A aula parte de um problema observável, apresenta os recursos necessários e termina com uma entrega que pode ser executada e verificada.
 
 Ao final, o estudante deverá conseguir explicar o propósito de cada recurso, implementar uma solução incremental, testar o comportamento e justificar as decisões adotadas.
 
 ## Conceitos Essenciais
 
-- Hover.
-- Focus-visible.
-- Group e peer.
-- Dark mode.
-- Motion-safe.
+- Padrões repetidos.
+- Extração.
+- Composição.
+- CSS autoral.
+- Manutenibilidade.
 
 ## 1) Contexto do encontro
 
@@ -30,25 +30,25 @@ Durante a aula, use quatro perguntas para orientar as decisões:
 
 ## 2) Conceitos em detalhe
 
-### 1) Hover
+### 1) Padrões repetidos
 
-Hover deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
+Padrões repetidos deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
 
-### 2) Focus-visible
+### 2) Extração
 
-Focus-visible deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
+Extração deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
 
-### 3) Group e peer
+### 3) Composição
 
-Group e peer deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
+Composição deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
 
-### 4) Dark mode
+### 4) CSS autoral
 
-Dark mode deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
+CSS autoral deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
 
-### 5) Motion-safe
+### 5) Manutenibilidade
 
-Motion-safe deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
+Manutenibilidade deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
 
 ## 3) Exemplo inicial
 
@@ -81,7 +81,7 @@ Digite e execute o exemplo antes de modificá-lo. Depois, altere um elemento por
 
 ## 5) Prática guiada
 
-**Proposta:** Criar componente interativo, acessível e com variante escura.
+**Proposta:** Criar biblioteca de botão, alerta e cartão.
 
 ### Etapas
 
@@ -99,11 +99,11 @@ Construa uma segunda variação sem acompanhar o exemplo linha a linha. A soluç
 
 ### Requisitos mínimos
 
-- demonstrar uso consciente de hover;
-- demonstrar uso consciente de focus-visible;
-- demonstrar uso consciente de group e peer;
-- demonstrar uso consciente de dark mode;
-- demonstrar uso consciente de motion-safe;
+- demonstrar uso consciente de padrões repetidos;
+- demonstrar uso consciente de extração;
+- demonstrar uso consciente de composição;
+- demonstrar uso consciente de CSS autoral;
+- demonstrar uso consciente de manutenibilidade;
 - manter nomes claros e organização consistente;
 - não apresentar erros de compilação ou console;
 - explicar no README como executar e testar;
@@ -141,11 +141,11 @@ Implemente um estado alternativo relevante, como vazio, erro, carregamento, tela
 
 ## Checklist de compreensão
 
-- [ ] Consigo explicar e aplicar **hover**.
-- [ ] Consigo explicar e aplicar **focus-visible**.
-- [ ] Consigo explicar e aplicar **group e peer**.
-- [ ] Consigo explicar e aplicar **dark mode**.
-- [ ] Consigo explicar e aplicar **motion-safe**.
+- [ ] Consigo explicar e aplicar **padrões repetidos**.
+- [ ] Consigo explicar e aplicar **extração**.
+- [ ] Consigo explicar e aplicar **composição**.
+- [ ] Consigo explicar e aplicar **CSS autoral**.
+- [ ] Consigo explicar e aplicar **manutenibilidade**.
 - [ ] Consigo executar e modificar o exemplo.
 - [ ] Consigo realizar a prática sem cópia integral.
 - [ ] Consigo identificar um erro e explicar a correção.
@@ -153,23 +153,23 @@ Implemente um estado alternativo relevante, como vazio, erro, carregamento, tela
 
 ## Resumo final
 
-Neste encontro, **estados e dark mode** foi tratado como parte de uma solução frontend completa. Conceitos, código, validação e comunicação técnica foram combinados para gerar um resultado reutilizável nos encontros seguintes e no projeto final.
+Neste encontro, **componentização visual** foi tratado como parte de uma solução frontend completa. Conceitos, código, validação e comunicação técnica foram combinados para gerar um resultado reutilizável nos encontros seguintes e no projeto final.
 
 ## Questões de fixação
 
-1. Como **hover** contribui para a solução desenvolvida?
-<!-- Gabarito: definir hover, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
+1. Como **padrões repetidos** contribui para a solução desenvolvida?
+<!-- Gabarito: definir padrões repetidos, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
 
-2. Como **focus-visible** contribui para a solução desenvolvida?
-<!-- Gabarito: definir focus-visible, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
+2. Como **extração** contribui para a solução desenvolvida?
+<!-- Gabarito: definir extração, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
 
-3. Como **group e peer** contribui para a solução desenvolvida?
-<!-- Gabarito: definir group e peer, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
+3. Como **composição** contribui para a solução desenvolvida?
+<!-- Gabarito: definir composição, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
 
-4. Como **dark mode** contribui para a solução desenvolvida?
-<!-- Gabarito: definir dark mode, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
+4. Como **CSS autoral** contribui para a solução desenvolvida?
+<!-- Gabarito: definir CSS autoral, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
 
-5. Como **motion-safe** contribui para a solução desenvolvida?
-<!-- Gabarito: definir motion-safe, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
+5. Como **manutenibilidade** contribui para a solução desenvolvida?
+<!-- Gabarito: definir manutenibilidade, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
 
 [Voltar ao cronograma](../01-cronograma-60h.md)

@@ -21,7 +21,7 @@ Consolidar os fundamentos de Padrões Web, desenvolver interfaces responsivas co
 
 - HTML5 semântico, formulários e acessibilidade;
 - cascata, especificidade, box model, Flexbox e Grid;
-- Git/GitHub e DevTools;
+- DevTools para inspeção de interfaces;
 - Tailwind CSS: instalação, build, utilitários e variantes;
 - responsividade, estados, dark mode e motion-safe;
 - temas, tokens e componentes;
@@ -37,28 +37,22 @@ Consolidar os fundamentos de Padrões Web, desenvolver interfaces responsivas co
 - **Conteúdos de CSS:** cascata, herança, especificidade, box model, unidades, fluxo normal, Flexbox, Grid, responsividade e media queries.
 - **Produto:** diagnóstico dos conhecimentos prévios.
 
-### Encontros 2 e 3 — Aplicação, inspeção e versionamento
-
-- **Tema:** oficina integrada de HTML e CSS, DevTools, Git e GitHub.
-- **Prática:** revisar uma página, validar sua adaptação e registrar correções em commits coerentes.
-- **Produto:** página semântica, acessível, responsiva e versionada.
-
-### Encontros 4 a 8 — Fundamentos do Tailwind CSS e Prática 1
+### Encontros 2 a 6 — Fundamentos do Tailwind CSS e Prática 1
 
 - **Tema:** utility-first, utilitários, layouts, responsividade e estados.
 - **Prática:** construção incremental de uma interface.
 - **Produto:** interface responsiva e interativa.
 
-### Encontros 9 a 14 — Sistema visual, Prática 2 e auditoria
+### Encontros 7 a 12 — Sistema visual, Prática 2 e auditoria
 
 - **Tema:** tema, tokens, componentes, formulários e auditoria.
 - **Prática:** desafio de reprodução e refatoração.
 - **Produto:** tema próprio, componentes reutilizáveis e interface auditada.
 
-### Encontros 15 a 20 — JavaScript, TypeScript e estudo de caso
+### Encontros 13 a 20 — JavaScript, TypeScript e estudo de caso
 
-- **Tema:** comportamento, tipagem e preparação para Angular.
-- **Prática:** adicionar interação tipada, concluir a Prática 3 no Encontro 17 e preparar o ambiente Angular no Encontro 18.
+- **Tema:** comportamento, tipagem, DOM, preparação para Angular e estudo de caso.
+- **Prática:** adicionar interação tipada, concluir a Prática 3 no Encontro 16, preparar o ambiente Angular no Encontro 17 e desenvolver o estudo de caso nos encontros 18 a 20.
 - **Produto:** Prática 3 e estudo de caso concluído.
 
 ## Estratégias de Ensino
@@ -69,7 +63,6 @@ Consolidar os fundamentos de Padrões Web, desenvolver interfaces responsivas co
 - consulta orientada à documentação oficial;
 - depuração com DevTools e mensagens do compilador;
 - revisão por pares com checklist;
-- commits pequenos associados a objetivos claros.
 
 ## Evidências de Aprendizagem
 
@@ -86,7 +79,7 @@ Consolidar os fundamentos de Padrões Web, desenvolver interfaces responsivas co
 - diagnóstico inicial sem caráter classificatório;
 - Atividade Prática 1 — Tailwind CSS responsivo: 20 pontos;
 - Atividade Prática 2 — interface temática: 20 pontos;
-- Atividade Prática 3 — TypeScript aplicado (Encontro 17): 20 pontos;
+- Atividade Prática 3 — TypeScript aplicado (Encontro 16): 20 pontos;
 - estudo de caso: 40 pontos;
 - total da unidade: 100 pontos.
 

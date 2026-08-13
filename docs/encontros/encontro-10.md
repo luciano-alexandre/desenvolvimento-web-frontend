@@ -1,21 +1,21 @@
-# Encontro 10 — Tema e tokens de design
+# Encontro 10 — Formulários e tabelas
 
 **Carga horária:** 1,5h  
-**Entrega prevista:** Tema customizado
+**Entrega prevista:** Formulário e tabela responsivos
 
 ## Visão Geral
 
-Este encontro desenvolve **tema e tokens de design** como continuidade direta dos conhecimentos anteriores. A aula parte de um problema observável, apresenta os recursos necessários e termina com uma entrega que pode ser executada e verificada.
+Este encontro desenvolve **formulários e tabelas** como continuidade direta dos conhecimentos anteriores. A aula parte de um problema observável, apresenta os recursos necessários e termina com uma entrega que pode ser executada e verificada.
 
 Ao final, o estudante deverá conseguir explicar o propósito de cada recurso, implementar uma solução incremental, testar o comportamento e justificar as decisões adotadas.
 
 ## Conceitos Essenciais
 
-- Tokens.
-- Variáveis de tema.
-- Paleta.
-- Tipografia.
-- Breakpoints.
+- Estados de campo.
+- Mensagens de erro.
+- Tabela responsiva.
+- Rótulos.
+- Navegação por teclado.
 
 ## 1) Contexto do encontro
 
@@ -30,25 +30,25 @@ Durante a aula, use quatro perguntas para orientar as decisões:
 
 ## 2) Conceitos em detalhe
 
-### 1) Tokens
+### 1) Estados de campo
 
-Tokens deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
+Estados de campo deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
 
-### 2) Variáveis de tema
+### 2) Mensagens de erro
 
-Variáveis de tema deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
+Mensagens de erro deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
 
-### 3) Paleta
+### 3) Tabela responsiva
 
-Paleta deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
+Tabela responsiva deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
 
-### 4) Tipografia
+### 4) Rótulos
 
-Tipografia deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
+Rótulos deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
 
-### 5) Breakpoints
+### 5) Navegação por teclado
 
-Breakpoints deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
+Navegação por teclado deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
 
 ## 3) Exemplo inicial
 
@@ -81,7 +81,7 @@ Digite e execute o exemplo antes de modificá-lo. Depois, altere um elemento por
 
 ## 5) Prática guiada
 
-**Proposta:** Definir tokens de marca e aplicá-los a três componentes.
+**Proposta:** Construir formulário e tabela acessíveis.
 
 ### Etapas
 
@@ -99,11 +99,11 @@ Construa uma segunda variação sem acompanhar o exemplo linha a linha. A soluç
 
 ### Requisitos mínimos
 
-- demonstrar uso consciente de tokens;
-- demonstrar uso consciente de variáveis de tema;
-- demonstrar uso consciente de paleta;
-- demonstrar uso consciente de tipografia;
-- demonstrar uso consciente de breakpoints;
+- demonstrar uso consciente de estados de campo;
+- demonstrar uso consciente de mensagens de erro;
+- demonstrar uso consciente de tabela responsiva;
+- demonstrar uso consciente de rótulos;
+- demonstrar uso consciente de navegação por teclado;
 - manter nomes claros e organização consistente;
 - não apresentar erros de compilação ou console;
 - explicar no README como executar e testar;
@@ -141,11 +141,11 @@ Implemente um estado alternativo relevante, como vazio, erro, carregamento, tela
 
 ## Checklist de compreensão
 
-- [ ] Consigo explicar e aplicar **tokens**.
-- [ ] Consigo explicar e aplicar **variáveis de tema**.
-- [ ] Consigo explicar e aplicar **paleta**.
-- [ ] Consigo explicar e aplicar **tipografia**.
-- [ ] Consigo explicar e aplicar **breakpoints**.
+- [ ] Consigo explicar e aplicar **estados de campo**.
+- [ ] Consigo explicar e aplicar **mensagens de erro**.
+- [ ] Consigo explicar e aplicar **tabela responsiva**.
+- [ ] Consigo explicar e aplicar **rótulos**.
+- [ ] Consigo explicar e aplicar **navegação por teclado**.
 - [ ] Consigo executar e modificar o exemplo.
 - [ ] Consigo realizar a prática sem cópia integral.
 - [ ] Consigo identificar um erro e explicar a correção.
@@ -153,23 +153,23 @@ Implemente um estado alternativo relevante, como vazio, erro, carregamento, tela
 
 ## Resumo final
 
-Neste encontro, **tema e tokens de design** foi tratado como parte de uma solução frontend completa. Conceitos, código, validação e comunicação técnica foram combinados para gerar um resultado reutilizável nos encontros seguintes e no projeto final.
+Neste encontro, **formulários e tabelas** foi tratado como parte de uma solução frontend completa. Conceitos, código, validação e comunicação técnica foram combinados para gerar um resultado reutilizável nos encontros seguintes e no projeto final.
 
 ## Questões de fixação
 
-1. Como **tokens** contribui para a solução desenvolvida?
-<!-- Gabarito: definir tokens, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
+1. Como **estados de campo** contribui para a solução desenvolvida?
+<!-- Gabarito: definir estados de campo, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
 
-2. Como **variáveis de tema** contribui para a solução desenvolvida?
-<!-- Gabarito: definir variáveis de tema, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
+2. Como **mensagens de erro** contribui para a solução desenvolvida?
+<!-- Gabarito: definir mensagens de erro, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
 
-3. Como **paleta** contribui para a solução desenvolvida?
-<!-- Gabarito: definir paleta, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
+3. Como **tabela responsiva** contribui para a solução desenvolvida?
+<!-- Gabarito: definir tabela responsiva, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
 
-4. Como **tipografia** contribui para a solução desenvolvida?
-<!-- Gabarito: definir tipografia, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
+4. Como **rótulos** contribui para a solução desenvolvida?
+<!-- Gabarito: definir rótulos, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
 
-5. Como **breakpoints** contribui para a solução desenvolvida?
-<!-- Gabarito: definir breakpoints, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
+5. Como **navegação por teclado** contribui para a solução desenvolvida?
+<!-- Gabarito: definir navegação por teclado, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
 
 [Voltar ao cronograma](../01-cronograma-60h.md)

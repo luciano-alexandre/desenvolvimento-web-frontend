@@ -1,174 +1,83 @@
-# Encontro 19 — Estudo de caso: análise e planejamento
+# Encontro 19 — Estudo de caso: desenvolvimento e acompanhamento
 
 **Carga horária:** 1,5h  
-**Entrega prevista:** Solução em desenvolvimento
+**Entrega prevista:** versão funcional para validação
 
-## Visão Geral
+## Visão geral
 
-Este encontro desenvolve **estudo de caso — análise e planejamento** como continuidade direta dos conhecimentos anteriores. A aula parte de um problema observável, apresenta os recursos necessários e termina com uma entrega que pode ser executada e verificada.
+Este encontro transforma o planejamento do estudo de caso em uma solução funcional. O acompanhamento prioriza requisitos essenciais, integração entre Tailwind CSS e TypeScript e correção antecipada de problemas antes da entrega final.
 
-Ao final, o estudante deverá conseguir explicar o propósito de cada recurso, implementar uma solução incremental, testar o comportamento e justificar as decisões adotadas.
+## Objetivos de aprendizagem
 
-## Conceitos Essenciais
+- implementar requisitos em incrementos verificáveis;
+- integrar apresentação responsiva e comportamento tipado;
+- representar estados de sucesso, vazio e erro;
+- revisar acessibilidade e qualidade durante o desenvolvimento;
+- organizar pendências para a conclusão.
 
-- Tailwind.
-- Responsividade.
-- JavaScript.
-- TypeScript.
-- Qualidade.
+## 1. Ordem de implementação
 
-## 1) Contexto do encontro
+1. confirme os critérios de aceite definidos no Encontro 18;
+2. implemente primeiro o fluxo principal sem refinamentos decorativos;
+3. conecte eventos, dados e estados com TypeScript;
+4. aplique Tailwind CSS mantendo responsividade e foco visível;
+5. teste um estado alternativo antes de ampliar a solução;
+6. execute o build e corrija erros bloqueadores;
+7. registre as pendências do Encontro 20.
 
-Uma interface de qualidade precisa combinar estrutura, comportamento, apresentação, acessibilidade e manutenção. O tema deste encontro não deve ser aprendido como uma lista de comandos isolados, mas como resposta a um problema concreto de desenvolvimento frontend.
+## 2. Acompanhamento técnico
 
-Durante a aula, use quatro perguntas para orientar as decisões:
+| Eixo | Pergunta de verificação |
+|---|---|
+| Requisitos | O fluxo principal atende aos critérios de aceite? |
+| Tailwind CSS | As classes expressam um sistema visual coerente? |
+| Responsividade | A interface funciona sem cortes em diferentes larguras? |
+| TypeScript | Dados, eventos e estados estão tipados sem `any` desnecessário? |
+| Acessibilidade | Estrutura, teclado, foco, nomes e contraste foram verificados? |
+| Qualidade | Build e console estão livres de erros? |
 
-- qual problema precisa ser resolvido?
-- em que parte do projeto fica essa responsabilidade?
-- como verificar se a solução funciona?
-- que impacto a escolha produz para usuários e manutenção?
+## 3. Versão funcional mínima
 
-## 2) Conceitos em detalhe
+A versão apresentada ao final do encontro deve:
 
-### 1) Tailwind
+- executar a tarefa principal do enunciado;
+- utilizar uma estrutura HTML semântica;
+- adaptar-se a viewport estreito e amplo;
+- possuir dados e funções tipados;
+- comunicar ao menos um estado alternativo;
+- manter navegação por teclado e foco visível;
+- executar sem erros no console;
+- produzir build com sucesso.
 
-Tailwind deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
+## 4. Registro de acompanhamento
 
-### 2) Responsividade
+| Requisito | Situação | Evidência | Próxima ação |
+|---|---|---|---|
+| Fluxo principal |  |  |  |
+| Responsividade |  |  |  |
+| Estados da interface |  |  |  |
+| Acessibilidade |  |  |  |
+| Build e console |  |  |  |
 
-Responsividade deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
+Classifique cada item como concluído, parcial ou bloqueado. Uma pendência deve indicar a próxima ação concreta, e não apenas "terminar" ou "ajustar".
 
-### 3) JavaScript
+## 5. Preparação para a entrega
 
-JavaScript deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
+Antes do Encontro 20:
 
-### 4) TypeScript
-
-TypeScript deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
-
-### 5) Qualidade
-
-Qualidade deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
-
-## 3) Exemplo inicial
-
-Digite e execute o exemplo antes de modificá-lo. Depois, altere um elemento por vez e observe o efeito no navegador, no terminal ou nos testes.
-
-```bash
-npm install
-npm run dev
-npm run build
-```
-
-### O que observar
-
-- localize entrada, transformação e saída;
-- relacione cada linha aos conceitos essenciais;
-- provoque um erro intencional e interprete a mensagem;
-- confirme o resultado com as ferramentas adequadas;
-- evite copiar o trecho sem compreender suas partes.
-
-## 4) Demonstração orientada
-
-1. apresente o requisito antes da solução;
-2. construa a menor versão funcional;
-3. inspecione o resultado e verbalize as decisões;
-4. introduza os conceitos progressivamente;
-5. teste um cenário alternativo ou de erro;
-6. refatore nomes, estrutura e repetição;
-7. registre a versão estável.
-
-## 5) Prática guiada
-
-**Proposta:** Analisar o estudo de caso, planejar a solução e iniciar a implementação.
-
-### Etapas
-
-1. crie uma pasta ou branch para o encontro;
-2. reproduza o exemplo e confirme que ele funciona;
-3. adapte nomes, conteúdo e dados ao domínio escolhido;
-4. aplique os cinco conceitos essenciais;
-5. teste diferentes larguras e estados aplicáveis;
-6. revise console, compilação, teclado e foco;
-7. prepare a entrega indicada no início da página.
-
-## 6) Exercício aplicado
-
-Construa uma segunda variação sem acompanhar o exemplo linha a linha. A solução deve ser autoral e compreensível para outra pessoa.
-
-### Requisitos mínimos
-
-- demonstrar uso consciente de Tailwind;
-- demonstrar uso consciente de responsividade;
-- demonstrar uso consciente de JavaScript;
-- demonstrar uso consciente de TypeScript;
-- demonstrar uso consciente de qualidade;
-- manter nomes claros e organização consistente;
-- não apresentar erros de compilação ou console;
-- explicar no README como executar e testar;
-- registrar evidências e decisões importantes.
-
-### Desafio adicional
-
-Implemente um estado alternativo relevante, como vazio, erro, carregamento, tela estreita ou navegação por teclado. Explique como a solução permanece utilizável nessa condição.
-
-## 7) Critérios de aceite
-
-- o projeto executa conforme as instruções;
-- o resultado atende ao objetivo funcional;
-- os recursos do encontro foram usados com intenção;
-- a interface funciona nos cenários testados;
-- a entrega está organizada e pode ser avaliada sem ajustes;
-- o histórico ou registro de trabalho evidencia evolução incremental.
-
-## 8) Erros comuns
-
-- começar pela aparência sem interpretar o requisito;
-- copiar o exemplo sem adaptar semântica e dados;
-- reunir responsabilidades diferentes no mesmo bloco;
-- testar apenas o caminho de sucesso;
-- ignorar mensagens do console ou compilador;
-- abstrair antes de existir repetição real;
-- entregar sem instruções de execução.
-
-## 9) Materiais para aprofundamento
-
-- [MDN Web Docs](https://developer.mozilla.org/pt-BR/docs/Web)
-- [Documentação do Tailwind CSS](https://tailwindcss.com/docs)
-- [Documentação do Angular](https://angular.dev/overview)
-- [Manual do TypeScript](https://www.typescriptlang.org/docs/handbook/intro.html)
+- resolva bloqueios do fluxo principal;
+- confirme todos os critérios de aceite;
+- teste conteúdo maior e estados alternativos;
+- revise nomes, repetições e responsabilidades;
+- atualize instruções de execução e validação;
+- organize os commits e confira os arquivos da entrega.
 
 ## Checklist de compreensão
 
-- [ ] Consigo explicar e aplicar **Tailwind**.
-- [ ] Consigo explicar e aplicar **responsividade**.
-- [ ] Consigo explicar e aplicar **JavaScript**.
-- [ ] Consigo explicar e aplicar **TypeScript**.
-- [ ] Consigo explicar e aplicar **qualidade**.
-- [ ] Consigo executar e modificar o exemplo.
-- [ ] Consigo realizar a prática sem cópia integral.
-- [ ] Consigo identificar um erro e explicar a correção.
-- [ ] Revisei a entrega pelos critérios de aceite.
-
-## Resumo final
-
-Neste encontro, **estudo de caso — análise e planejamento** foi tratado como parte de uma solução frontend completa. Conceitos, código, validação e comunicação técnica foram combinados para gerar um resultado reutilizável nos encontros seguintes e no projeto final.
-
-## Questões de fixação
-
-1. Como **Tailwind** contribui para a solução desenvolvida?
-<!-- Gabarito: definir Tailwind, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
-
-2. Como **responsividade** contribui para a solução desenvolvida?
-<!-- Gabarito: definir responsividade, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
-
-3. Como **JavaScript** contribui para a solução desenvolvida?
-<!-- Gabarito: definir JavaScript, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
-
-4. Como **TypeScript** contribui para a solução desenvolvida?
-<!-- Gabarito: definir TypeScript, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
-
-5. Como **qualidade** contribui para a solução desenvolvida?
-<!-- Gabarito: definir qualidade, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
+- [ ] Implemento requisitos em incrementos verificáveis.
+- [ ] Integro Tailwind CSS e TypeScript sem misturar responsabilidades.
+- [ ] Valido responsividade, estados e acessibilidade durante o trabalho.
+- [ ] Executo build e verifico o console antes da entrega.
+- [ ] Transformo pendências em próximas ações concretas.
 
 [Voltar ao cronograma](../01-cronograma-60h.md)

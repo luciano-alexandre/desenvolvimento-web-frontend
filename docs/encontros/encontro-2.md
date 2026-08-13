@@ -1,161 +1,175 @@
-# Encontro 2 — Oficina diagnóstica de HTML e CSS
+# Encontro 2 — Introdução ao Tailwind CSS
 
-**Entrega prevista:** página semântica, acessível e responsiva revisada
+**Carga horária:** 1,5h
+**Entrega prevista:** Projeto Tailwind configurado
 
-## Visão geral
+## Visão Geral
 
-Este encontro aplica o diagnóstico e os conceitos revisados no Encontro 1. A turma parte de uma interface com problemas observáveis, confirma cada problema com evidências e implementa correções integradas de HTML e CSS.
+Este encontro desenvolve **introdução ao tailwind css** como continuidade direta dos conhecimentos anteriores. A aula parte de um problema observável, apresenta os recursos necessários e termina com uma entrega que pode ser executada e verificada.
 
-Não se trata de acrescentar novos fundamentos, mas de demonstrar domínio sobre semântica, acessibilidade, cascata, box model, unidades, Flexbox, Grid e responsividade.
+Ao final, o estudante deverá conseguir explicar o propósito de cada recurso, implementar uma solução incremental, testar o comportamento e justificar as decisões adotadas.
 
-## Objetivos de aprendizagem
+## Conceitos Essenciais
 
-- transformar o diagnóstico do Encontro 1 em correções verificáveis;
-- preservar semântica e ordem de leitura ao alterar o layout;
-- reduzir conflitos de cascata e especificidade;
-- escolher Flexbox ou Grid segundo o problema;
-- corrigir overflow e adaptar a interface com abordagem mobile-first;
-- validar teclado, foco, zoom e diferentes larguras.
+- Utility-first.
+- Instalação.
+- Importação.
+- Detecção de classes.
+- Build.
 
-## 1. Ponto de partida
+## 1) Contexto do encontro
 
-Utilize uma página que contenha:
+Uma interface de qualidade precisa combinar estrutura, comportamento, apresentação, acessibilidade e manutenção. O tema deste encontro não deve ser aprendido como uma lista de comandos isolados, mas como resposta a um problema concreto de desenvolvimento frontend.
 
-- cabeçalho e navegação;
-- conteúdo principal com títulos e cartões;
-- imagem ou outra mídia;
-- formulário com pelo menos dois campos;
-- grupo de ações;
-- folha de estilos externa.
+Durante a aula, use quatro perguntas para orientar as decisões:
 
-A versão inicial deve possuir problemas suficientes para exigir análise: elementos genéricos no lugar de controles, rótulos ausentes, seletores excessivamente fortes, dimensões fixas, layout frágil e foco pouco visível.
+- qual problema precisa ser resolvido?
+- em que parte do projeto fica essa responsabilidade?
+- como verificar se a solução funciona?
+- que impacto a escolha produz para usuários e manutenção?
 
-## 2. Ordem da oficina
+## 2) Conceitos em detalhe
 
-### Etapa 1 — Estrutura e acessibilidade
+### 1) Utility-first
 
-1. identifique o assunto principal e a hierarquia de títulos;
-2. revise `header`, `nav`, `main`, `section`, `article` e `footer`;
-3. diferencie links de botões;
-4. associe `label`, instruções e mensagens aos campos;
-5. verifique nomes acessíveis, texto alternativo e ordem de foco.
+Utility-first deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
 
-### Etapa 2 — Cascata e modelo de caixa
+### 2) Instalação
 
-1. localize declarações sobrescritas;
-2. remova `!important` e seletores fortes sem necessidade;
-3. adote `border-box` e confirme as dimensões calculadas;
-4. substitua espaçamentos repetitivos por `gap` quando pertinente;
-5. troque dimensões rígidas por limites fluidos.
+Instalação deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
 
-### Etapa 3 — Layout
+### 3) Importação
 
-- use Flexbox para um agrupamento unidimensional;
-- use Grid para uma organização bidimensional;
-- mantenha a ordem visual compatível com a ordem do documento;
-- permita quebra e redução dos itens;
-- evite posicionamento absoluto para estruturar a página.
+Importação deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
 
-### Etapa 4 — Responsividade
+### 4) Detecção de classes
 
-1. comece com uma apresentação funcional em viewport estreito;
-2. deixe contêiner, texto e mídia fluidos com limites;
-3. acrescente breakpoint somente onde o conteúdo exigir;
-4. corrija a origem de qualquer overflow;
-5. respeite `prefers-reduced-motion` se houver animação.
+Detecção de classes deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
 
-## 3. Exemplo de direção para a solução
+### 5) Build
 
-```css
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+Build deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
 
-body {
-  margin: 0;
-  color: #172033;
-  font-family: system-ui, sans-serif;
-  line-height: 1.5;
-}
+## 3) Exemplo inicial
 
-.container {
-  width: min(100% - 2rem, 72rem);
-  margin-inline: auto;
-}
+Digite e execute o exemplo antes de modificá-lo. Depois, altere um elemento por vez e observe o efeito no navegador, no terminal ou nos testes.
 
-.acoes {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-}
-
-.grade {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
-  gap: 1rem;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
-:focus-visible {
-  outline: 3px solid #1d4ed8;
-  outline-offset: 3px;
-}
+```html
+<article class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm md:p-8">
+  <h2 class="text-xl font-bold text-slate-900">Interface responsiva</h2>
+  <p class="mt-2 text-slate-600">Componente construído com Tailwind CSS.</p>
+</article>
 ```
 
-O exemplo é uma referência, não uma solução para ser copiada sem análise. Cada regra deve responder a um problema demonstrado na interface.
+### O que observar
 
-## 4. Validação
+- localize entrada, transformação e saída;
+- relacione cada linha aos conceitos essenciais;
+- provoque um erro intencional e interprete a mensagem;
+- confirme o resultado com as ferramentas adequadas;
+- evite copiar o trecho sem compreender suas partes.
 
-| Cenário | Resultado esperado | Evidência | Situação |
-|---|---|---|---|
-| HTML sem CSS | estrutura e ordem compreensíveis |  |  |
-| teclado | controles alcançáveis e foco visível |  |  |
-| viewport estreito | uma coluna, sem cortes |  |  |
-| viewport intermediário | reorganização legível |  |  |
-| viewport amplo | uso equilibrado do espaço |  |  |
-| zoom ampliado | texto sem sobreposição |  |  |
-| conteúdo longo | sem overflow indevido |  |  |
+## 4) Demonstração orientada
 
-## 5. Entrega
+1. apresente o requisito antes da solução;
+2. construa a menor versão funcional;
+3. inspecione o resultado e verbalize as decisões;
+4. introduza os conceitos progressivamente;
+5. teste um cenário alternativo ou de erro;
+6. refatore nomes, estrutura e repetição;
+7. registre a versão estável.
 
-A entrega deve conter:
+## 5) Prática guiada
 
-- página revisada;
-- folha CSS sem estilos inline e sem `!important` desnecessário;
-- ao menos um uso justificado de Flexbox e um de Grid;
-- comportamento responsivo mobile-first;
-- tabela de validação preenchida;
-- lista breve das correções e respectivas evidências.
+**Proposta:** Configurar Tailwind e comprovar a geração do CSS.
 
-## Critérios de verificação
+### Etapas
 
-- estrutura semântica e acessível;
-- estilos previsíveis e de baixa especificidade;
-- box model e unidades adequados;
-- layout coerente com o conteúdo;
-- responsividade sem ocultar defeitos;
-- evidências reproduzíveis.
+1. crie uma pasta ou branch para o encontro;
+2. reproduza o exemplo e confirme que ele funciona;
+3. adapte nomes, conteúdo e dados ao domínio escolhido;
+4. aplique os cinco conceitos essenciais;
+5. teste diferentes larguras e estados aplicáveis;
+6. revise console, compilação, teclado e foco;
+7. prepare a entrega indicada no início da página.
+
+## 6) Exercício aplicado
+
+Construa uma segunda variação sem acompanhar o exemplo linha a linha. A solução deve ser autoral e compreensível para outra pessoa.
+
+### Requisitos mínimos
+
+- demonstrar uso consciente de utility-first;
+- demonstrar uso consciente de instalação;
+- demonstrar uso consciente de importação;
+- demonstrar uso consciente de detecção de classes;
+- demonstrar uso consciente de build;
+- manter nomes claros e organização consistente;
+- não apresentar erros de compilação ou console;
+- explicar no README como executar e testar;
+- registrar evidências e decisões importantes.
+
+### Desafio adicional
+
+Implemente um estado alternativo relevante, como vazio, erro, carregamento, tela estreita ou navegação por teclado. Explique como a solução permanece utilizável nessa condição.
+
+## 7) Critérios de aceite
+
+- o projeto executa conforme as instruções;
+- o resultado atende ao objetivo funcional;
+- os recursos do encontro foram usados com intenção;
+- a interface funciona nos cenários testados;
+- a entrega está organizada e pode ser avaliada sem ajustes;
+- o histórico ou registro de trabalho evidencia evolução incremental.
+
+## 8) Erros comuns
+
+- começar pela aparência sem interpretar o requisito;
+- copiar o exemplo sem adaptar semântica e dados;
+- reunir responsabilidades diferentes no mesmo bloco;
+- testar apenas o caminho de sucesso;
+- ignorar mensagens do console ou compilador;
+- abstrair antes de existir repetição real;
+- entregar sem instruções de execução.
+
+## 9) Materiais para aprofundamento
+
+- [MDN Web Docs](https://developer.mozilla.org/pt-BR/docs/Web)
+- [Documentação do Tailwind CSS](https://tailwindcss.com/docs)
+- [Documentação do Angular](https://angular.dev/overview)
+- [Manual do TypeScript](https://www.typescriptlang.org/docs/handbook/intro.html)
 
 ## Checklist de compreensão
 
-- [ ] Justifico cada correção a partir de uma evidência.
-- [ ] Preservo semântica e ordem de leitura.
-- [ ] Resolvo conflitos sem elevar desnecessariamente a especificidade.
-- [ ] Uso Flexbox e Grid segundo seus eixos.
-- [ ] Defino breakpoints pelo conteúdo.
-- [ ] Testo teclado, zoom, larguras e conteúdo longo.
+- [ ] Consigo explicar e aplicar **utility-first**.
+- [ ] Consigo explicar e aplicar **instalação**.
+- [ ] Consigo explicar e aplicar **importação**.
+- [ ] Consigo explicar e aplicar **detecção de classes**.
+- [ ] Consigo explicar e aplicar **build**.
+- [ ] Consigo executar e modificar o exemplo.
+- [ ] Consigo realizar a prática sem cópia integral.
+- [ ] Consigo identificar um erro e explicar a correção.
+- [ ] Revisei a entrega pelos critérios de aceite.
 
-## Referências
+## Resumo final
 
-- [MDN — CSS](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
-- [MDN — Responsive design](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Responsive_Design)
-- [WAI — Easy Checks](https://www.w3.org/WAI/test-evaluate/preliminary/)
+Neste encontro, **introdução ao tailwind css** foi tratado como parte de uma solução frontend completa. Conceitos, código, validação e comunicação técnica foram combinados para gerar um resultado reutilizável nos encontros seguintes e no projeto final.
+
+## Questões de fixação
+
+1. Como **utility-first** contribui para a solução desenvolvida?
+<!-- Gabarito: definir utility-first, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
+
+2. Como **instalação** contribui para a solução desenvolvida?
+<!-- Gabarito: definir instalação, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
+
+3. Como **importação** contribui para a solução desenvolvida?
+<!-- Gabarito: definir importação, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
+
+4. Como **detecção de classes** contribui para a solução desenvolvida?
+<!-- Gabarito: definir detecção de classes, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
+
+5. Como **build** contribui para a solução desenvolvida?
+<!-- Gabarito: definir build, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
 
 [Voltar ao cronograma](../01-cronograma-60h.md)

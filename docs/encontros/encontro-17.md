@@ -1,21 +1,21 @@
-# Encontro 17 — Atividade Prática 3: TypeScript aplicado
+# Encontro 17 — Preparação para Angular
 
 **Carga horária:** 1,5h  
-**Entrega prevista:** Atividade Prática 3 — 20 pontos
+**Entrega prevista:** Ambiente validado
 
 ## Visão Geral
 
-Este encontro desenvolve **atividade prática 3 com TypeScript aplicado** como continuidade direta dos conhecimentos anteriores. A aula parte de um problema observável, apresenta os recursos necessários e termina com uma entrega que pode ser executada e verificada.
+Este encontro desenvolve **preparação para angular** como continuidade direta dos conhecimentos anteriores. A aula parte de um problema observável, apresenta os recursos necessários e termina com uma entrega que pode ser executada e verificada.
 
 Ao final, o estudante deverá conseguir explicar o propósito de cada recurso, implementar uma solução incremental, testar o comportamento e justificar as decisões adotadas.
 
 ## Conceitos Essenciais
 
-- Tipos.
-- Interfaces.
-- Unions.
-- Generics.
-- Narrowing.
+- Node e npm.
+- Angular CLI.
+- SPA.
+- Componentes.
+- Workspace.
 
 ## 1) Contexto do encontro
 
@@ -30,39 +30,34 @@ Durante a aula, use quatro perguntas para orientar as decisões:
 
 ## 2) Conceitos em detalhe
 
-### 1) Tipos
+### 1) Node e npm
 
-Tipos deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
+Node e npm deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
 
-### 2) Interfaces
+### 2) Angular CLI
 
-Interfaces deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
+Angular CLI deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
 
-### 3) Unions
+### 3) SPA
 
-Unions deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
+SPA deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
 
-### 4) Generics
+### 4) Componentes
 
-Generics deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
+Componentes deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
 
-### 5) Narrowing
+### 5) Workspace
 
-Narrowing deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
+Workspace deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
 
 ## 3) Exemplo inicial
 
 Digite e execute o exemplo antes de modificá-lo. Depois, altere um elemento por vez e observe o efeito no navegador, no terminal ou nos testes.
 
-```ts
-interface Produto {
-  id: number;
-  nome: string;
-  preco: number;
-}
-
-const total = (itens: Produto[]): number =>
-  itens.reduce((soma, item) => soma + item.preco, 0);
+```bash
+npm install
+npm run dev
+npm run build
 ```
 
 ### O que observar
@@ -85,7 +80,7 @@ const total = (itens: Produto[]): number =>
 
 ## 5) Prática guiada
 
-**Proposta:** Implementar individualmente uma interface com dados e funções tipados.
+**Proposta:** Criar e executar um workspace Angular.
 
 ### Etapas
 
@@ -103,11 +98,11 @@ Construa uma segunda variação sem acompanhar o exemplo linha a linha. A soluç
 
 ### Requisitos mínimos
 
-- demonstrar uso consciente de tipos;
-- demonstrar uso consciente de interfaces;
-- demonstrar uso consciente de unions;
-- demonstrar uso consciente de generics;
-- demonstrar uso consciente de narrowing;
+- demonstrar uso consciente de Node e npm;
+- demonstrar uso consciente de Angular CLI;
+- demonstrar uso consciente de SPA;
+- demonstrar uso consciente de componentes;
+- demonstrar uso consciente de workspace;
 - manter nomes claros e organização consistente;
 - não apresentar erros de compilação ou console;
 - explicar no README como executar e testar;
@@ -145,11 +140,11 @@ Implemente um estado alternativo relevante, como vazio, erro, carregamento, tela
 
 ## Checklist de compreensão
 
-- [ ] Consigo explicar e aplicar **tipos**.
-- [ ] Consigo explicar e aplicar **interfaces**.
-- [ ] Consigo explicar e aplicar **unions**.
-- [ ] Consigo explicar e aplicar **generics**.
-- [ ] Consigo explicar e aplicar **narrowing**.
+- [ ] Consigo explicar e aplicar **Node e npm**.
+- [ ] Consigo explicar e aplicar **Angular CLI**.
+- [ ] Consigo explicar e aplicar **SPA**.
+- [ ] Consigo explicar e aplicar **componentes**.
+- [ ] Consigo explicar e aplicar **workspace**.
 - [ ] Consigo executar e modificar o exemplo.
 - [ ] Consigo realizar a prática sem cópia integral.
 - [ ] Consigo identificar um erro e explicar a correção.
@@ -157,23 +152,23 @@ Implemente um estado alternativo relevante, como vazio, erro, carregamento, tela
 
 ## Resumo final
 
-Neste encontro, **atividade prática 3 com TypeScript aplicado** foi tratado como parte de uma solução frontend completa. Conceitos, código, validação e comunicação técnica foram combinados para gerar um resultado reutilizável nos encontros seguintes e no projeto final.
+Neste encontro, **preparação para angular** foi tratado como parte de uma solução frontend completa. Conceitos, código, validação e comunicação técnica foram combinados para gerar um resultado reutilizável nos encontros seguintes e no projeto final.
 
 ## Questões de fixação
 
-1. Como **tipos** contribui para a solução desenvolvida?
-<!-- Gabarito: definir tipos, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
+1. Como **Node e npm** contribui para a solução desenvolvida?
+<!-- Gabarito: definir Node e npm, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
 
-2. Como **interfaces** contribui para a solução desenvolvida?
-<!-- Gabarito: definir interfaces, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
+2. Como **Angular CLI** contribui para a solução desenvolvida?
+<!-- Gabarito: definir Angular CLI, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
 
-3. Como **unions** contribui para a solução desenvolvida?
-<!-- Gabarito: definir unions, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
+3. Como **SPA** contribui para a solução desenvolvida?
+<!-- Gabarito: definir SPA, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
 
-4. Como **generics** contribui para a solução desenvolvida?
-<!-- Gabarito: definir generics, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
+4. Como **componentes** contribui para a solução desenvolvida?
+<!-- Gabarito: definir componentes, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
 
-5. Como **narrowing** contribui para a solução desenvolvida?
-<!-- Gabarito: definir narrowing, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
+5. Como **workspace** contribui para a solução desenvolvida?
+<!-- Gabarito: definir workspace, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
 
 [Voltar ao cronograma](../01-cronograma-60h.md)

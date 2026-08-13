@@ -1,21 +1,21 @@
-# Encontro 18 — Preparação para Angular
+# Encontro 18 — Estudo de caso: análise e planejamento
 
 **Carga horária:** 1,5h  
-**Entrega prevista:** Ambiente validado
+**Entrega prevista:** Solução em desenvolvimento
 
 ## Visão Geral
 
-Este encontro desenvolve **preparação para angular** como continuidade direta dos conhecimentos anteriores. A aula parte de um problema observável, apresenta os recursos necessários e termina com uma entrega que pode ser executada e verificada.
+Este encontro desenvolve **estudo de caso — análise e planejamento** como continuidade direta dos conhecimentos anteriores. A aula parte de um problema observável, apresenta os recursos necessários e termina com uma entrega que pode ser executada e verificada.
 
 Ao final, o estudante deverá conseguir explicar o propósito de cada recurso, implementar uma solução incremental, testar o comportamento e justificar as decisões adotadas.
 
 ## Conceitos Essenciais
 
-- Node e npm.
-- Angular CLI.
-- SPA.
-- Componentes.
-- Workspace.
+- Tailwind.
+- Responsividade.
+- JavaScript.
+- TypeScript.
+- Qualidade.
 
 ## 1) Contexto do encontro
 
@@ -30,25 +30,25 @@ Durante a aula, use quatro perguntas para orientar as decisões:
 
 ## 2) Conceitos em detalhe
 
-### 1) Node e npm
+### 1) Tailwind
 
-Node e npm deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
+Tailwind deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
 
-### 2) Angular CLI
+### 2) Responsividade
 
-Angular CLI deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
+Responsividade deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
 
-### 3) SPA
+### 3) JavaScript
 
-SPA deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
+JavaScript deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
 
-### 4) Componentes
+### 4) TypeScript
 
-Componentes deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
+TypeScript deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
 
-### 5) Workspace
+### 5) Qualidade
 
-Workspace deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
+Qualidade deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
 
 ## 3) Exemplo inicial
 
@@ -80,7 +80,7 @@ npm run build
 
 ## 5) Prática guiada
 
-**Proposta:** Criar e executar um workspace Angular.
+**Proposta:** Analisar o estudo de caso, planejar a solução e iniciar a implementação.
 
 ### Etapas
 
@@ -98,11 +98,11 @@ Construa uma segunda variação sem acompanhar o exemplo linha a linha. A soluç
 
 ### Requisitos mínimos
 
-- demonstrar uso consciente de Node e npm;
-- demonstrar uso consciente de Angular CLI;
-- demonstrar uso consciente de SPA;
-- demonstrar uso consciente de componentes;
-- demonstrar uso consciente de workspace;
+- demonstrar uso consciente de Tailwind;
+- demonstrar uso consciente de responsividade;
+- demonstrar uso consciente de JavaScript;
+- demonstrar uso consciente de TypeScript;
+- demonstrar uso consciente de qualidade;
 - manter nomes claros e organização consistente;
 - não apresentar erros de compilação ou console;
 - explicar no README como executar e testar;
@@ -140,11 +140,11 @@ Implemente um estado alternativo relevante, como vazio, erro, carregamento, tela
 
 ## Checklist de compreensão
 
-- [ ] Consigo explicar e aplicar **Node e npm**.
-- [ ] Consigo explicar e aplicar **Angular CLI**.
-- [ ] Consigo explicar e aplicar **SPA**.
-- [ ] Consigo explicar e aplicar **componentes**.
-- [ ] Consigo explicar e aplicar **workspace**.
+- [ ] Consigo explicar e aplicar **Tailwind**.
+- [ ] Consigo explicar e aplicar **responsividade**.
+- [ ] Consigo explicar e aplicar **JavaScript**.
+- [ ] Consigo explicar e aplicar **TypeScript**.
+- [ ] Consigo explicar e aplicar **qualidade**.
 - [ ] Consigo executar e modificar o exemplo.
 - [ ] Consigo realizar a prática sem cópia integral.
 - [ ] Consigo identificar um erro e explicar a correção.
@@ -152,23 +152,23 @@ Implemente um estado alternativo relevante, como vazio, erro, carregamento, tela
 
 ## Resumo final
 
-Neste encontro, **preparação para angular** foi tratado como parte de uma solução frontend completa. Conceitos, código, validação e comunicação técnica foram combinados para gerar um resultado reutilizável nos encontros seguintes e no projeto final.
+Neste encontro, **estudo de caso — análise e planejamento** foi tratado como parte de uma solução frontend completa. Conceitos, código, validação e comunicação técnica foram combinados para gerar um resultado reutilizável nos encontros seguintes e no projeto final.
 
 ## Questões de fixação
 
-1. Como **Node e npm** contribui para a solução desenvolvida?
-<!-- Gabarito: definir Node e npm, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
+1. Como **Tailwind** contribui para a solução desenvolvida?
+<!-- Gabarito: definir Tailwind, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
 
-2. Como **Angular CLI** contribui para a solução desenvolvida?
-<!-- Gabarito: definir Angular CLI, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
+2. Como **responsividade** contribui para a solução desenvolvida?
+<!-- Gabarito: definir responsividade, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
 
-3. Como **SPA** contribui para a solução desenvolvida?
-<!-- Gabarito: definir SPA, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
+3. Como **JavaScript** contribui para a solução desenvolvida?
+<!-- Gabarito: definir JavaScript, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
 
-4. Como **componentes** contribui para a solução desenvolvida?
-<!-- Gabarito: definir componentes, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
+4. Como **TypeScript** contribui para a solução desenvolvida?
+<!-- Gabarito: definir TypeScript, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
 
-5. Como **workspace** contribui para a solução desenvolvida?
-<!-- Gabarito: definir workspace, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
+5. Como **qualidade** contribui para a solução desenvolvida?
+<!-- Gabarito: definir qualidade, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
 
 [Voltar ao cronograma](../01-cronograma-60h.md)

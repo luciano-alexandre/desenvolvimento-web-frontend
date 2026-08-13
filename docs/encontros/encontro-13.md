@@ -1,21 +1,21 @@
-# Encontro 13 — Atividade Prática 2: interface temática com Tailwind CSS
+# Encontro 13 — JavaScript moderno
 
 **Carga horária:** 1,5h  
-**Entrega prevista:** Atividade Prática 2 — 20 pontos
+**Entrega prevista:** Interface com JavaScript
 
 ## Visão Geral
 
-Este encontro desenvolve **atividade prática 2 com Tailwind CSS** como continuidade direta dos conhecimentos anteriores. A aula parte de um problema observável, apresenta os recursos necessários e termina com uma entrega que pode ser executada e verificada.
+Este encontro desenvolve **javascript moderno** como continuidade direta dos conhecimentos anteriores. A aula parte de um problema observável, apresenta os recursos necessários e termina com uma entrega que pode ser executada e verificada.
 
 Ao final, o estudante deverá conseguir explicar o propósito de cada recurso, implementar uma solução incremental, testar o comportamento e justificar as decisões adotadas.
 
 ## Conceitos Essenciais
 
-- Leitura de referência.
-- Decomposição.
-- Fidelidade.
-- Responsividade.
-- Autoria.
+- Módulos ES.
+- DOM.
+- Eventos.
+- Async-await.
+- Tratamento de erros.
 
 ## 1) Contexto do encontro
 
@@ -30,35 +30,38 @@ Durante a aula, use quatro perguntas para orientar as decisões:
 
 ## 2) Conceitos em detalhe
 
-### 1) Leitura de referência
+### 1) Módulos ES
 
-Leitura de referência deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
+Módulos ES deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
 
-### 2) Decomposição
+### 2) DOM
 
-Decomposição deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
+DOM deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
 
-### 3) Fidelidade
+### 3) Eventos
 
-Fidelidade deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
+Eventos deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
 
-### 4) Responsividade
+### 4) Async-await
 
-Responsividade deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
+Async-await deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
 
-### 5) Autoria
+### 5) Tratamento de erros
 
-Autoria deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
+Tratamento de erros deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
 
 ## 3) Exemplo inicial
 
 Digite e execute o exemplo antes de modificá-lo. Depois, altere um elemento por vez e observe o efeito no navegador, no terminal ou nos testes.
 
-```html
-<article class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm md:p-8">
-  <h2 class="text-xl font-bold text-slate-900">Interface responsiva</h2>
-  <p class="mt-2 text-slate-600">Componente construído com Tailwind CSS.</p>
-</article>
+```js
+const botao = document.querySelector("#carregar");
+
+botao.addEventListener("click", async () => {
+  const resposta = await fetch("/api/itens");
+  const itens = await resposta.json();
+  console.table(itens);
+});
 ```
 
 ### O que observar
@@ -81,7 +84,7 @@ Digite e execute o exemplo antes de modificá-lo. Depois, altere um elemento por
 
 ## 5) Prática guiada
 
-**Proposta:** Reproduzir uma interface e documentar decisões.
+**Proposta:** Adicionar filtro e carregamento assíncrono à interface.
 
 ### Etapas
 
@@ -99,11 +102,11 @@ Construa uma segunda variação sem acompanhar o exemplo linha a linha. A soluç
 
 ### Requisitos mínimos
 
-- demonstrar uso consciente de leitura de referência;
-- demonstrar uso consciente de decomposição;
-- demonstrar uso consciente de fidelidade;
-- demonstrar uso consciente de responsividade;
-- demonstrar uso consciente de autoria;
+- demonstrar uso consciente de módulos ES;
+- demonstrar uso consciente de DOM;
+- demonstrar uso consciente de eventos;
+- demonstrar uso consciente de async-await;
+- demonstrar uso consciente de tratamento de erros;
 - manter nomes claros e organização consistente;
 - não apresentar erros de compilação ou console;
 - explicar no README como executar e testar;
@@ -141,11 +144,11 @@ Implemente um estado alternativo relevante, como vazio, erro, carregamento, tela
 
 ## Checklist de compreensão
 
-- [ ] Consigo explicar e aplicar **leitura de referência**.
-- [ ] Consigo explicar e aplicar **decomposição**.
-- [ ] Consigo explicar e aplicar **fidelidade**.
-- [ ] Consigo explicar e aplicar **responsividade**.
-- [ ] Consigo explicar e aplicar **autoria**.
+- [ ] Consigo explicar e aplicar **módulos ES**.
+- [ ] Consigo explicar e aplicar **DOM**.
+- [ ] Consigo explicar e aplicar **eventos**.
+- [ ] Consigo explicar e aplicar **async-await**.
+- [ ] Consigo explicar e aplicar **tratamento de erros**.
 - [ ] Consigo executar e modificar o exemplo.
 - [ ] Consigo realizar a prática sem cópia integral.
 - [ ] Consigo identificar um erro e explicar a correção.
@@ -153,23 +156,23 @@ Implemente um estado alternativo relevante, como vazio, erro, carregamento, tela
 
 ## Resumo final
 
-Neste encontro, **atividade prática 2 com Tailwind CSS** foi tratado como parte de uma solução frontend completa. Conceitos, código, validação e comunicação técnica foram combinados para gerar um resultado reutilizável nos encontros seguintes e no projeto final.
+Neste encontro, **javascript moderno** foi tratado como parte de uma solução frontend completa. Conceitos, código, validação e comunicação técnica foram combinados para gerar um resultado reutilizável nos encontros seguintes e no projeto final.
 
 ## Questões de fixação
 
-1. Como **leitura de referência** contribui para a solução desenvolvida?
-<!-- Gabarito: definir leitura de referência, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
+1. Como **módulos ES** contribui para a solução desenvolvida?
+<!-- Gabarito: definir módulos ES, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
 
-2. Como **decomposição** contribui para a solução desenvolvida?
-<!-- Gabarito: definir decomposição, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
+2. Como **DOM** contribui para a solução desenvolvida?
+<!-- Gabarito: definir DOM, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
 
-3. Como **fidelidade** contribui para a solução desenvolvida?
-<!-- Gabarito: definir fidelidade, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
+3. Como **eventos** contribui para a solução desenvolvida?
+<!-- Gabarito: definir eventos, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
 
-4. Como **responsividade** contribui para a solução desenvolvida?
-<!-- Gabarito: definir responsividade, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
+4. Como **async-await** contribui para a solução desenvolvida?
+<!-- Gabarito: definir async-await, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
 
-5. Como **autoria** contribui para a solução desenvolvida?
-<!-- Gabarito: definir autoria, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
+5. Como **tratamento de erros** contribui para a solução desenvolvida?
+<!-- Gabarito: definir tratamento de erros, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
 
 [Voltar ao cronograma](../01-cronograma-60h.md)

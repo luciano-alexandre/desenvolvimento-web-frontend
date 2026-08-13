@@ -1,21 +1,21 @@
-# Encontro 8 — Atividade Prática 1: Tailwind CSS responsivo
+# Encontro 8 — Tema e tokens de design
 
 **Carga horária:** 1,5h  
-**Entrega prevista:** Atividade Prática 1 — 20 pontos
+**Entrega prevista:** Tema customizado
 
 ## Visão Geral
 
-Este encontro desenvolve **atividade prática 1 com Tailwind CSS responsivo** como continuidade direta dos conhecimentos anteriores. A aula parte de um problema observável, apresenta os recursos necessários e termina com uma entrega que pode ser executada e verificada.
+Este encontro desenvolve **tema e tokens de design** como continuidade direta dos conhecimentos anteriores. A aula parte de um problema observável, apresenta os recursos necessários e termina com uma entrega que pode ser executada e verificada.
 
 Ao final, o estudante deverá conseguir explicar o propósito de cada recurso, implementar uma solução incremental, testar o comportamento e justificar as decisões adotadas.
 
 ## Conceitos Essenciais
 
+- Tokens.
+- Variáveis de tema.
+- Paleta.
+- Tipografia.
 - Breakpoints.
-- Variantes responsivas.
-- Larguras fluidas.
-- Ordenação.
-- Testes de viewport.
 
 ## 1) Contexto do encontro
 
@@ -30,25 +30,25 @@ Durante a aula, use quatro perguntas para orientar as decisões:
 
 ## 2) Conceitos em detalhe
 
-### 1) Breakpoints
+### 1) Tokens
+
+Tokens deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
+
+### 2) Variáveis de tema
+
+Variáveis de tema deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
+
+### 3) Paleta
+
+Paleta deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
+
+### 4) Tipografia
+
+Tipografia deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
+
+### 5) Breakpoints
 
 Breakpoints deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
-
-### 2) Variantes responsivas
-
-Variantes responsivas deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
-
-### 3) Larguras fluidas
-
-Larguras fluidas deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
-
-### 4) Ordenação
-
-Ordenação deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
-
-### 5) Testes de viewport
-
-Testes de viewport deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
 
 ## 3) Exemplo inicial
 
@@ -81,7 +81,7 @@ Digite e execute o exemplo antes de modificá-lo. Depois, altere um elemento por
 
 ## 5) Prática guiada
 
-**Proposta:** Criar uma seção responsiva em três faixas.
+**Proposta:** Definir tokens de marca e aplicá-los a três componentes.
 
 ### Etapas
 
@@ -99,11 +99,11 @@ Construa uma segunda variação sem acompanhar o exemplo linha a linha. A soluç
 
 ### Requisitos mínimos
 
+- demonstrar uso consciente de tokens;
+- demonstrar uso consciente de variáveis de tema;
+- demonstrar uso consciente de paleta;
+- demonstrar uso consciente de tipografia;
 - demonstrar uso consciente de breakpoints;
-- demonstrar uso consciente de variantes responsivas;
-- demonstrar uso consciente de larguras fluidas;
-- demonstrar uso consciente de ordenação;
-- demonstrar uso consciente de testes de viewport;
 - manter nomes claros e organização consistente;
 - não apresentar erros de compilação ou console;
 - explicar no README como executar e testar;
@@ -141,11 +141,11 @@ Implemente um estado alternativo relevante, como vazio, erro, carregamento, tela
 
 ## Checklist de compreensão
 
+- [ ] Consigo explicar e aplicar **tokens**.
+- [ ] Consigo explicar e aplicar **variáveis de tema**.
+- [ ] Consigo explicar e aplicar **paleta**.
+- [ ] Consigo explicar e aplicar **tipografia**.
 - [ ] Consigo explicar e aplicar **breakpoints**.
-- [ ] Consigo explicar e aplicar **variantes responsivas**.
-- [ ] Consigo explicar e aplicar **larguras fluidas**.
-- [ ] Consigo explicar e aplicar **ordenação**.
-- [ ] Consigo explicar e aplicar **testes de viewport**.
 - [ ] Consigo executar e modificar o exemplo.
 - [ ] Consigo realizar a prática sem cópia integral.
 - [ ] Consigo identificar um erro e explicar a correção.
@@ -153,23 +153,23 @@ Implemente um estado alternativo relevante, como vazio, erro, carregamento, tela
 
 ## Resumo final
 
-Neste encontro, **atividade prática 1 com Tailwind CSS responsivo** foi tratado como parte de uma solução frontend completa. Conceitos, código, validação e comunicação técnica foram combinados para gerar um resultado reutilizável nos encontros seguintes e no projeto final.
+Neste encontro, **tema e tokens de design** foi tratado como parte de uma solução frontend completa. Conceitos, código, validação e comunicação técnica foram combinados para gerar um resultado reutilizável nos encontros seguintes e no projeto final.
 
 ## Questões de fixação
 
-1. Como **breakpoints** contribui para a solução desenvolvida?
+1. Como **tokens** contribui para a solução desenvolvida?
+<!-- Gabarito: definir tokens, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
+
+2. Como **variáveis de tema** contribui para a solução desenvolvida?
+<!-- Gabarito: definir variáveis de tema, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
+
+3. Como **paleta** contribui para a solução desenvolvida?
+<!-- Gabarito: definir paleta, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
+
+4. Como **tipografia** contribui para a solução desenvolvida?
+<!-- Gabarito: definir tipografia, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
+
+5. Como **breakpoints** contribui para a solução desenvolvida?
 <!-- Gabarito: definir breakpoints, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
-
-2. Como **variantes responsivas** contribui para a solução desenvolvida?
-<!-- Gabarito: definir variantes responsivas, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
-
-3. Como **larguras fluidas** contribui para a solução desenvolvida?
-<!-- Gabarito: definir larguras fluidas, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
-
-4. Como **ordenação** contribui para a solução desenvolvida?
-<!-- Gabarito: definir ordenação, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
-
-5. Como **testes de viewport** contribui para a solução desenvolvida?
-<!-- Gabarito: definir testes de viewport, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
 
 [Voltar ao cronograma](../01-cronograma-60h.md)

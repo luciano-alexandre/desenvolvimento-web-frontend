@@ -1,11 +1,11 @@
-# Encontro 16 — Fundamentos de TypeScript
+# Encontro 16 — Atividade Prática 3: TypeScript aplicado
 
 **Carga horária:** 1,5h  
-**Entrega prevista:** Exercícios TypeScript
+**Entrega prevista:** Atividade Prática 3 — 20 pontos
 
 ## Visão Geral
 
-Este encontro desenvolve **fundamentos de typescript** como continuidade direta dos conhecimentos anteriores. A aula parte de um problema observável, apresenta os recursos necessários e termina com uma entrega que pode ser executada e verificada.
+Este encontro desenvolve **atividade prática 3 com TypeScript aplicado** como continuidade direta dos conhecimentos anteriores. A aula parte de um problema observável, apresenta os recursos necessários e termina com uma entrega que pode ser executada e verificada.
 
 Ao final, o estudante deverá conseguir explicar o propósito de cada recurso, implementar uma solução incremental, testar o comportamento e justificar as decisões adotadas.
 
@@ -85,7 +85,7 @@ const total = (itens: Produto[]): number =>
 
 ## 5) Prática guiada
 
-**Proposta:** Tipar os dados e funções de uma aplicação.
+**Proposta:** Implementar individualmente uma interface com dados e funções tipados.
 
 ### Etapas
 
@@ -157,7 +157,7 @@ Implemente um estado alternativo relevante, como vazio, erro, carregamento, tela
 
 ## Resumo final
 
-Neste encontro, **fundamentos de typescript** foi tratado como parte de uma solução frontend completa. Conceitos, código, validação e comunicação técnica foram combinados para gerar um resultado reutilizável nos encontros seguintes e no projeto final.
+Neste encontro, **atividade prática 3 com TypeScript aplicado** foi tratado como parte de uma solução frontend completa. Conceitos, código, validação e comunicação técnica foram combinados para gerar um resultado reutilizável nos encontros seguintes e no projeto final.
 
 ## Questões de fixação
 

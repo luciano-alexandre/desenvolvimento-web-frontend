@@ -12,16 +12,15 @@ O tempo pode variar em avaliações, correções e marcos do projeto, preservand
 
 ## Sequência de Conteúdo
 
-### Bloco 1 — Retomada de Padrões Web (Encontros 1 a 3)
+### Bloco 1 — Retomada de Padrões Web (Encontro 1)
 
-- diagnóstico, HTML semântico, formulários e acessibilidade integrados no Encontro 1;
+- diagnóstico, HTML semântico, formulários e acessibilidade;
 - cascata, especificidade, box model e unidades;
-- Flexbox, Grid e responsividade mobile-first;
-- Git/GitHub e DevTools integrados à revisão de layouts.
+- Flexbox, Grid e responsividade mobile-first.
 
-**Produto do bloco:** página anterior revisada, responsiva, acessível e versionada.
+**Produto do bloco:** diagnóstico integrado dos conhecimentos prévios.
 
-### Bloco 2 — Tailwind CSS (Encontros 4 a 14)
+### Bloco 2 — Tailwind CSS (Encontros 2 a 12)
 
 - abordagem utility-first e fluxo de compilação;
 - utilitários de tipografia, cor, espaçamento e tamanho;
@@ -30,20 +29,21 @@ O tempo pode variar em avaliações, correções e marcos do projeto, preservand
 - dark mode e preferências do usuário;
 - tema, tokens e componentes visuais;
 - formulários, tabelas e acessibilidade;
-- Atividade Prática 1 no Encontro 8;
-- Atividade Prática 2 no Encontro 13;
-- refatoração e auditoria no Encontro 14.
+- Atividade Prática 1 no Encontro 6;
+- Atividade Prática 2 no Encontro 11;
+- refatoração e auditoria no Encontro 12.
 
 **Produto do bloco:** interface responsiva com tema próprio e biblioteca inicial de componentes.
 
-### Bloco 3 — JavaScript, TypeScript e estudo de caso (Encontros 15 a 20)
+### Bloco 3 — JavaScript, TypeScript e estudo de caso (Encontros 13 a 20)
 
 - módulos, DOM, eventos e assincronismo;
 - tipos, interfaces, unions, generics e narrowing;
+- TypeScript aplicado a seletores, eventos e estados do DOM;
 - Node.js, npm, Angular CLI e conceito de SPA;
-- Atividade Prática 3 no Encontro 17;
-- preparação do ambiente Angular no Encontro 18;
-- estudo de caso desenvolvido nos Encontros 19 e 20.
+- Atividade Prática 3 no Encontro 16;
+- preparação do ambiente Angular no Encontro 17;
+- estudo de caso desenvolvido nos Encontros 18 a 20.
 
 **Produto do bloco:** interface com comportamento tipado e ambiente Angular validado.
 

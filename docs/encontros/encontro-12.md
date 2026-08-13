@@ -1,175 +1,195 @@
-# Encontro 12 — Formulários e tabelas
+# Encontro 12 — Refatoração e auditoria de interfaces
 
-**Carga horária:** 1,5h  
-**Entrega prevista:** Formulário e tabela responsivos
+**Entrega prevista:** interface Tailwind revisada e documentada
 
-## Visão Geral
+## Visão geral
 
-Este encontro desenvolve **formulários e tabelas** como continuidade direta dos conhecimentos anteriores. A aula parte de um problema observável, apresenta os recursos necessários e termina com uma entrega que pode ser executada e verificada.
+Refatorar significa melhorar a estrutura interna sem alterar intencionalmente o comportamento esperado. Auditar significa verificar a solução por critérios explícitos e produzir evidências. Depois das duas primeiras atividades práticas, este encontro consolida Tailwind CSS antes da transição para JavaScript e TypeScript.
 
-Ao final, o estudante deverá conseguir explicar o propósito de cada recurso, implementar uma solução incremental, testar o comportamento e justificar as decisões adotadas.
+Uma interface visualmente concluída ainda pode conter repetição, classes conflitantes, problemas de foco, excesso de dependências, responsividade frágil ou conteúdo que não suporta variações. A revisão técnica transforma percepções vagas em problemas reproduzíveis e correções justificadas.
 
-## Conceitos Essenciais
+## Objetivos de aprendizagem
 
-- Estados de campo.
-- Mensagens de erro.
-- Tabela responsiva.
-- Rótulos.
-- Navegação por teclado.
+- identificar repetição e complexidade desnecessária;
+- revisar semântica, responsividade e acessibilidade;
+- verificar estados de interação e preferências do usuário;
+- analisar o CSS gerado e o build de produção;
+- documentar problemas, correções e evidências;
+- organizar mudanças em commits coerentes.
 
-## 1) Contexto do encontro
+## 1. Refatoração orientada por problema
 
-Uma interface de qualidade precisa combinar estrutura, comportamento, apresentação, acessibilidade e manutenção. O tema deste encontro não deve ser aprendido como uma lista de comandos isolados, mas como resposta a um problema concreto de desenvolvimento frontend.
+Uma refatoração deve partir de um problema observável. Alterar todo o código apenas por preferência pessoal aumenta risco e dificulta revisão.
 
-Durante a aula, use quatro perguntas para orientar as decisões:
+| Sintoma | Causa possível | Refatoração possível |
+|---|---|---|
+| classes repetidas em muitos elementos | padrão visual recorrente | criar componente ou abstração adequada |
+| variações inconsistentes | ausência de tokens | consolidar cores, espaçamentos e tipografia no tema |
+| sobrescritas frequentes | responsabilidades misturadas | reorganizar estrutura e variantes |
+| layout quebra com texto longo | dimensões rígidas | usar limites fluidos e permitir quebra |
+| foco invisível | estado não definido ou removido | aplicar variante `focus-visible` adequada |
 
-- qual problema precisa ser resolvido?
-- em que parte do projeto fica essa responsabilidade?
-- como verificar se a solução funciona?
-- que impacto a escolha produz para usuários e manutenção?
+Nem toda repetição precisa ser abstraída. Um componente deve representar uma unidade reconhecível, com responsabilidade e variações claras.
 
-## 2) Conceitos em detalhe
+## 2. Legibilidade de classes utilitárias
 
-### 1) Estados de campo
-
-Estados de campo deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
-
-### 2) Mensagens de erro
-
-Mensagens de erro deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
-
-### 3) Tabela responsiva
-
-Tabela responsiva deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
-
-### 4) Rótulos
-
-Rótulos deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
-
-### 5) Navegação por teclado
-
-Navegação por teclado deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
-
-## 3) Exemplo inicial
-
-Digite e execute o exemplo antes de modificá-lo. Depois, altere um elemento por vez e observe o efeito no navegador, no terminal ou nos testes.
+Agrupe mentalmente as classes por responsabilidade:
 
 ```html
-<article class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm md:p-8">
-  <h2 class="text-xl font-bold text-slate-900">Interface responsiva</h2>
-  <p class="mt-2 text-slate-600">Componente construído com Tailwind CSS.</p>
+<article
+  class="
+    grid gap-4
+    rounded-xl border border-slate-200 bg-white p-5 shadow-sm
+    text-slate-900
+    hover:border-blue-400
+    focus-within:ring-2 focus-within:ring-blue-600
+    dark:border-slate-700 dark:bg-slate-900 dark:text-white
+  "
+>
+  <!-- conteúdo -->
 </article>
 ```
 
-### O que observar
+A quebra de linhas pode ajudar durante o estudo, desde que o formatador e o projeto adotem uma convenção consistente. Classes contraditórias, duplicadas ou que não produzem efeito devem ser removidas.
 
-- localize entrada, transformação e saída;
-- relacione cada linha aos conceitos essenciais;
-- provoque um erro intencional e interprete a mensagem;
-- confirme o resultado com as ferramentas adequadas;
-- evite copiar o trecho sem compreender suas partes.
+## 3. Auditoria por dimensões
 
-## 4) Demonstração orientada
+### Estrutura e conteúdo
 
-1. apresente o requisito antes da solução;
-2. construa a menor versão funcional;
-3. inspecione o resultado e verbalize as decisões;
-4. introduza os conceitos progressivamente;
-5. teste um cenário alternativo ou de erro;
-6. refatore nomes, estrutura e repetição;
-7. registre a versão estável.
+- landmarks e títulos representam a organização;
+- links e botões correspondem à função;
+- textos continuam compreensíveis fora do contexto visual;
+- imagens possuem alternativa e dimensões.
 
-## 5) Prática guiada
+### Responsividade
 
-**Proposta:** Construir formulário e tabela acessíveis.
+- não existe rolagem horizontal indevida;
+- texto ampliado não se sobrepõe;
+- cartões aceitam conteúdo mais longo;
+- breakpoints respondem ao conteúdo;
+- tabelas possuem estratégia para telas estreitas.
 
-### Etapas
+### Acessibilidade
 
-1. crie uma pasta ou branch para o encontro;
-2. reproduza o exemplo e confirme que ele funciona;
-3. adapte nomes, conteúdo e dados ao domínio escolhido;
-4. aplique os cinco conceitos essenciais;
-5. teste diferentes larguras e estados aplicáveis;
-6. revise console, compilação, teclado e foco;
-7. prepare a entrega indicada no início da página.
+- todos os controles funcionam por teclado;
+- o foco é visível;
+- estados não dependem somente de cor;
+- rótulos, instruções e erros estão associados;
+- movimentos respeitam `prefers-reduced-motion`.
 
-## 6) Exercício aplicado
+### Qualidade técnica
 
-Construa uma segunda variação sem acompanhar o exemplo linha a linha. A solução deve ser autoral e compreensível para outra pessoa.
+- build conclui sem erros;
+- console não apresenta erros não justificados;
+- apenas classes detectáveis pelo Tailwind são utilizadas;
+- dependências e arquivos gerados estão organizados;
+- README explica instalação, execução e verificação.
 
-### Requisitos mínimos
+## 4. Classes construídas dinamicamente
 
-- demonstrar uso consciente de estados de campo;
-- demonstrar uso consciente de mensagens de erro;
-- demonstrar uso consciente de tabela responsiva;
-- demonstrar uso consciente de rótulos;
-- demonstrar uso consciente de navegação por teclado;
-- manter nomes claros e organização consistente;
-- não apresentar erros de compilação ou console;
-- explicar no README como executar e testar;
-- registrar evidências e decisões importantes.
+O Tailwind detecta classes nos arquivos-fonte. Construções parciais podem não ser reconhecidas:
 
-### Desafio adicional
+```js
+// Evite construir fragmentos que não aparecem completos no código-fonte
+const classe = `bg-${cor}-600`;
+```
 
-Implemente um estado alternativo relevante, como vazio, erro, carregamento, tela estreita ou navegação por teclado. Explique como a solução permanece utilizável nessa condição.
+Prefira mapear valores para classes completas:
 
-## 7) Critérios de aceite
+```js
+const variantes = {
+  sucesso: "bg-emerald-600 text-white",
+  alerta: "bg-amber-400 text-slate-950",
+  erro: "bg-red-700 text-white",
+};
+```
 
-- o projeto executa conforme as instruções;
-- o resultado atende ao objetivo funcional;
-- os recursos do encontro foram usados com intenção;
-- a interface funciona nos cenários testados;
-- a entrega está organizada e pode ser avaliada sem ajustes;
-- o histórico ou registro de trabalho evidencia evolução incremental.
+O mesmo princípio será importante em templates Angular: classes completas tornam a geração previsível.
 
-## 8) Erros comuns
+## 5. Matriz de validação
 
-- começar pela aparência sem interpretar o requisito;
-- copiar o exemplo sem adaptar semântica e dados;
-- reunir responsabilidades diferentes no mesmo bloco;
-- testar apenas o caminho de sucesso;
-- ignorar mensagens do console ou compilador;
-- abstrair antes de existir repetição real;
-- entregar sem instruções de execução.
+| Cenário | Resultado esperado | Evidência | Situação |
+|---|---|---|---|
+| viewport estreito | conteúdo sem corte |  |  |
+| viewport amplo | hierarquia equilibrada |  |  |
+| teclado | todos os controles operáveis |  |  |
+| foco | indicador sempre perceptível |  |  |
+| tema escuro | contraste e estados preservados |  |  |
+| movimento reduzido | animações não essenciais reduzidas |  |  |
+| conteúdo extenso | layout permanece íntegro |  |  |
+| build | saída sem erro |  |  |
 
-## 9) Materiais para aprofundamento
+## 6. Relatório de problema e correção
 
-- [MDN Web Docs](https://developer.mozilla.org/pt-BR/docs/Web)
-- [Documentação do Tailwind CSS](https://tailwindcss.com/docs)
-- [Documentação do Angular](https://angular.dev/overview)
-- [Manual do TypeScript](https://www.typescriptlang.org/docs/handbook/intro.html)
+Cada item do relatório deve conter:
+
+```text
+Problema:
+Condição de reprodução:
+Impacto:
+Causa identificada:
+Correção aplicada:
+Evidência após a correção:
+Commit:
+```
+
+Esse registro diferencia uma correção baseada em evidência de uma alteração meramente estética.
+
+## 7. Atividade de aplicação
+
+Audite a interface produzida na Atividade Prática 2. Selecione problemas de pelo menos três dimensões distintas e gere uma versão revisada.
+
+### Critérios de conclusão
+
+- matriz de validação preenchida;
+- correções justificadas por evidências;
+- responsividade verificada de forma contínua;
+- navegação por teclado e foco revisados;
+- build concluído sem erros;
+- README atualizado;
+- commits separados por finalidade.
+
+## 8. Erros frequentes
+
+- reescrever toda a interface sem definir o problema;
+- abstrair um padrão que ocorre apenas uma vez;
+- avaliar apenas presets de dispositivos;
+- esconder overflow em vez de corrigir a origem;
+- ignorar estados de foco, erro e conteúdo vazio;
+- confiar exclusivamente em auditorias automáticas;
+- alterar aparência e comportamento no mesmo commit sem justificativa.
 
 ## Checklist de compreensão
 
-- [ ] Consigo explicar e aplicar **estados de campo**.
-- [ ] Consigo explicar e aplicar **mensagens de erro**.
-- [ ] Consigo explicar e aplicar **tabela responsiva**.
-- [ ] Consigo explicar e aplicar **rótulos**.
-- [ ] Consigo explicar e aplicar **navegação por teclado**.
-- [ ] Consigo executar e modificar o exemplo.
-- [ ] Consigo realizar a prática sem cópia integral.
-- [ ] Consigo identificar um erro e explicar a correção.
-- [ ] Revisei a entrega pelos critérios de aceite.
-
-## Resumo final
-
-Neste encontro, **formulários e tabelas** foi tratado como parte de uma solução frontend completa. Conceitos, código, validação e comunicação técnica foram combinados para gerar um resultado reutilizável nos encontros seguintes e no projeto final.
+- [ ] Distingo refatoração de alteração de requisito.
+- [ ] Localizo repetição e inconsistência no uso de utilitários.
+- [ ] Verifico semântica, responsividade e acessibilidade.
+- [ ] Evito classes Tailwind construídas por fragmentos dinâmicos.
+- [ ] Registro problemas e correções com evidências.
+- [ ] Organizo o histórico em commits coerentes.
 
 ## Questões de fixação
 
-1. Como **estados de campo** contribui para a solução desenvolvida?
-<!-- Gabarito: definir estados de campo, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
+1. O que caracteriza uma refatoração?
+<!-- Gabarito: melhoria da estrutura interna sem alteração intencional do comportamento esperado. -->
 
-2. Como **mensagens de erro** contribui para a solução desenvolvida?
-<!-- Gabarito: definir mensagens de erro, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
+2. Por que nem toda repetição deve virar componente?
+<!-- Gabarito: abstrações prematuras aumentam complexidade; o padrão precisa ter responsabilidade, recorrência e variações compreensíveis. -->
 
-3. Como **tabela responsiva** contribui para a solução desenvolvida?
-<!-- Gabarito: definir tabela responsiva, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
+3. Por que classes Tailwind montadas por fragmentos podem falhar?
+<!-- Gabarito: o mecanismo de detecção pode não encontrar no código-fonte a classe completa que precisa gerar. -->
 
-4. Como **rótulos** contribui para a solução desenvolvida?
-<!-- Gabarito: definir rótulos, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
+4. O que torna uma auditoria reproduzível?
+<!-- Gabarito: critérios explícitos, condição de reprodução, evidências, resultado esperado e registro da correção. -->
 
-5. Como **navegação por teclado** contribui para a solução desenvolvida?
-<!-- Gabarito: definir navegação por teclado, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
+5. Por que ferramentas automáticas não bastam para avaliar acessibilidade?
+<!-- Gabarito: elas detectam apenas parte dos problemas e não substituem avaliação de conteúdo, fluxo, teclado e experiência humana. -->
+
+## Referências
+
+- [Tailwind CSS — Detecting classes in source files](https://tailwindcss.com/docs/detecting-classes-in-source-files)
+- [Tailwind CSS — Reusing styles](https://tailwindcss.com/docs/styling-with-utility-classes#reusing-styles)
+- [Chrome Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
+- [W3C — Evaluating Web Accessibility](https://www.w3.org/WAI/test-evaluate/)
 
 [Voltar ao cronograma](../01-cronograma-60h.md)

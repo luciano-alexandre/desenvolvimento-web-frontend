@@ -1,178 +1,105 @@
-# Encontro 15 — JavaScript moderno
+# Encontro 15 — TypeScript aplicado ao DOM
 
 **Carga horária:** 1,5h  
-**Entrega prevista:** Interface com JavaScript
+**Entrega prevista:** interface com eventos e estados tipados
 
-## Visão Geral
+## Visão geral
 
-Este encontro desenvolve **javascript moderno** como continuidade direta dos conhecimentos anteriores. A aula parte de um problema observável, apresenta os recursos necessários e termina com uma entrega que pode ser executada e verificada.
+Este encontro conecta os fundamentos de TypeScript ao navegador. A proposta é selecionar elementos com segurança, tipar eventos, modelar estados da interface e separar leitura do DOM, transformação de dados e renderização.
 
-Ao final, o estudante deverá conseguir explicar o propósito de cada recurso, implementar uma solução incremental, testar o comportamento e justificar as decisões adotadas.
+## Objetivos de aprendizagem
 
-## Conceitos Essenciais
+- tipar consultas e eventos do DOM;
+- tratar a possibilidade de elementos ausentes;
+- modelar estados com unions discriminadas;
+- criar funções pequenas para atualizar a interface;
+- validar compilação, console, teclado e foco.
 
-- Módulos ES.
-- DOM.
-- Eventos.
-- Async-await.
-- Tratamento de erros.
+## 1. Seleção segura de elementos
 
-## 1) Contexto do encontro
+`querySelector` pode retornar `null`. O código deve confirmar a existência do elemento antes de utilizá-lo.
 
-Uma interface de qualidade precisa combinar estrutura, comportamento, apresentação, acessibilidade e manutenção. O tema deste encontro não deve ser aprendido como uma lista de comandos isolados, mas como resposta a um problema concreto de desenvolvimento frontend.
+```ts
+const formulario = document.querySelector<HTMLFormElement>("#filtro");
+const campo = document.querySelector<HTMLInputElement>("#busca");
+const resultado = document.querySelector<HTMLElement>("#resultado");
 
-Durante a aula, use quatro perguntas para orientar as decisões:
+if (!formulario || !campo || !resultado) {
+  throw new Error("Elementos obrigatorios nao encontrados");
+}
+```
 
-- qual problema precisa ser resolvido?
-- em que parte do projeto fica essa responsabilidade?
-- como verificar se a solução funciona?
-- que impacto a escolha produz para usuários e manutenção?
+Evite usar asserções `as` apenas para silenciar o compilador. A verificação em tempo de execução documenta uma dependência real da interface.
 
-## 2) Conceitos em detalhe
+## 2. Eventos tipados
 
-### 1) Módulos ES
-
-Módulos ES deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
-
-### 2) DOM
-
-DOM deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
-
-### 3) Eventos
-
-Eventos deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
-
-### 4) Async-await
-
-Async-await deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
-
-### 5) Tratamento de erros
-
-Tratamento de erros deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
-
-## 3) Exemplo inicial
-
-Digite e execute o exemplo antes de modificá-lo. Depois, altere um elemento por vez e observe o efeito no navegador, no terminal ou nos testes.
-
-```js
-const botao = document.querySelector("#carregar");
-
-botao.addEventListener("click", async () => {
-  const resposta = await fetch("/api/itens");
-  const itens = await resposta.json();
-  console.table(itens);
+```ts
+formulario.addEventListener("submit", (evento: SubmitEvent) => {
+  evento.preventDefault();
+  const termo = campo.value.trim();
+  resultado.textContent = termo
+    ? `Busca por: ${termo}`
+    : "Informe um termo para pesquisar.";
 });
 ```
 
-### O que observar
+O tipo do evento informa quais propriedades estão disponíveis. O elemento de origem deve ser obtido de uma referência já validada ou refinado com `instanceof`.
 
-- localize entrada, transformação e saída;
-- relacione cada linha aos conceitos essenciais;
-- provoque um erro intencional e interprete a mensagem;
-- confirme o resultado com as ferramentas adequadas;
-- evite copiar o trecho sem compreender suas partes.
+## 3. Estados da interface
 
-## 4) Demonstração orientada
+```ts
+type EstadoBusca =
+  | { tipo: "inicial" }
+  | { tipo: "carregando" }
+  | { tipo: "sucesso"; quantidade: number }
+  | { tipo: "vazio" }
+  | { tipo: "erro"; mensagem: string };
 
-1. apresente o requisito antes da solução;
-2. construa a menor versão funcional;
-3. inspecione o resultado e verbalize as decisões;
-4. introduza os conceitos progressivamente;
-5. teste um cenário alternativo ou de erro;
-6. refatore nomes, estrutura e repetição;
-7. registre a versão estável.
+function mensagemDoEstado(estado: EstadoBusca): string {
+  switch (estado.tipo) {
+    case "inicial": return "Digite um termo para iniciar.";
+    case "carregando": return "Buscando...";
+    case "sucesso": return `${estado.quantidade} resultado(s).`;
+    case "vazio": return "Nenhum resultado encontrado.";
+    case "erro": return estado.mensagem;
+  }
+}
+```
 
-## 5) Prática guiada
+A union discriminada impede combinações incoerentes e permite narrowing pelo campo `tipo`.
 
-**Proposta:** Adicionar filtro e carregamento assíncrono à interface.
+## 4. Prática guiada
 
-### Etapas
+Implemente uma interface de filtro que:
 
-1. crie uma pasta ou branch para o encontro;
-2. reproduza o exemplo e confirme que ele funciona;
-3. adapte nomes, conteúdo e dados ao domínio escolhido;
-4. aplique os cinco conceitos essenciais;
-5. teste diferentes larguras e estados aplicáveis;
-6. revise console, compilação, teclado e foco;
-7. prepare a entrega indicada no início da página.
+1. leia um termo de um formulário acessível;
+2. filtre uma coleção tipada;
+3. represente os estados inicial, sucesso e vazio;
+4. atualize uma região de resultados;
+5. preserve foco visível e operação por teclado;
+6. não apresente erros de compilação ou console.
 
-## 6) Exercício aplicado
+## 5. Critérios de aceite
 
-Construa uma segunda variação sem acompanhar o exemplo linha a linha. A solução deve ser autoral e compreensível para outra pessoa.
-
-### Requisitos mínimos
-
-- demonstrar uso consciente de módulos ES;
-- demonstrar uso consciente de DOM;
-- demonstrar uso consciente de eventos;
-- demonstrar uso consciente de async-await;
-- demonstrar uso consciente de tratamento de erros;
-- manter nomes claros e organização consistente;
-- não apresentar erros de compilação ou console;
-- explicar no README como executar e testar;
-- registrar evidências e decisões importantes.
-
-### Desafio adicional
-
-Implemente um estado alternativo relevante, como vazio, erro, carregamento, tela estreita ou navegação por teclado. Explique como a solução permanece utilizável nessa condição.
-
-## 7) Critérios de aceite
-
-- o projeto executa conforme as instruções;
-- o resultado atende ao objetivo funcional;
-- os recursos do encontro foram usados com intenção;
-- a interface funciona nos cenários testados;
-- a entrega está organizada e pode ser avaliada sem ajustes;
-- o histórico ou registro de trabalho evidencia evolução incremental.
-
-## 8) Erros comuns
-
-- começar pela aparência sem interpretar o requisito;
-- copiar o exemplo sem adaptar semântica e dados;
-- reunir responsabilidades diferentes no mesmo bloco;
-- testar apenas o caminho de sucesso;
-- ignorar mensagens do console ou compilador;
-- abstrair antes de existir repetição real;
-- entregar sem instruções de execução.
-
-## 9) Materiais para aprofundamento
-
-- [MDN Web Docs](https://developer.mozilla.org/pt-BR/docs/Web)
-- [Documentação do Tailwind CSS](https://tailwindcss.com/docs)
-- [Documentação do Angular](https://angular.dev/overview)
-- [Manual do TypeScript](https://www.typescriptlang.org/docs/handbook/intro.html)
+- consultas ao DOM tratam valores nulos;
+- eventos e dados possuem tipos coerentes;
+- estados impossíveis não podem ser representados;
+- funções possuem responsabilidades claras;
+- a interface comunica estados por texto, não apenas por cor;
+- a solução funciona com teclado.
 
 ## Checklist de compreensão
 
-- [ ] Consigo explicar e aplicar **módulos ES**.
-- [ ] Consigo explicar e aplicar **DOM**.
-- [ ] Consigo explicar e aplicar **eventos**.
-- [ ] Consigo explicar e aplicar **async-await**.
-- [ ] Consigo explicar e aplicar **tratamento de erros**.
-- [ ] Consigo executar e modificar o exemplo.
-- [ ] Consigo realizar a prática sem cópia integral.
-- [ ] Consigo identificar um erro e explicar a correção.
-- [ ] Revisei a entrega pelos critérios de aceite.
+- [ ] Trato o retorno potencialmente nulo de `querySelector`.
+- [ ] Tipo eventos sem recorrer a `any`.
+- [ ] Uso narrowing para acessar dados específicos de cada estado.
+- [ ] Separo dados, regras e atualização do DOM.
+- [ ] Testo compilação, console, teclado e estados alternativos.
 
-## Resumo final
+## Referências
 
-Neste encontro, **javascript moderno** foi tratado como parte de uma solução frontend completa. Conceitos, código, validação e comunicação técnica foram combinados para gerar um resultado reutilizável nos encontros seguintes e no projeto final.
-
-## Questões de fixação
-
-1. Como **módulos ES** contribui para a solução desenvolvida?
-<!-- Gabarito: definir módulos ES, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
-
-2. Como **DOM** contribui para a solução desenvolvida?
-<!-- Gabarito: definir DOM, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
-
-3. Como **eventos** contribui para a solução desenvolvida?
-<!-- Gabarito: definir eventos, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
-
-4. Como **async-await** contribui para a solução desenvolvida?
-<!-- Gabarito: definir async-await, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
-
-5. Como **tratamento de erros** contribui para a solução desenvolvida?
-<!-- Gabarito: definir tratamento de erros, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
+- [TypeScript — DOM Manipulation](https://www.typescriptlang.org/docs/handbook/dom-manipulation.html)
+- [TypeScript — Narrowing](https://www.typescriptlang.org/docs/handbook/2/narrowing.html)
+- [MDN — EventTarget](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget)
 
 [Voltar ao cronograma](../01-cronograma-60h.md)

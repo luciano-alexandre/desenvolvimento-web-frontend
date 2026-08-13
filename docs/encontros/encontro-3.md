@@ -1,145 +1,175 @@
-# Encontro 3 — Git, GitHub e DevTools
+# Encontro 3 — Utilitários fundamentais
 
-**Entrega prevista:** correções validadas e versionadas
+**Carga horária:** 1,5h
+**Entrega prevista:** Página estilizada
 
-## Visão geral
+## Visão Geral
 
-Este encontro usa a página revisada na oficina anterior para consolidar um fluxo profissional de investigação e versionamento. DevTools fornece evidências sobre o comportamento da interface; Git registra mudanças coerentes; GitHub apoia compartilhamento e revisão.
+Este encontro desenvolve **utilitários fundamentais** como continuidade direta dos conhecimentos anteriores. A aula parte de um problema observável, apresenta os recursos necessários e termina com uma entrega que pode ser executada e verificada.
 
-## Objetivos de aprendizagem
+Ao final, o estudante deverá conseguir explicar o propósito de cada recurso, implementar uma solução incremental, testar o comportamento e justificar as decisões adotadas.
 
-- investigar HTML e CSS com os painéis do DevTools;
-- reproduzir e documentar problemas de interface;
-- conferir alterações antes de adicioná-las ao histórico;
-- separar correções por finalidade;
-- escrever commits que descrevam resultados;
-- publicar uma branch e preparar a revisão no GitHub.
+## Conceitos Essenciais
 
-## 1. Investigação com DevTools
+- Cores.
+- Tipografia.
+- Espaçamento.
+- Tamanhos.
+- Bordas e sombras.
 
-Use o painel **Elements** para:
+## 1) Contexto do encontro
 
-- conferir a árvore e a ordem dos elementos;
-- editar classes e declarações temporariamente;
-- identificar regras sobrescritas;
-- inspecionar estilos computados e box model;
-- localizar o elemento que provoca overflow;
-- verificar estados como `:hover` e `:focus-visible`.
+Uma interface de qualidade precisa combinar estrutura, comportamento, apresentação, acessibilidade e manutenção. O tema deste encontro não deve ser aprendido como uma lista de comandos isolados, mas como resposta a um problema concreto de desenvolvimento frontend.
 
-Na simulação responsiva:
+Durante a aula, use quatro perguntas para orientar as decisões:
 
-- redimensione continuamente, além de usar presets;
-- teste orientação e zoom;
-- emule preferências de cor e redução de movimento;
-- confirme o comportamento em larguras intermediárias;
-- registre dimensão, ação e resultado de cada teste.
+- qual problema precisa ser resolvido?
+- em que parte do projeto fica essa responsabilidade?
+- como verificar se a solução funciona?
+- que impacto a escolha produz para usuários e manutenção?
 
-Alterações feitas no DevTools são experimentais. Depois de confirmar uma hipótese, aplique a correção no arquivo-fonte e repita o teste.
+## 2) Conceitos em detalhe
 
-## 2. Preparar o repositório
+### 1) Cores
 
-```bash
-git status
-git switch -c revisao-interface
-git diff
+Cores deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
+
+### 2) Tipografia
+
+Tipografia deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
+
+### 3) Espaçamento
+
+Espaçamento deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
+
+### 4) Tamanhos
+
+Tamanhos deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
+
+### 5) Bordas e sombras
+
+Bordas e sombras deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
+
+## 3) Exemplo inicial
+
+Digite e execute o exemplo antes de modificá-lo. Depois, altere um elemento por vez e observe o efeito no navegador, no terminal ou nos testes.
+
+```html
+<article class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm md:p-8">
+  <h2 class="text-xl font-bold text-slate-900">Interface responsiva</h2>
+  <p class="mt-2 text-slate-600">Componente construído com Tailwind CSS.</p>
+</article>
 ```
 
-`git status` mostra a situação do diretório de trabalho. A branch isola a atividade. `git diff` permite revisar o conteúdo real das alterações antes do commit.
+### O que observar
 
-Arquivos gerados, dependências e configurações locais não devem ser adicionados por acidente. Confira o `.gitignore` e o diff antes de preparar cada mudança.
+- localize entrada, transformação e saída;
+- relacione cada linha aos conceitos essenciais;
+- provoque um erro intencional e interprete a mensagem;
+- confirme o resultado com as ferramentas adequadas;
+- evite copiar o trecho sem compreender suas partes.
 
-## 3. Commits por finalidade
+## 4) Demonstração orientada
 
-Separe correções que podem ser explicadas e verificadas de modo independente:
+1. apresente o requisito antes da solução;
+2. construa a menor versão funcional;
+3. inspecione o resultado e verbalize as decisões;
+4. introduza os conceitos progressivamente;
+5. teste um cenário alternativo ou de erro;
+6. refatore nomes, estrutura e repetição;
+7. registre a versão estável.
 
-```bash
-git add index.html
-git commit -m "Corrige semantica e rotulos do formulario"
+## 5) Prática guiada
 
-git add styles.css
-git commit -m "Adapta grade para telas estreitas"
+**Proposta:** Construir um cartão com hierarquia visual consistente.
 
-git add styles.css
-git commit -m "Torna foco dos controles visivel"
-```
+### Etapas
 
-Uma mensagem de commit deve indicar o resultado, e não apenas o arquivo modificado. Antes de cada commit:
+1. crie uma pasta ou branch para o encontro;
+2. reproduza o exemplo e confirme que ele funciona;
+3. adapte nomes, conteúdo e dados ao domínio escolhido;
+4. aplique os cinco conceitos essenciais;
+5. teste diferentes larguras e estados aplicáveis;
+6. revise console, compilação, teclado e foco;
+7. prepare a entrega indicada no início da página.
 
-1. execute `git diff`;
-2. confirme que as mudanças possuem a mesma finalidade;
-3. teste o comportamento afetado;
-4. prepare apenas os arquivos pertinentes;
-5. confira o diff preparado com `git diff --staged`.
+## 6) Exercício aplicado
 
-## 4. Histórico e correções
+Construa uma segunda variação sem acompanhar o exemplo linha a linha. A solução deve ser autoral e compreensível para outra pessoa.
 
-```bash
-git log --oneline --decorate -5
-git show --stat HEAD
-```
+### Requisitos mínimos
 
-O histórico deve permitir compreender a evolução da solução. Se algo ainda não foi commitado, corrija o arquivo normalmente. Evite reescrever ou apagar histórico compartilhado sem compreender o impacto.
+- demonstrar uso consciente de cores;
+- demonstrar uso consciente de tipografia;
+- demonstrar uso consciente de espaçamento;
+- demonstrar uso consciente de tamanhos;
+- demonstrar uso consciente de bordas e sombras;
+- manter nomes claros e organização consistente;
+- não apresentar erros de compilação ou console;
+- explicar no README como executar e testar;
+- registrar evidências e decisões importantes.
 
-## 5. Compartilhamento no GitHub
+### Desafio adicional
 
-```bash
-git push -u origin revisao-interface
-```
+Implemente um estado alternativo relevante, como vazio, erro, carregamento, tela estreita ou navegação por teclado. Explique como a solução permanece utilizável nessa condição.
 
-Ao preparar uma revisão, informe:
+## 7) Critérios de aceite
 
-- problema observado;
-- mudança implementada;
-- passos de validação;
-- larguras e formas de interação testadas;
-- limitações ou pontos ainda pendentes.
+- o projeto executa conforme as instruções;
+- o resultado atende ao objetivo funcional;
+- os recursos do encontro foram usados com intenção;
+- a interface funciona nos cenários testados;
+- a entrega está organizada e pode ser avaliada sem ajustes;
+- o histórico ou registro de trabalho evidencia evolução incremental.
 
-Capturas podem complementar a explicação visual, mas não substituem passos reproduzíveis nem testes por teclado.
+## 8) Erros comuns
 
-## 6. Atividade de aplicação
+- começar pela aparência sem interpretar o requisito;
+- copiar o exemplo sem adaptar semântica e dados;
+- reunir responsabilidades diferentes no mesmo bloco;
+- testar apenas o caminho de sucesso;
+- ignorar mensagens do console ou compilador;
+- abstrair antes de existir repetição real;
+- entregar sem instruções de execução.
 
-Retome a entrega do Encontro 2 e:
+## 9) Materiais para aprofundamento
 
-1. reproduza três problemas ou riscos no DevTools;
-2. registre a evidência de cada um;
-3. implemente as correções nos arquivos-fonte;
-4. valide novamente os cenários afetados;
-5. organize as mudanças em pelo menos dois commits coerentes;
-6. publique a branch no GitHub;
-7. produza uma descrição curta para revisão.
-
-## Registro de validação
-
-| Problema | Evidência no DevTools | Correção | Teste posterior | Commit |
-|---|---|---|---|---|
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-## Erros frequentes
-
-- modificar arquivos sem conferir `git diff`;
-- agrupar mudanças sem relação em um único commit;
-- usar mensagens como "ajustes" ou "correções" sem indicar resultado;
-- tratar uma alteração temporária no DevTools como solução persistida;
-- validar somente com presets de dispositivos;
-- adicionar arquivos gerados ou dados locais ao repositório;
-- publicar sem repetir os testes depois da correção.
+- [MDN Web Docs](https://developer.mozilla.org/pt-BR/docs/Web)
+- [Documentação do Tailwind CSS](https://tailwindcss.com/docs)
+- [Documentação do Angular](https://angular.dev/overview)
+- [Manual do TypeScript](https://www.typescriptlang.org/docs/handbook/intro.html)
 
 ## Checklist de compreensão
 
-- [ ] Uso DevTools para formular e confirmar hipóteses.
-- [ ] Distingo experimentos no navegador de alterações no código-fonte.
-- [ ] Confiro diffs antes de preparar e registrar mudanças.
-- [ ] Separo commits por finalidade.
-- [ ] Escrevo mensagens que descrevem resultados.
-- [ ] Registro passos de validação reproduzíveis.
-- [ ] Publico uma branch sem incluir arquivos indevidos.
+- [ ] Consigo explicar e aplicar **cores**.
+- [ ] Consigo explicar e aplicar **tipografia**.
+- [ ] Consigo explicar e aplicar **espaçamento**.
+- [ ] Consigo explicar e aplicar **tamanhos**.
+- [ ] Consigo explicar e aplicar **bordas e sombras**.
+- [ ] Consigo executar e modificar o exemplo.
+- [ ] Consigo realizar a prática sem cópia integral.
+- [ ] Consigo identificar um erro e explicar a correção.
+- [ ] Revisei a entrega pelos critérios de aceite.
 
-## Referências
+## Resumo final
 
-- [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
-- [Git — documentação](https://git-scm.com/doc)
-- [GitHub Docs — pull requests](https://docs.github.com/en/pull-requests)
+Neste encontro, **utilitários fundamentais** foi tratado como parte de uma solução frontend completa. Conceitos, código, validação e comunicação técnica foram combinados para gerar um resultado reutilizável nos encontros seguintes e no projeto final.
+
+## Questões de fixação
+
+1. Como **cores** contribui para a solução desenvolvida?
+<!-- Gabarito: definir cores, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
+
+2. Como **tipografia** contribui para a solução desenvolvida?
+<!-- Gabarito: definir tipografia, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
+
+3. Como **espaçamento** contribui para a solução desenvolvida?
+<!-- Gabarito: definir espaçamento, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
+
+4. Como **tamanhos** contribui para a solução desenvolvida?
+<!-- Gabarito: definir tamanhos, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
+
+5. Como **bordas e sombras** contribui para a solução desenvolvida?
+<!-- Gabarito: definir bordas e sombras, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
 
 [Voltar ao cronograma](../01-cronograma-60h.md)

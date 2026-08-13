@@ -1,21 +1,21 @@
-# Encontro 4 — Introdução ao Tailwind CSS
+# Encontro 4 — Layouts com Tailwind
 
 **Carga horária:** 1,5h  
-**Entrega prevista:** Projeto Tailwind configurado
+**Entrega prevista:** Layout com Tailwind
 
 ## Visão Geral
 
-Este encontro desenvolve **introdução ao tailwind css** como continuidade direta dos conhecimentos anteriores. A aula parte de um problema observável, apresenta os recursos necessários e termina com uma entrega que pode ser executada e verificada.
+Este encontro desenvolve **layouts com tailwind** como continuidade direta dos conhecimentos anteriores. A aula parte de um problema observável, apresenta os recursos necessários e termina com uma entrega que pode ser executada e verificada.
 
 Ao final, o estudante deverá conseguir explicar o propósito de cada recurso, implementar uma solução incremental, testar o comportamento e justificar as decisões adotadas.
 
 ## Conceitos Essenciais
 
-- Utility-first.
-- Instalação.
-- Importação.
-- Detecção de classes.
-- Build.
+- Flex.
+- Grid.
+- Gap.
+- Alinhamento.
+- Posicionamento.
 
 ## 1) Contexto do encontro
 
@@ -30,25 +30,25 @@ Durante a aula, use quatro perguntas para orientar as decisões:
 
 ## 2) Conceitos em detalhe
 
-### 1) Utility-first
+### 1) Flex
 
-Utility-first deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
+Flex deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
 
-### 2) Instalação
+### 2) Grid
 
-Instalação deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
+Grid deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
 
-### 3) Importação
+### 3) Gap
 
-Importação deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
+Gap deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
 
-### 4) Detecção de classes
+### 4) Alinhamento
 
-Detecção de classes deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
+Alinhamento deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
 
-### 5) Build
+### 5) Posicionamento
 
-Build deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
+Posicionamento deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
 
 ## 3) Exemplo inicial
 
@@ -81,7 +81,7 @@ Digite e execute o exemplo antes de modificá-lo. Depois, altere um elemento por
 
 ## 5) Prática guiada
 
-**Proposta:** Configurar Tailwind e comprovar a geração do CSS.
+**Proposta:** Reproduzir cabeçalho e grade usando utilitários de layout.
 
 ### Etapas
 
@@ -99,11 +99,11 @@ Construa uma segunda variação sem acompanhar o exemplo linha a linha. A soluç
 
 ### Requisitos mínimos
 
-- demonstrar uso consciente de utility-first;
-- demonstrar uso consciente de instalação;
-- demonstrar uso consciente de importação;
-- demonstrar uso consciente de detecção de classes;
-- demonstrar uso consciente de build;
+- demonstrar uso consciente de flex;
+- demonstrar uso consciente de grid;
+- demonstrar uso consciente de gap;
+- demonstrar uso consciente de alinhamento;
+- demonstrar uso consciente de posicionamento;
 - manter nomes claros e organização consistente;
 - não apresentar erros de compilação ou console;
 - explicar no README como executar e testar;
@@ -141,11 +141,11 @@ Implemente um estado alternativo relevante, como vazio, erro, carregamento, tela
 
 ## Checklist de compreensão
 
-- [ ] Consigo explicar e aplicar **utility-first**.
-- [ ] Consigo explicar e aplicar **instalação**.
-- [ ] Consigo explicar e aplicar **importação**.
-- [ ] Consigo explicar e aplicar **detecção de classes**.
-- [ ] Consigo explicar e aplicar **build**.
+- [ ] Consigo explicar e aplicar **flex**.
+- [ ] Consigo explicar e aplicar **grid**.
+- [ ] Consigo explicar e aplicar **gap**.
+- [ ] Consigo explicar e aplicar **alinhamento**.
+- [ ] Consigo explicar e aplicar **posicionamento**.
 - [ ] Consigo executar e modificar o exemplo.
 - [ ] Consigo realizar a prática sem cópia integral.
 - [ ] Consigo identificar um erro e explicar a correção.
@@ -153,23 +153,23 @@ Implemente um estado alternativo relevante, como vazio, erro, carregamento, tela
 
 ## Resumo final
 
-Neste encontro, **introdução ao tailwind css** foi tratado como parte de uma solução frontend completa. Conceitos, código, validação e comunicação técnica foram combinados para gerar um resultado reutilizável nos encontros seguintes e no projeto final.
+Neste encontro, **layouts com tailwind** foi tratado como parte de uma solução frontend completa. Conceitos, código, validação e comunicação técnica foram combinados para gerar um resultado reutilizável nos encontros seguintes e no projeto final.
 
 ## Questões de fixação
 
-1. Como **utility-first** contribui para a solução desenvolvida?
-<!-- Gabarito: definir utility-first, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
+1. Como **flex** contribui para a solução desenvolvida?
+<!-- Gabarito: definir flex, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
 
-2. Como **instalação** contribui para a solução desenvolvida?
-<!-- Gabarito: definir instalação, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
+2. Como **grid** contribui para a solução desenvolvida?
+<!-- Gabarito: definir grid, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
 
-3. Como **importação** contribui para a solução desenvolvida?
-<!-- Gabarito: definir importação, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
+3. Como **gap** contribui para a solução desenvolvida?
+<!-- Gabarito: definir gap, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
 
-4. Como **detecção de classes** contribui para a solução desenvolvida?
-<!-- Gabarito: definir detecção de classes, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
+4. Como **alinhamento** contribui para a solução desenvolvida?
+<!-- Gabarito: definir alinhamento, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
 
-5. Como **build** contribui para a solução desenvolvida?
-<!-- Gabarito: definir build, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
+5. Como **posicionamento** contribui para a solução desenvolvida?
+<!-- Gabarito: definir posicionamento, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
 
 [Voltar ao cronograma](../01-cronograma-60h.md)

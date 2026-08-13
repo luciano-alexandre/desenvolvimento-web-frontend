@@ -1,21 +1,21 @@
-# Encontro 7 — Responsividade mobile-first
+# Encontro 7 — Estados e dark mode
 
 **Carga horária:** 1,5h  
-**Entrega prevista:** Interface responsiva
+**Entrega prevista:** Componente interativo
 
 ## Visão Geral
 
-Este encontro desenvolve **responsividade mobile-first** como continuidade direta dos conhecimentos anteriores. A aula parte de um problema observável, apresenta os recursos necessários e termina com uma entrega que pode ser executada e verificada.
+Este encontro desenvolve **estados e dark mode** como continuidade direta dos conhecimentos anteriores. A aula parte de um problema observável, apresenta os recursos necessários e termina com uma entrega que pode ser executada e verificada.
 
 Ao final, o estudante deverá conseguir explicar o propósito de cada recurso, implementar uma solução incremental, testar o comportamento e justificar as decisões adotadas.
 
 ## Conceitos Essenciais
 
-- Breakpoints.
-- Variantes responsivas.
-- Larguras fluidas.
-- Ordenação.
-- Testes de viewport.
+- Hover.
+- Focus-visible.
+- Group e peer.
+- Dark mode.
+- Motion-safe.
 
 ## 1) Contexto do encontro
 
@@ -30,25 +30,25 @@ Durante a aula, use quatro perguntas para orientar as decisões:
 
 ## 2) Conceitos em detalhe
 
-### 1) Breakpoints
+### 1) Hover
 
-Breakpoints deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
+Hover deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
 
-### 2) Variantes responsivas
+### 2) Focus-visible
 
-Variantes responsivas deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
+Focus-visible deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
 
-### 3) Larguras fluidas
+### 3) Group e peer
 
-Larguras fluidas deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
+Group e peer deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
 
-### 4) Ordenação
+### 4) Dark mode
 
-Ordenação deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
+Dark mode deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
 
-### 5) Testes de viewport
+### 5) Motion-safe
 
-Testes de viewport deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
+Motion-safe deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
 
 ## 3) Exemplo inicial
 
@@ -81,7 +81,7 @@ Digite e execute o exemplo antes de modificá-lo. Depois, altere um elemento por
 
 ## 5) Prática guiada
 
-**Proposta:** Criar uma seção responsiva em três faixas.
+**Proposta:** Criar componente interativo, acessível e com variante escura.
 
 ### Etapas
 
@@ -99,11 +99,11 @@ Construa uma segunda variação sem acompanhar o exemplo linha a linha. A soluç
 
 ### Requisitos mínimos
 
-- demonstrar uso consciente de breakpoints;
-- demonstrar uso consciente de variantes responsivas;
-- demonstrar uso consciente de larguras fluidas;
-- demonstrar uso consciente de ordenação;
-- demonstrar uso consciente de testes de viewport;
+- demonstrar uso consciente de hover;
+- demonstrar uso consciente de focus-visible;
+- demonstrar uso consciente de group e peer;
+- demonstrar uso consciente de dark mode;
+- demonstrar uso consciente de motion-safe;
 - manter nomes claros e organização consistente;
 - não apresentar erros de compilação ou console;
 - explicar no README como executar e testar;
@@ -141,11 +141,11 @@ Implemente um estado alternativo relevante, como vazio, erro, carregamento, tela
 
 ## Checklist de compreensão
 
-- [ ] Consigo explicar e aplicar **breakpoints**.
-- [ ] Consigo explicar e aplicar **variantes responsivas**.
-- [ ] Consigo explicar e aplicar **larguras fluidas**.
-- [ ] Consigo explicar e aplicar **ordenação**.
-- [ ] Consigo explicar e aplicar **testes de viewport**.
+- [ ] Consigo explicar e aplicar **hover**.
+- [ ] Consigo explicar e aplicar **focus-visible**.
+- [ ] Consigo explicar e aplicar **group e peer**.
+- [ ] Consigo explicar e aplicar **dark mode**.
+- [ ] Consigo explicar e aplicar **motion-safe**.
 - [ ] Consigo executar e modificar o exemplo.
 - [ ] Consigo realizar a prática sem cópia integral.
 - [ ] Consigo identificar um erro e explicar a correção.
@@ -153,23 +153,23 @@ Implemente um estado alternativo relevante, como vazio, erro, carregamento, tela
 
 ## Resumo final
 
-Neste encontro, **responsividade mobile-first** foi tratado como parte de uma solução frontend completa. Conceitos, código, validação e comunicação técnica foram combinados para gerar um resultado reutilizável nos encontros seguintes e no projeto final.
+Neste encontro, **estados e dark mode** foi tratado como parte de uma solução frontend completa. Conceitos, código, validação e comunicação técnica foram combinados para gerar um resultado reutilizável nos encontros seguintes e no projeto final.
 
 ## Questões de fixação
 
-1. Como **breakpoints** contribui para a solução desenvolvida?
-<!-- Gabarito: definir breakpoints, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
+1. Como **hover** contribui para a solução desenvolvida?
+<!-- Gabarito: definir hover, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
 
-2. Como **variantes responsivas** contribui para a solução desenvolvida?
-<!-- Gabarito: definir variantes responsivas, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
+2. Como **focus-visible** contribui para a solução desenvolvida?
+<!-- Gabarito: definir focus-visible, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
 
-3. Como **larguras fluidas** contribui para a solução desenvolvida?
-<!-- Gabarito: definir larguras fluidas, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
+3. Como **group e peer** contribui para a solução desenvolvida?
+<!-- Gabarito: definir group e peer, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
 
-4. Como **ordenação** contribui para a solução desenvolvida?
-<!-- Gabarito: definir ordenação, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
+4. Como **dark mode** contribui para a solução desenvolvida?
+<!-- Gabarito: definir dark mode, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
 
-5. Como **testes de viewport** contribui para a solução desenvolvida?
-<!-- Gabarito: definir testes de viewport, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
+5. Como **motion-safe** contribui para a solução desenvolvida?
+<!-- Gabarito: definir motion-safe, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
 
 [Voltar ao cronograma](../01-cronograma-60h.md)

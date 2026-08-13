@@ -2,7 +2,7 @@
 
 Referência: 80 aulas de 45 minutos, organizadas em 40 encontros de 1,5h, com 2 encontros por semana e 2 unidades formativas de 30h.
 
-Pré-requisito recomendado: conclusão de Padrões Web ou domínio equivalente de HTML5, CSS, responsividade, acessibilidade e Git/GitHub.
+Pré-requisito recomendado: conclusão de Padrões Web ou domínio equivalente de HTML5, CSS, responsividade e acessibilidade.
 
 ## Unidade 1 — Revisão, Tailwind CSS e TypeScript (Encontros 1 a 20)
 
@@ -13,33 +13,33 @@ Pré-requisito recomendado: conclusão de Padrões Web ou domínio equivalente d
 | Encontro | Carga | Tema Central | Entrega/Avaliação | Conteúdo da Aula |
 |---|---:|---|---|---|
 | 1 | 1,5h | Revisão integrada: HTML semântico, acessibilidade e CSS (cascata, box model, unidades, Flexbox, Grid e responsividade) | Diagnóstico dos conhecimentos prévios | [Encontro 1](./encontros/encontro-1.md) |
-| 2 | 1,5h | Oficina diagnóstica: aplicação integrada de HTML e CSS | Página semântica e responsiva revisada | [Encontro 2](./encontros/encontro-2.md) |
-| 3 | 1,5h | Git, GitHub e DevTools aplicados à inspeção da interface | Correções validadas e versionadas | [Encontro 3](./encontros/encontro-3.md) |
-| 4 | 1,5h | Tailwind CSS: utility-first, instalação, configuração e build | Projeto Tailwind configurado | [Encontro 4](./encontros/encontro-4.md) |
-| 5 | 1,5h | Tailwind CSS: cores, tipografia, espaçamentos, tamanhos e bordas | Página estilizada | [Encontro 5](./encontros/encontro-5.md) |
-| 6 | 1,5h | Tailwind CSS: Flexbox, Grid, posicionamento e composição | Layout com Tailwind | [Encontro 6](./encontros/encontro-6.md) |
-| 7 | 1,5h | Tailwind CSS responsivo: breakpoints e abordagem mobile-first | Interface responsiva | [Encontro 7](./encontros/encontro-7.md) |
-| 8 | 1,5h | Atividade Prática 1: layout responsivo com Tailwind CSS | **Prática 1 — 20 pontos** | [Encontro 8](./encontros/encontro-8.md) |
-| 9 | 1,5h | Estados, `focus-visible`, variantes, dark mode e `motion-safe` | Componente interativo | [Encontro 9](./encontros/encontro-9.md) |
-| 10 | 1,5h | Tema, tokens de design, paleta e tipografia | Tema customizado | [Encontro 10](./encontros/encontro-10.md) |
-| 11 | 1,5h | Componentização visual, reutilização e CSS autoral | Biblioteca de componentes | [Encontro 11](./encontros/encontro-11.md) |
-| 12 | 1,5h | Formulários, tabelas e acessibilidade com Tailwind CSS | Formulário e tabela | [Encontro 12](./encontros/encontro-12.md) |
-| 13 | 1,5h | Atividade Prática 2: interface temática com Tailwind CSS | **Prática 2 — 20 pontos** | [Encontro 13](./encontros/encontro-13.md) |
-| 14 | 1,5h | Refatoração, auditoria, acessibilidade e build de interfaces Tailwind | Interface revisada e documentada | [Encontro 14](./encontros/encontro-14.md) |
-| 15 | 1,5h | JavaScript moderno: módulos, DOM, eventos e assincronismo | Interface interativa | [Encontro 15](./encontros/encontro-15.md) |
-| 16 | 1,5h | TypeScript: tipos, interfaces, unions, generics e narrowing | Exercícios TypeScript | [Encontro 16](./encontros/encontro-16.md) |
-| 17 | 1,5h | Atividade Prática 3: comportamento de interface com TypeScript | **Prática 3 — 20 pontos** | [Encontro 17](./encontros/encontro-17.md) |
-| 18 | 1,5h | Preparação para Angular: Node.js, npm, CLI, SPA e componentes | Ambiente validado | [Encontro 18](./encontros/encontro-18.md) |
-| 19 | 1,5h | Estudo de caso: análise, planejamento e início da solução | Solução em desenvolvimento | [Encontro 19](./encontros/encontro-19.md) |
+| 2 | 1,5h | Tailwind CSS: utility-first, instalação, configuração e build | Projeto Tailwind configurado | [Encontro 2](./encontros/encontro-2.md) |
+| 3 | 1,5h | Tailwind CSS: cores, tipografia, espaçamentos, tamanhos e bordas | Página estilizada | [Encontro 3](./encontros/encontro-3.md) |
+| 4 | 1,5h | Tailwind CSS: Flexbox, Grid, posicionamento e composição | Layout com Tailwind | [Encontro 4](./encontros/encontro-4.md) |
+| 5 | 1,5h | Tailwind CSS responsivo: breakpoints e abordagem mobile-first | Interface responsiva | [Encontro 5](./encontros/encontro-5.md) |
+| 6 | 1,5h | Atividade Prática 1: layout responsivo com Tailwind CSS | **Prática 1 — 20 pontos** | [Encontro 6](./encontros/encontro-6.md) |
+| 7 | 1,5h | Estados, `focus-visible`, variantes, dark mode e `motion-safe` | Componente interativo | [Encontro 7](./encontros/encontro-7.md) |
+| 8 | 1,5h | Tema, tokens de design, paleta e tipografia | Tema customizado | [Encontro 8](./encontros/encontro-8.md) |
+| 9 | 1,5h | Componentização visual, reutilização e CSS autoral | Biblioteca de componentes | [Encontro 9](./encontros/encontro-9.md) |
+| 10 | 1,5h | Formulários, tabelas e acessibilidade com Tailwind CSS | Formulário e tabela | [Encontro 10](./encontros/encontro-10.md) |
+| 11 | 1,5h | Atividade Prática 2: interface temática com Tailwind CSS | **Prática 2 — 20 pontos** | [Encontro 11](./encontros/encontro-11.md) |
+| 12 | 1,5h | Refatoração, auditoria, acessibilidade e build de interfaces Tailwind | Interface revisada e documentada | [Encontro 12](./encontros/encontro-12.md) |
+| 13 | 1,5h | JavaScript moderno: módulos, DOM, eventos e assincronismo | Interface interativa | [Encontro 13](./encontros/encontro-13.md) |
+| 14 | 1,5h | TypeScript: tipos, interfaces, unions, generics e narrowing | Exercícios TypeScript | [Encontro 14](./encontros/encontro-14.md) |
+| 15 | 1,5h | TypeScript aplicado ao DOM: seletores, eventos e estados tipados | Interface com comportamento tipado | [Encontro 15](./encontros/encontro-15.md) |
+| 16 | 1,5h | Atividade Prática 3: comportamento de interface com TypeScript | **Prática 3 — 20 pontos** | [Encontro 16](./encontros/encontro-16.md) |
+| 17 | 1,5h | Preparação para Angular: Node.js, npm, CLI, SPA e componentes | Ambiente validado | [Encontro 17](./encontros/encontro-17.md) |
+| 18 | 1,5h | Estudo de caso: análise e planejamento da solução | Planejamento e base inicial | [Encontro 18](./encontros/encontro-18.md) |
+| 19 | 1,5h | Estudo de caso: desenvolvimento e acompanhamento | Versão funcional para validação | [Encontro 19](./encontros/encontro-19.md) |
 | 20 | 1,5h | Estudo de caso: conclusão, validação e entrega | **Estudo de caso — 40 pontos** | [Encontro 20](./encontros/encontro-20.md) |
 
 ### Composição da Nota da Unidade 1
 
 | Instrumento | Valor |
 |---|---:|
-| Atividade Prática 1 — Tailwind CSS responsivo (Encontro 8) | 20 pontos |
-| Atividade Prática 2 — interface temática (Encontro 13) | 20 pontos |
-| Atividade Prática 3 — TypeScript aplicado (Encontro 17) | 20 pontos |
+| Atividade Prática 1 — Tailwind CSS responsivo (Encontro 6) | 20 pontos |
+| Atividade Prática 2 — interface temática (Encontro 11) | 20 pontos |
+| Atividade Prática 3 — TypeScript aplicado (Encontro 16) | 20 pontos |
 | Estudo de caso | 40 pontos |
 | **Total** | **100 pontos** |
 

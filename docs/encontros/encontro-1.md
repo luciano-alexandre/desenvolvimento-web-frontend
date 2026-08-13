@@ -2,7 +2,7 @@
 
 ## Visão geral
 
-Desenvolvimento Web Frontend dá continuidade a Padrões Web. HTML, CSS, acessibilidade, responsividade e versionamento continuam sendo a base sobre a qual Tailwind CSS, TypeScript e Angular serão estudados. Frameworks organizam e aceleram o trabalho, mas não corrigem automaticamente uma estrutura semântica inadequada, um layout frágil ou uma interação inacessível.
+Desenvolvimento Web Frontend dá continuidade a Padrões Web. HTML, CSS, acessibilidade e responsividade continuam sendo a base sobre a qual Tailwind CSS, TypeScript e Angular serão estudados. Frameworks organizam e aceleram o trabalho, mas não corrigem automaticamente uma estrutura semântica inadequada, um layout frágil ou uma interação inacessível.
 
 Este material apresenta o modelo mental que acompanhará toda a disciplina e concentra a revisão de CSS no primeiro encontro. O diagnóstico não procura apenas saber se uma página “abre”, mas se o estudante consegue ler o código, explicar decisões, localizar defeitos e propor melhorias verificáveis.
 
@@ -14,7 +14,7 @@ Este material apresenta o modelo mental que acompanhará toda a disciplina e con
 - explicar cascata, herança, especificidade e box model;
 - selecionar unidades CSS e estruturar layouts com Flexbox e Grid;
 - aplicar responsividade mobile-first, conteúdo fluido e media queries;
-- utilizar navegador, DevTools e Git como instrumentos de investigação;
+- utilizar navegador e DevTools como instrumentos de investigação;
 - registrar conhecimentos consolidados e pontos que precisam ser retomados.
 
 ## 1. O que muda nesta disciplina
@@ -27,7 +27,6 @@ CSS / Tailwind CSS  → apresentação e adaptação visual
 JavaScript          → eventos e comportamento
 TypeScript          → contratos e verificação de tipos
 Angular             → componentes, rotas, serviços e aplicação
-Git                 → histórico e colaboração
 ```
 
 As camadas cooperam, mas não são intercambiáveis. Um botão precisa continuar sendo um elemento `button`; uma classe visual não substitui sua semântica. Da mesma forma, Angular não elimina o HTML, e Tailwind não elimina o CSS: ambos exigem domínio dos fundamentos que abstraem.
@@ -113,7 +112,7 @@ O estado visual e `aria-expanded` precisam permanecer sincronizados.
 | Confiabilidade | Erros e estados alternativos foram previstos? |
 | Versionamento | O histórico explica a evolução da solução? |
 
-Qualidade não é uma etapa final. Uma marcação semântica correta simplifica acessibilidade; componentes bem delimitados favorecem testes; commits pequenos facilitam localizar regressões.
+Qualidade não é uma etapa final. Uma marcação semântica correta simplifica acessibilidade, e componentes bem delimitados favorecem testes e manutenção.
 
 Essas dimensões começam na estrutura do documento. Por isso, a revisão prossegue com HTML semântico e acessibilidade antes de chegar ao diagnóstico integrado.
 
@@ -450,7 +449,6 @@ As correções serão implementadas na oficina do Encontro 2 e versionadas no En
 - usar `div` clicável no lugar de controles nativos;
 - aplicar JavaScript para resolver algo disponível em HTML ou CSS;
 - testar somente com mouse e em uma largura;
-- alterar vários problemas em um único commit genérico;
 - propor correções sem registrar como foram validadas.
 - usar ARIA para imitar um elemento nativo disponível;
 - escolher títulos pelo tamanho visual;
@@ -471,7 +469,6 @@ As correções serão implementadas na oficina do Encontro 2 e versionadas no En
 - [ ] Consigo explicar por que Tailwind e Angular não substituem fundamentos Web.
 - [ ] Avalio semântica, funcionalidade, responsividade e acessibilidade.
 - [ ] Uso o DevTools para buscar evidências.
-- [ ] Escrevo commits que descrevem mudanças coerentes.
 - [ ] Registro pontos consolidados e lacunas de aprendizagem.
 - [ ] Estruturo landmarks e títulos de forma coerente.
 - [ ] Diferencio links, botões e elementos genéricos.
@@ -488,7 +485,6 @@ As correções serão implementadas na oficina do Encontro 2 e versionadas no En
 
 - [MDN — Aprendizado de desenvolvimento Web](https://developer.mozilla.org/pt-BR/docs/Learn_web_development)
 - [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
-- [Git — documentação](https://git-scm.com/doc)
 - [WAI — fundamentos de acessibilidade](https://www.w3.org/WAI/fundamentals/accessibility-intro/)
 - [WAI — estrutura de páginas](https://www.w3.org/WAI/tutorials/page-structure/)
 - [WAI — formulários](https://www.w3.org/WAI/tutorials/forms/)
