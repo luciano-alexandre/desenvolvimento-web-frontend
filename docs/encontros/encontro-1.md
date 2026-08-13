@@ -440,7 +440,7 @@ Analise uma página que contenha cabeçalho, navegação, formulário e grade de
 - teclado, foco, contraste e preferências do usuário;
 - problemas que podem ser confirmados pelo DevTools.
 
-As correções serão implementadas na oficina do Encontro 2 e versionadas no Encontro 3.
+O diagnóstico orienta as retomadas necessárias e prepara a transição para Tailwind CSS no Encontro 2.
 
 ## 8. Erros frequentes
 
