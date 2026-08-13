@@ -331,46 +331,7 @@ Variantes aplicam um utilitário quando uma condição é atendida.
 
 Estados e responsividade serão aprofundados nos encontros seguintes. Aqui, o importante é reconhecer que variantes geram CSS condicional e não dependem de JavaScript.
 
-## 9. Detecção de classes
-
-Tailwind examina os arquivos como texto. Ele procura tokens que podem corresponder a utilitários conhecidos e gera CSS para as classes encontradas.
-
-Por isso, nomes completos precisam existir no código-fonte.
-
-```js
-// Evite: os nomes completos não aparecem no arquivo.
-const cor = "red";
-const classe = `bg-${cor}-600`;
-
-// Prefira: todas as possibilidades são detectáveis.
-const classesPorEstado = {
-  erro: "bg-red-600 text-white",
-  sucesso: "bg-emerald-600 text-white",
-};
-```
-
-Tailwind não executa JavaScript nem interpreta interpolações para descobrir o valor final. Ele precisa encontrar `bg-red-600` e `bg-emerald-600` completos.
-
-### Arquivos normalmente ignorados
-
-A detecção automática desconsidera, entre outros:
-
-- arquivos listados no `.gitignore`;
-- `node_modules`;
-- arquivos binários;
-- arquivos CSS;
-- lockfiles de gerenciadores de pacotes.
-
-Quando uma biblioteca externa ou uma pasta ignorada contém classes que precisam ser processadas, uma fonte pode ser registrada explicitamente:
-
-```css
-@import "tailwindcss";
-@source "../node_modules/@exemplo/componentes";
-```
-
-Não adicione `@source` sem necessidade. Primeiro confirme se o arquivo realmente está fora da detecção automática.
-
-## 10. Exemplo principal do encontro
+## 9. Exemplo principal do encontro
 
 Com o processo `npm run dev` ativo, substitua o conteúdo de `src/index.html` pelo exemplo:
 
@@ -438,7 +399,7 @@ Com o processo `npm run dev` ativo, substitua o conteúdo de `src/index.html` pe
 - somente classes reconhecidas e detectadas geram utilitários;
 - mudar ou remover uma classe altera apenas a responsabilidade associada.
 
-## 11. Validação do ambiente
+## 10. Validação do ambiente
 
 ### Verificar o terminal
 
@@ -473,7 +434,6 @@ Crie uma página de apresentação para uma disciplina, curso, evento ou projeto
 - um link ou botão com estado de foco visível;
 - fundo, borda, espaçamento, tipografia e cor definidos por utilitários;
 - pelo menos uma variante `hover:` ou `focus-visible:`;
-- pelo menos uma variante responsiva;
 - folha CSS gerada pela CLI;
 - scripts `dev` e `build` funcionais.
 
