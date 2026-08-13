@@ -34,18 +34,6 @@ Desenvolver competências para projetar, implementar, testar e publicar aplicaç
 - [Visão Geral do Professor](docs/00-visao-geral-professor.md)
 - [Visão Geral da Disciplina](docs/00-visao-geral-disciplina.md)
 - [Cronograma de 60h](docs/01-cronograma-60h.md)
-- [Roteiro Sequencial](docs/02-roteiro-sequencial.md)
-
-### Planos de ensino
-
-- [Plano da Unidade 1 — Revisão, Tailwind CSS e TypeScript](docs/planos-aula/unidade-1-tailwind-typescript.md)
-- [Plano da Unidade 2 — Angular e Projeto Final](docs/planos-aula/unidade-2-angular.md)
-
-### Aulas e atividades
-
-- [Índice dos 40 encontros](docs/encontros/README.md)
-- [Orientações do Projeto Final](atividades/01-projeto-final-angular.md)
-- [Referências e Recursos](docs/referencias/01-links-e-recursos.md)
 
 ## Organização das Pastas
 
@@ -88,9 +76,7 @@ Os instrumentos, marcos e critérios estão detalhados no [cronograma](docs/01-c
 
 ## Como Utilizar este Repositório
 
-Os estudantes devem começar pela visão geral e pelo cronograma. Antes de cada aula, podem consultar o roteiro do encontro correspondente. As atividades práticas devem ser versionadas em repositório próprio, com commits que representem a evolução real do trabalho.
-
-O professor pode usar os planos de unidade para organizar objetivos, estratégias e evidências de aprendizagem, complementando cada encontro com slides, exemplos executáveis e avisos da turma.
+Os estudantes devem começar pela visão geral e pelo cronograma. As atividades práticas devem ser versionadas em repositório próprio, com commits que representem a evolução real do trabalho.
 
 ## Princípios da Disciplina
 

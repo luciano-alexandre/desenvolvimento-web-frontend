@@ -90,6 +90,5 @@ Após o encontro:
 
 - [Visão geral da disciplina](../00-visao-geral-disciplina.md)
 - [Cronograma](../01-cronograma-60h.md)
-- [Roteiro sequencial](../02-roteiro-sequencial.md)
 - [Referências](../referencias/01-links-e-recursos.md)
 - [Projeto final](../../atividades/01-projeto-final-angular.md)
