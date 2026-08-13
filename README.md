@@ -27,35 +27,14 @@ Desenvolver competências para projetar, implementar, testar e publicar aplicaç
 5. integração com APIs e gerenciamento de estado;
 6. testes, otimização, publicação e apresentação do projeto final.
 
-## Navegação do Material
-
-### Apresentação e planejamento
+## Apresentação e planejamento
 
 - [Visão Geral do Professor](docs/00-visao-geral-professor.md)
 - [Visão Geral da Disciplina](docs/00-visao-geral-disciplina.md)
 - [Cronograma de 60h](docs/01-cronograma-60h.md)
 
-## Organização das Pastas
 
-```text
-.
-├── README.md
-├── atividades/
-│   └── 01-projeto-final-angular.md
-├── docs/
-│   ├── 00-visao-geral-disciplina.md
-│   ├── 00-visao-geral-professor.md
-│   ├── 01-cronograma-60h.md
-│   ├── 02-roteiro-sequencial.md
-│   ├── encontros/
-│   ├── planos-aula/
-│   └── referencias/
-├── exemplos/
-└── projetos/
-    └── projeto-final/
-```
-
-## Tecnologias Principais
+## Tecnologias 
 
 - HTML5 e acessibilidade;
 - CSS moderno e responsividade;
@@ -73,17 +52,3 @@ Desenvolver competências para projetar, implementar, testar e publicar aplicaç
 - **Unidade 2:** Projeto Final valendo 100 pontos, com dois encontros de acompanhamento e quatro encontros de apresentação.
 
 Os instrumentos, marcos e critérios estão detalhados no [cronograma](docs/01-cronograma-60h.md).
-
-## Como Utilizar este Repositório
-
-Os estudantes devem começar pela visão geral e pelo cronograma. As atividades práticas devem ser versionadas em repositório próprio, com commits que representem a evolução real do trabalho.
-
-## Princípios da Disciplina
-
-- compreender antes de abstrair;
-- construir em pequenas etapas verificáveis;
-- tratar acessibilidade e responsividade como requisitos;
-- usar frameworks com consciência técnica;
-- separar responsabilidades e favorecer manutenção;
-- testar estados de sucesso, vazio, carregamento e erro;
-- documentar e comunicar decisões de projeto.
