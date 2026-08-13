@@ -31,11 +31,17 @@ Consolidar os fundamentos de Padrões Web, desenvolver interfaces responsivas co
 
 ## Roteiro por Faixa de Encontros
 
-### Encontros 1 a 3 — Revisão e diagnóstico
+### Encontro 1 — Revisão integrada
 
-- **Tema:** continuidade de Padrões Web.
-- **Prática:** diagnóstico integrado de semântica, acessibilidade, CSS e responsividade.
-- **Produto:** página revisada e repositório organizado.
+- **Tema:** continuidade de Padrões Web, HTML semântico, acessibilidade e revisão completa de CSS.
+- **Conteúdos de CSS:** cascata, herança, especificidade, box model, unidades, fluxo normal, Flexbox, Grid, responsividade e media queries.
+- **Produto:** diagnóstico dos conhecimentos prévios.
+
+### Encontros 2 e 3 — Aplicação, inspeção e versionamento
+
+- **Tema:** oficina integrada de HTML e CSS, DevTools, Git e GitHub.
+- **Prática:** revisar uma página, validar sua adaptação e registrar correções em commits coerentes.
+- **Produto:** página semântica, acessível, responsiva e versionada.
 
 ### Encontros 4 a 8 — Fundamentos do Tailwind CSS e Prática 1
 

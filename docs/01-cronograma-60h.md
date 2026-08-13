@@ -12,9 +12,9 @@ Pré-requisito recomendado: conclusão de Padrões Web ou domínio equivalente d
 
 | Encontro | Carga | Tema Central | Entrega/Avaliação | Conteúdo da Aula |
 |---|---:|---|---|---|
-| 1 | 1,5h | Continuidade de Padrões Web, diagnóstico, HTML semântico e acessibilidade | Diagnóstico e página semântica revisada | [Encontro 1](./encontros/encontro-1.md) |
-| 2 | 1,5h | Revisão de CSS: cascata, especificidade, box model e unidades | Exercícios de revisão | [Encontro 2](./encontros/encontro-2.md) |
-| 3 | 1,5h | Revisão de Flexbox, Grid, responsividade, Git e DevTools | Layout revisado e versionado | [Encontro 3](./encontros/encontro-3.md) |
+| 1 | 1,5h | Revisão integrada: HTML semântico, acessibilidade e CSS (cascata, box model, unidades, Flexbox, Grid e responsividade) | Diagnóstico dos conhecimentos prévios | [Encontro 1](./encontros/encontro-1.md) |
+| 2 | 1,5h | Oficina diagnóstica: aplicação integrada de HTML e CSS | Página semântica e responsiva revisada | [Encontro 2](./encontros/encontro-2.md) |
+| 3 | 1,5h | Git, GitHub e DevTools aplicados à inspeção da interface | Correções validadas e versionadas | [Encontro 3](./encontros/encontro-3.md) |
 | 4 | 1,5h | Tailwind CSS: utility-first, instalação, configuração e build | Projeto Tailwind configurado | [Encontro 4](./encontros/encontro-4.md) |
 | 5 | 1,5h | Tailwind CSS: cores, tipografia, espaçamentos, tamanhos e bordas | Página estilizada | [Encontro 5](./encontros/encontro-5.md) |
 | 6 | 1,5h | Tailwind CSS: Flexbox, Grid, posicionamento e composição | Layout com Tailwind | [Encontro 6](./encontros/encontro-6.md) |

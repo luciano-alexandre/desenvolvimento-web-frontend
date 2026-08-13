@@ -28,9 +28,9 @@ Após o encontro:
 
 ### Revisão de Padrões Web
 
-1. [Continuidade, diagnóstico, HTML semântico e acessibilidade](encontro-1.md)
-2. [Fundamentos de CSS](encontro-2.md)
-3. [Layouts responsivos, Git e DevTools](encontro-3.md)
+1. [Revisão integrada de HTML, acessibilidade e CSS](encontro-1.md)
+2. [Oficina diagnóstica de HTML e CSS](encontro-2.md)
+3. [Git, GitHub e DevTools](encontro-3.md)
 
 ### Tailwind CSS
 

@@ -1,16 +1,19 @@
-# Encontro 1 — Continuidade, diagnóstico, HTML semântico e acessibilidade
+# Encontro 1 — Revisão integrada de HTML, acessibilidade e CSS
 
 ## Visão geral
 
 Desenvolvimento Web Frontend dá continuidade a Padrões Web. HTML, CSS, acessibilidade, responsividade e versionamento continuam sendo a base sobre a qual Tailwind CSS, TypeScript e Angular serão estudados. Frameworks organizam e aceleram o trabalho, mas não corrigem automaticamente uma estrutura semântica inadequada, um layout frágil ou uma interação inacessível.
 
-Este material apresenta o modelo mental que acompanhará toda a disciplina e oferece um diagnóstico dos conhecimentos prévios. O diagnóstico não procura apenas saber se uma página “abre”, mas se o estudante consegue ler o código, explicar decisões, localizar defeitos e propor melhorias verificáveis.
+Este material apresenta o modelo mental que acompanhará toda a disciplina e concentra a revisão de CSS no primeiro encontro. O diagnóstico não procura apenas saber se uma página “abre”, mas se o estudante consegue ler o código, explicar decisões, localizar defeitos e propor melhorias verificáveis.
 
 ## Objetivos de aprendizagem
 
 - relacionar HTML, CSS e JavaScript às responsabilidades de uma interface;
 - distinguir página estática, interface interativa e aplicação frontend;
 - reconhecer semântica, responsividade, acessibilidade e manutenção como requisitos;
+- explicar cascata, herança, especificidade e box model;
+- selecionar unidades CSS e estruturar layouts com Flexbox e Grid;
+- aplicar responsividade mobile-first, conteúdo fluido e media queries;
 - utilizar navegador, DevTools e Git como instrumentos de investigação;
 - registrar conhecimentos consolidados e pontos que precisam ser retomados.
 
@@ -255,7 +258,192 @@ Uma interface operável por teclado permite percorrer controles em ordem lógica
 
 Evite `tabindex` positivo, que cria uma ordem artificial difícil de manter. Um teste básico percorre a página com `Tab` e `Shift + Tab`, ativa controles e confirma que não há armadilhas de foco.
 
-## 6. Erros frequentes
+## 6. Revisão completa de CSS
+
+CSS transforma a árvore do documento em uma apresentação visual. Mesmo quando Tailwind CSS for adotado, as regras geradas continuarão submetidas à cascata, ao modelo de caixa e aos algoritmos de layout da plataforma Web.
+
+### Anatomia e inclusão
+
+```css
+.cartao {
+  max-width: 30rem;
+  padding: 1.5rem;
+  border: 1px solid #cbd5e1;
+}
+```
+
+`.cartao` é o seletor; `max-width`, `padding` e `border` são propriedades; os termos após `:` são valores. Em projetos, prefira uma folha externa vinculada com `link`; estilos inline dificultam reutilização e manutenção.
+
+### Cascata, herança e especificidade
+
+A cascata resolve declarações concorrentes considerando, de forma simplificada:
+
+1. relevância e condição de aplicação;
+2. origem e importância;
+3. camadas de cascata;
+4. especificidade;
+5. ordem no código.
+
+```css
+p { color: #334155; }
+.destaque { color: #1d4ed8; }
+```
+
+Em `<p class="destaque">`, a classe vence por ser mais específica. Quando os demais critérios empatam, vence a declaração posterior. `!important` deve ser excepcional, pois costuma dificultar a evolução dos estilos.
+
+Propriedades de texto, como `color` e `font-family`, geralmente são herdadas; dimensões, margens, bordas e fundos geralmente não. Os valores globais `inherit`, `initial`, `unset` e `revert` permitem controlar esse comportamento.
+
+Uma representação didática da especificidade usa três grupos:
+
+```text
+IDs | classes, atributos e pseudoclasses | elementos e pseudoelementos
+```
+
+| Seletor | Peso aproximado |
+|---|---:|
+| `article` | 0-0-1 |
+| `.cartao` | 0-1-0 |
+| `.cartao h2` | 0-1-1 |
+| `[aria-current="page"]` | 0-1-0 |
+| `#conteudo` | 1-0-0 |
+
+Prefira classes de baixa especificidade. `:where()` tem especificidade zero, enquanto `:is()` e `:not()` assumem a especificidade do argumento mais forte.
+
+### Box model e fluxo normal
+
+Cada elemento gera uma caixa formada por conteúdo, padding, borda e margem. No modelo `content-box`, `width` mede apenas o conteúdo. Uma largura de `300px`, padding lateral de `20px` e bordas de `2px` resultam em 344px.
+
+```css
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+```
+
+Com `border-box`, a largura declarada inclui conteúdo, padding e borda. `padding` cria espaço interno; `margin`, separação externa; `gap` costuma ser a melhor opção entre itens de Flexbox e Grid.
+
+No fluxo normal, caixas `block` iniciam uma linha e ocupam o espaço disponível; caixas `inline` acompanham o texto; `inline-block` flui em linha e aceita dimensões de bloco. `display: none` remove o elemento do layout e da árvore de acessibilidade.
+
+### Unidades, limites e propriedades lógicas
+
+| Unidade | Referência | Uso comum |
+|---|---|---|
+| `px` | pixel CSS | bordas e detalhes precisos |
+| `rem` | fonte raiz | tipografia e espaçamento |
+| `em` | fonte do contexto | componentes que escalam localmente |
+| `%` | bloco de referência | dimensões fluidas |
+| `vw`, `vh` | viewport | efeitos dependentes da tela, com cautela |
+| `ch` | largura aproximada do caractere `0` | comprimento de linha |
+| `fr` | fração do Grid | distribuição de colunas |
+
+```css
+.conteudo {
+  width: min(100% - 2rem, 70rem);
+  margin-inline: auto;
+}
+
+h1 {
+  font-size: clamp(2rem, 1.5rem + 2vw, 3.5rem);
+}
+```
+
+Não existe uma unidade ideal para todas as situações. Use limites flexíveis e preserve as preferências de tamanho de texto. Propriedades lógicas como `padding-inline`, `margin-block` e `border-inline-start` acompanham o modo de escrita e favorecem internacionalização.
+
+### Flexbox
+
+Flexbox distribui e alinha itens prioritariamente em um eixo. É adequado para navegação, grupos de botões, etiquetas e alinhamento interno de componentes.
+
+```css
+.acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.acoes > * {
+  flex: 1 1 12rem;
+}
+```
+
+`flex-direction` define o eixo principal; `justify-content` distribui nesse eixo; `align-items` atua no eixo transversal; `flex-wrap` permite quebra; e `flex-grow`, `flex-shrink` e `flex-basis` controlam crescimento, redução e base.
+
+### Grid
+
+Grid organiza linhas e colunas e é adequado para grades de cartões, painéis e layouts de conteúdo com barra lateral.
+
+```css
+.grade {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+  gap: 1rem;
+}
+```
+
+A expressão cria o número de colunas que couber e impede que a largura mínima ultrapasse telas estreitas. Flexbox e Grid podem ser combinados: Grid distribui componentes, e Flexbox organiza o interior de cada um.
+
+### Responsividade e mobile-first
+
+Design responsivo preserva leitura, operação e hierarquia em diferentes larguras, tamanhos de fonte, orientações, formas de entrada e preferências do usuário. O documento deve declarar:
+
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+```
+
+Mobile-first parte de uma base simples e acrescenta complexidade quando o conteúdo dispõe de espaço. Breakpoints devem nascer do conteúdo, não de modelos específicos de aparelho.
+
+```css
+.cabecalho {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@media (min-width: 48rem) {
+  .cabecalho {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+```
+
+Mídias devem permanecer fluidas (`max-width: 100%; height: auto`). Para imagens, `srcset` e `sizes` permitem oferecer arquivos adequados ao espaço ocupado; `width` e `height` reservam a proporção antes do carregamento.
+
+### Overflow e validação
+
+Overflow costuma surgir de larguras fixas, imagens sem limite, palavras longas, `white-space: nowrap`, colunas que não encolhem ou `100vw` somado a padding. Corrija a causa em vez de esconder o sintoma com `overflow-x: hidden` no `body`.
+
+```css
+.texto-longo { overflow-wrap: anywhere; }
+.tabela-container { overflow-x: auto; }
+.coluna-grid { min-width: 0; }
+```
+
+No DevTools, verifique estilos computados, box model, regras sobrescritas, media queries e overflow. Teste redimensionamento contínuo, zoom, teclado, conteúdo maior que o previsto, tema escuro e redução de movimento.
+
+## 7. Diagnóstico integrado
+
+Analise uma página que contenha cabeçalho, navegação, formulário e grade de cartões. Registre, sem corrigir ainda, evidências sobre:
+
+- semântica, landmarks, títulos e nomes acessíveis;
+- cascata, especificidade, box model e unidades;
+- adequação do uso de Flexbox e Grid;
+- comportamento responsivo, media queries e overflow;
+- teclado, foco, contraste e preferências do usuário;
+- problemas que podem ser confirmados pelo DevTools.
+
+As correções serão implementadas na oficina do Encontro 2 e versionadas no Encontro 3.
+
+## 8. Erros frequentes
 
 - avaliar apenas a aparência visual;
 - confundir ausência de erro no console com qualidade completa;
@@ -270,6 +458,12 @@ Evite `tabindex` positivo, que cria uma ordem artificial difícil de manter. Um 
 - usar placeholder como único rótulo;
 - escrever texto alternativo genérico ou redundante;
 - considerar auditoria automática equivalente a teste humano.
+- aumentar a especificidade até forçar um estilo;
+- usar posicionamento absoluto como ferramenta principal de layout;
+- escolher breakpoints por aparelho, e não pelo conteúdo;
+- usar Grid para tudo ou Flexbox para tudo;
+- esconder overflow sem corrigir sua origem;
+- testar apenas em uma largura de viewport.
 
 ## Checklist de compreensão
 
@@ -283,6 +477,12 @@ Evite `tabindex` positivo, que cria uma ordem artificial difícil de manter. Um 
 - [ ] Diferencio links, botões e elementos genéricos.
 - [ ] Associo rótulos, instruções e erros aos campos.
 - [ ] Verifico nomes acessíveis, foco e navegação por teclado.
+- [ ] Explico a ordem geral da cascata e diferencio herança de especificidade.
+- [ ] Calculo dimensões nos modelos `content-box` e `border-box`.
+- [ ] Seleciono unidades e limites de acordo com o comportamento desejado.
+- [ ] Escolho Flexbox ou Grid conforme o eixo do problema.
+- [ ] Aplico mobile-first e defino breakpoints a partir do conteúdo.
+- [ ] Identifico a origem de overflow e valido a interface no DevTools.
 
 ## Referências
 
@@ -293,5 +493,11 @@ Evite `tabindex` positivo, que cria uma ordem artificial difícil de manter. Um 
 - [WAI — estrutura de páginas](https://www.w3.org/WAI/tutorials/page-structure/)
 - [WAI — formulários](https://www.w3.org/WAI/tutorials/forms/)
 - [ARIA Authoring Practices Guide](https://www.w3.org/WAI/ARIA/apg/)
+- [MDN — Cascade](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_cascade/Cascade)
+- [MDN — Specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_cascade/Specificity)
+- [MDN — Box model](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Box_model)
+- [MDN — Responsive design](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Responsive_Design)
+- [MDN — Flexbox](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Flexbox)
+- [MDN — CSS Grid](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Grids)
 
 [Voltar ao cronograma](../01-cronograma-60h.md)

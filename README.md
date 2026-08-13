@@ -50,5 +50,3 @@ Desenvolver competências para projetar, implementar, testar e publicar aplicaç
 
 - **Unidade 1:** três atividades práticas de 20 pontos e um estudo de caso de 40 pontos, totalizando 100 pontos.
 - **Unidade 2:** Projeto Final valendo 100 pontos, com dois encontros de acompanhamento e quatro encontros de apresentação.
-
-Os instrumentos, marcos e critérios estão detalhados no [cronograma](docs/01-cronograma-60h.md).
