@@ -110,7 +110,7 @@ O ponto de partida deste encontro não é um arquivo vazio. Abra `src/index.html
 
 Antes de continuar, abra a página e confirme que cores, espaçamentos, largura, borda, sombra e foco continuam iguais ao resultado anterior. Esse é o **checkpoint inicial**: se a interface não estiver correta agora, verifique o log do contêiner e a referência a `output.css` antes de acrescentar o layout.
 
-### Transformar perfil em item de catálogo
+### Alterando o exemplo anterior
 
 No Encontro 3, o nome do curso era o assunto principal da página e, por isso, utilizava `h1`. No catálogo, a página terá o título principal “Cursos em destaque”, enquanto cada curso será uma subseção. Faça estas alterações no cartão existente:
 
@@ -143,53 +143,100 @@ O cartão adaptado deve ficar assim:
 </article>
 ```
 
-Essa etapa reutiliza o componente já construído. As mudanças de conteúdo e hierarquia preparam o cartão para outro contexto, sem descartar as decisões visuais do Encontro 3.
-
-### Expandir a página sem aplicar o novo layout
+### Expandir a página
 
 Agora acrescente o cabeçalho, o título geral e dois novos cartões. Duplique o `article` adaptado e altere apenas categoria, título, descrição e destino do link para TypeScript e Angular. Envolva os três cartões com `div id="cursos"`.
 
-Neste primeiro momento, não aplique `flex` nem `grid` aos novos contêineres. O objetivo é observar a estrutura ampliada no fluxo normal antes de introduzir os utilitários de layout. O `body` resultante deve seguir esta organização semântica; ao montar sua versão, mantenha nos cartões as classes visuais recuperadas anteriormente:
-
 ```html
-<body>
-  <header>
-    <a href="#inicio">Frontend IFRN</a>
-    <nav aria-label="Navegação principal">
-      <a href="#cursos">Cursos</a>
-      <a href="#agenda">Agenda</a>
-      <a href="#contato">Contato</a>
+<body class="min-h-screen bg-slate-100 text-slate-900">
+  <header class="border-b border-slate-200 bg-white px-6 py-5">
+    <a class="font-bold text-slate-900" href="#inicio">Frontend IFRN</a>
+    <nav class="mt-3" aria-label="Navegação principal">
+      <a class="mr-4 text-sm font-medium text-slate-600 hover:text-sky-700" href="#cursos">
+        Cursos
+      </a>
+      <a class="mr-4 text-sm font-medium text-slate-600 hover:text-sky-700" href="#agenda">
+        Agenda
+      </a>
+      <a class="text-sm font-medium text-slate-600 hover:text-sky-700" href="#contato">
+        Contato
+      </a>
     </nav>
   </header>
 
-  <main id="inicio">
+  <main id="inicio" class="mx-auto max-w-6xl p-6">
     <section aria-labelledby="titulo-cursos">
       <div>
         <div>
-          <p>Formação frontend</p>
-          <h1 id="titulo-cursos">Cursos em destaque</h1>
+          <p class="text-sm font-semibold text-sky-700">Formação frontend</p>
+          <h1 id="titulo-cursos" class="mt-2 text-3xl font-bold text-slate-900">
+            Cursos em destaque
+          </h1>
         </div>
-        <a href="#todos">Ver todos</a>
+        <a
+          class="mt-4 inline-flex rounded-md bg-sky-700 px-4 py-3 font-semibold text-white hover:bg-sky-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-700"
+          href="#todos"
+        >
+          Ver todos
+        </a>
       </div>
 
-      <div id="cursos">
-        <article>
-          <p>Tailwind CSS</p>
-          <h2>Interfaces com utilitários</h2>
-          <p>Construa interfaces consistentes a partir de decisões pequenas.</p>
-          <a href="#tailwind">Conhecer curso</a>
+      <div id="cursos" class="mt-8">
+        <article class="w-full rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
+          <p class="text-sm font-semibold text-sky-700">Tailwind CSS</p>
+          <h2 class="mt-2 text-xl font-bold text-slate-900">
+            Interfaces com utilitários
+          </h2>
+          <p class="mt-3 text-base leading-7 text-slate-600">
+            Construa interfaces consistentes a partir de decisões pequenas.
+          </p>
+          <p class="mt-4 text-sm font-medium text-slate-500">
+            12 encontros · nível introdutório
+          </p>
+          <a
+            class="mt-6 inline-flex rounded-md bg-sky-700 px-4 py-3 font-semibold text-white hover:bg-sky-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-700"
+            href="#tailwind"
+          >
+            Conhecer curso
+          </a>
         </article>
-        <article>
-          <p>TypeScript</p>
-          <h2>Tipos para aplicações web</h2>
-          <p>Modele dados e torne contratos explícitos no código.</p>
-          <a href="#typescript">Conhecer curso</a>
+
+        <article class="mt-6 w-full rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
+          <p class="text-sm font-semibold text-sky-700">TypeScript</p>
+          <h2 class="mt-2 text-xl font-bold text-slate-900">
+            Tipos para aplicações web
+          </h2>
+          <p class="mt-3 text-base leading-7 text-slate-600">
+            Modele dados e torne contratos explícitos no código.
+          </p>
+          <p class="mt-4 text-sm font-medium text-slate-500">
+            10 encontros · nível introdutório
+          </p>
+          <a
+            class="mt-6 inline-flex rounded-md bg-sky-700 px-4 py-3 font-semibold text-white hover:bg-sky-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-700"
+            href="#typescript"
+          >
+            Conhecer curso
+          </a>
         </article>
-        <article>
-          <p>Angular</p>
-          <h2>Aplicações orientadas a componentes</h2>
-          <p>Organize interfaces, estado, rotas e comunicação com APIs.</p>
-          <a href="#angular">Conhecer curso</a>
+
+        <article class="mt-6 w-full rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
+          <p class="text-sm font-semibold text-sky-700">Angular</p>
+          <h2 class="mt-2 text-xl font-bold text-slate-900">
+            Aplicações orientadas a componentes
+          </h2>
+          <p class="mt-3 text-base leading-7 text-slate-600">
+            Organize interfaces, estado, rotas e comunicação com APIs.
+          </p>
+          <p class="mt-4 text-sm font-medium text-slate-500">
+            18 encontros · nível intermediário
+          </p>
+          <a
+            class="mt-6 inline-flex rounded-md bg-sky-700 px-4 py-3 font-semibold text-white hover:bg-sky-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-700"
+            href="#angular"
+          >
+            Conhecer curso
+          </a>
         </article>
       </div>
     </section>
@@ -197,7 +244,7 @@ Neste primeiro momento, não aplique `flex` nem `grid` aos novos contêineres. O
 </body>
 ```
 
-Sem `flex` ou `grid`, os blocos aparecem um depois do outro e crescem conforme o conteúdo. Esse **fluxo normal** não é um erro: ele mantém uma ordem compreensível e oferece uma base estável.
+As classes de cores, tipografia, espaçamento, largura, borda, raio, sombra e foco foram preservadas ou reaplicadas aos novos conteúdos. Ainda não há `flex` nem `grid`: os cartões aparecem um depois do outro no fluxo normal. As margens `mt-6` dos dois últimos cartões criam um intervalo provisório; quando o contêiner se tornar Grid, elas deverão ser removidas e substituídas por `gap-6`.
 
 Antes de modificar o exemplo, localize o `header`, a barra de título, o `div#cursos`, seus três `article` e a ordem de leitura que deverá ser preservada.
 
