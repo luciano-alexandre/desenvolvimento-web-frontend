@@ -360,7 +360,7 @@ O `flex` externo não alcança os netos. Para organizar os links, transforme o p
 
 O eixo agora é vertical por causa de `flex-col`. `mt-auto` absorve o espaço livre acima do link e o leva ao final. O efeito fica visível quando a grade oferece alturas equivalentes.
 
-## 6. Grid: linhas e colunas
+## 5. Grid: linhas e colunas
 
 Grid é apropriado quando os itens compartilham uma estrutura bidimensional:
 
@@ -430,35 +430,7 @@ Em telas estreitas, três colunas fixas podem esmagar o texto. Uma grade que se 
 
 Uma interface pode aninhar os sistemas: Grid organiza cartões; cada cartão usa Flexbox; a navegação usa outro Flexbox.
 
-## 8. Gap e ritmo
-
-`gap` pertence ao contêiner e cria espaço **entre** seus itens, sem adicionar espaço às bordas externas.
-
-| Classe | Resultado |
-|---|---|
-| `gap-6` | intervalo nos dois eixos |
-| `gap-x-6` | intervalo horizontal |
-| `gap-y-4` | intervalo vertical |
-
-```html
-<!-- Itens acoplados à posição -->
-<nav>
-  <a class="mr-6" href="#cursos">Cursos</a>
-  <a class="mr-6" href="#agenda">Agenda</a>
-  <a href="#contato">Contato</a>
-</nav>
-
-<!-- O contêiner controla a relação -->
-<nav class="flex gap-6">
-  <a href="#cursos">Cursos</a>
-  <a href="#agenda">Agenda</a>
-  <a href="#contato">Contato</a>
-</nav>
-```
-
-Margens continuam adequadas para separar blocos específicos, como `mt-8` entre a introdução e a grade. `gap` resolve a relação interna de um conjunto.
-
-## 9. Alinhamento e distribuição
+## 8. Alinhamento e distribuição
 
 “Centralizar” é uma descrição incompleta: indique **o que**, **em qual eixo** e **dentro de qual espaço**.
 
@@ -486,36 +458,7 @@ Margens continuam adequadas para separar blocos específicos, como `mt-8` entre 
 
 `items-end` alinha grupo e link pela extremidade transversal; `shrink-0` evita comprimir a ação. Reduza a largura e registre quando a composição deixa de ser confortável.
 
-## 10. Posicionamento e sobreposição
-
-Todo elemento começa com `position: static`. `relative` mantém o elemento no fluxo e cria uma referência para um descendente `absolute`. O absoluto sai do fluxo.
-
-```html
-<div class="relative">
-  <img
-    class="h-40 w-full rounded-lg object-cover"
-    src="./img/laboratorio.jpg"
-    alt="Estudantes trabalhando em um laboratório de informática"
-    width="640"
-    height="320"
-  />
-  <span class="absolute left-3 top-3 rounded-full bg-sky-700 px-3 py-1 text-sm font-semibold text-white">
-    Novo
-  </span>
-</div>
-```
-
-Sem o ancestral `relative`, o selo pode usar outra referência e aparecer longe da imagem. Não use `absolute` para estruturar a página: ele não reserva espaço e pode sobrepor conteúdo quando o texto cresce.
-
-Antes de usá-lo, confirme:
-
-- há sobreposição intencional?
-- o ancestral correto possui `relative`?
-- o texto pode crescer sem cobrir outro conteúdo?
-- o elemento não cobre controles ou indicações de foco?
-- a composição continua utilizável com zoom?
-
-## 11. Exemplo principal completo
+## 9. Exemplo principal completo
 
 ```html
 <!doctype html>
@@ -577,74 +520,7 @@ Antes de usá-lo, confirme:
 </html>
 ```
 
-### O que observar
-
-- o HTML mantém ordem lógica mesmo sem CSS;
-- o cabeçalho organiza dois grupos com Flexbox;
-- a navegação pode quebrar linha;
-- a barra de título preserva um `gap` mínimo;
-- o Grid decide quantas colunas cabem;
-- cada cartão usa Flexbox em coluna para alinhar a ação;
-- `gap` controla relações internas e `mt-8` separa blocos;
-- não há posicionamento absoluto na estrutura principal;
-- a ordem de tabulação acompanha o HTML.
-
-## 12. Inspeção e diagnóstico
-
-### Verificar no DevTools
-
-1. selecione o cabeçalho e confirme `display: flex`;
-2. ative a visualização de Flexbox e identifique os eixos;
-3. desative `justify-content` e observe o espaço livre;
-4. selecione `#cursos`, ative a sobreposição de Grid e conte as colunas;
-5. altere `gap` e compare o ritmo;
-6. confirme que um cartão é item do Grid e contêiner Flexbox;
-7. reduza a viewport e procure overflow horizontal;
-8. percorra os links com `Tab` e confirme ordem e foco.
-
-### Experimentos orientados
-
-- remova `flex` do cabeçalho e identifique o fluxo normal;
-- troque a direção por `flex-col` e localize os novos eixos;
-- remova `flex-wrap` da navegação e reduza a largura;
-- substitua a grade fluida por `grid-cols-3` e encontre seu limite;
-- remova `h-full` ou `mt-auto` e compare as ações;
-- aplique `items-center` à grade e observe o que é alinhado;
-- teste um `absolute` sem ancestral `relative` e investigue a referência.
-
-Reverta cada experimento e explique qual propriedade produziu o comportamento.
-
-## 13. Prática guiada
-
-### Etapa 1 — Estrutura e fluxo
-
-- parta do cartão concluído no Encontro 3 e faça a adaptação semântica para `h2`;
-- amplie o HTML sem classes de layout nos novos contêineres, preservando as classes visuais dos cartões;
-- confira a hierarquia de títulos e o nome da navegação;
-- percorra os links com teclado;
-- descreva a ordem no fluxo normal.
-
-### Etapa 2 — Flexbox
-
-- transforme cabeçalho e navegação em contêineres Flexbox;
-- distribua título e ação da seção;
-- reduza a largura e registre o primeiro desconforto.
-
-### Etapa 3 — Grid
-
-- transforme `#cursos` em Grid;
-- comece com `grid-cols-3 gap-6`;
-- observe as trilhas no DevTools;
-- troque para a grade fluida e compare.
-
-### Etapa 4 — Cartões
-
-- aplique `flex h-full flex-col`;
-- use `mt-auto pt-6` nas ações;
-- aumente o texto de um cartão;
-- confirme que nada é cortado.
-
-## 14. Exercício aplicado
+## 9. Exercício aplicado
 
 Crie uma página para eventos, projetos, notícias, produtos ou serviços sem copiar integralmente o exemplo.
 
@@ -654,63 +530,8 @@ Crie uma página para eventos, projetos, notícias, produtos ou serviços sem co
 - usar Flexbox em duas relações unidimensionais;
 - usar Grid em uma coleção com pelo menos quatro itens;
 - controlar intervalos com `gap`;
-- explicar as escolhas de alinhamento;
 - variar o texto para testar crescimento;
-- usar posicionamento somente se houver sobreposição real;
-- manter foco visível e ordem de teclado previsível;
-- não apresentar overflow nem erros de compilação ou console;
 - registrar no README a execução com Docker Compose e a escolha entre Flexbox e Grid.
-
-### Desafio adicional
-
-Adicione imagem e selo sobreposto a um cartão. Use `relative` e `absolute`, teste com zoom e confirme que o selo não cobre texto, ação ou foco.
-
-## 15. Critérios de aceite
-
-- o projeto executa com `docker compose up` e recompila o CSS após alterações no HTML;
-- o primeiro cartão reutiliza e adapta o componente concluído no Encontro 3;
-- os contêineres e itens de layout são identificáveis;
-- Flexbox e Grid correspondem à relação entre os itens;
-- intervalos do conjunto são controlados pelo contêiner;
-- conteúdos diferentes não são cortados nem sobrepostos;
-- a estrutura principal não depende de `absolute`;
-- ordem visual, leitura e teclado permanecem coerentes;
-- não há rolagem horizontal indevida;
-- o README registra os comandos `docker compose up`, `docker compose up --build` e `docker compose down`, além dos testes e decisões.
-
-## 16. Erros comuns
-
-### Aplicar `flex` ou `grid` ao elemento errado
-
-As propriedades organizam filhos diretos. Inspecione a árvore e mova a classe ao ancestral que reúne os itens.
-
-### Confundir `justify-*` com `items-*`
-
-Identifique primeiro o eixo principal. Em `flex-col`, `justify-*` atua verticalmente e `items-*`, horizontalmente.
-
-### Usar `justify-between` sem `gap`
-
-Quando há pouco espaço livre, a distribuição não garante distância mínima.
-
-### Fixar colunas sem testar o conteúdo
-
-`grid-cols-3` sempre solicita três colunas e pode comprimir conteúdo em telas estreitas.
-
-### Colocar margens em todos os itens
-
-Isso acopla cada item à posição. Para intervalos internos, centralize a decisão com `gap`.
-
-### Reordenar apenas a apresentação
-
-A ordem visual pode divergir da leitura assistiva e do foco. Organize primeiro o HTML.
-
-### Usar `absolute` para construir a página
-
-Elementos absolutos saem do fluxo e podem se sobrepor quando o conteúdo cresce.
-
-### Fixar a altura de textos
-
-Alturas rígidas podem cortar traduções, zoom ou dados maiores. Prefira altura automática.
 
 ## Materiais para aprofundamento
 
