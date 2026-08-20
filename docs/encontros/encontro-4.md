@@ -74,7 +74,82 @@ docker compose down
 
 O código e o CSS gerado permanecem no projeto porque estão no diretório compartilhado. O comando `down` remove o contêiner e a rede do Compose, não os arquivos da atividade.
 
-Insira esta estrutura no `body` de `src/index.html`, ainda sem classes:
+## 2. Retomada do código do Encontro 3
+
+O ponto de partida deste encontro não é um arquivo vazio. Abra `src/index.html` e confirme que ele ainda contém a página de perfil construída no Encontro 3:
+
+```html
+<body class="min-h-screen bg-slate-100 text-slate-900">
+  <main class="mx-auto max-w-2xl p-6">
+    <article class="w-full rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
+      <p class="text-sm font-semibold text-sky-700">Formação frontend</p>
+
+      <h1 class="mt-2 text-3xl font-bold text-slate-900">
+        Interfaces com Tailwind CSS
+      </h1>
+
+      <p class="mt-4 max-w-prose text-base leading-7 text-slate-600">
+        Aprenda a transformar decisões de design em utilitários pequenos,
+        previsíveis e reutilizáveis.
+      </p>
+
+      <p class="mt-4 text-sm font-medium text-slate-500">
+        12 encontros · nível introdutório
+      </p>
+
+      <a
+        class="mt-6 inline-flex rounded-md bg-sky-700 px-4 py-3 font-semibold text-white hover:bg-sky-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-700"
+        href="#conteudo"
+      >
+        Ver conteúdo
+      </a>
+    </article>
+  </main>
+</body>
+```
+
+Antes de continuar, abra a página e confirme que cores, espaçamentos, largura, borda, sombra e foco continuam iguais ao resultado anterior. Esse é o **checkpoint inicial**: se a interface não estiver correta agora, verifique o log do contêiner e a referência a `output.css` antes de acrescentar o layout.
+
+### Transformar perfil em item de catálogo
+
+No Encontro 3, o nome do curso era o assunto principal da página e, por isso, utilizava `h1`. No catálogo, a página terá o título principal “Cursos em destaque”, enquanto cada curso será uma subseção. Faça estas alterações no cartão existente:
+
+1. troque o `h1` do cartão por `h2`;
+2. altere o texto introdutório “Formação frontend” para a categoria “Tailwind CSS”;
+3. troque o texto do link por “Conhecer curso” e o destino por `#tailwind`;
+4. remova `max-w-prose` do parágrafo, pois a largura passará a ser limitada pela coluna do Grid;
+5. preserve as classes de cor, tipografia, espaçamento, borda e sombra estudadas no encontro anterior.
+
+O cartão adaptado deve ficar assim:
+
+```html
+<article class="w-full rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
+  <p class="text-sm font-semibold text-sky-700">Tailwind CSS</p>
+  <h2 class="mt-2 text-xl font-bold text-slate-900">
+    Interfaces com utilitários
+  </h2>
+  <p class="mt-3 text-base leading-7 text-slate-600">
+    Construa interfaces consistentes a partir de decisões pequenas.
+  </p>
+  <p class="mt-4 text-sm font-medium text-slate-500">
+    12 encontros · nível introdutório
+  </p>
+  <a
+    class="mt-6 inline-flex rounded-md bg-sky-700 px-4 py-3 font-semibold text-white hover:bg-sky-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-700"
+    href="#tailwind"
+  >
+    Conhecer curso
+  </a>
+</article>
+```
+
+Essa etapa reutiliza o componente já construído. As mudanças de conteúdo e hierarquia preparam o cartão para outro contexto, sem descartar as decisões visuais do Encontro 3.
+
+### Expandir a página sem aplicar o novo layout
+
+Agora acrescente o cabeçalho, o título geral e dois novos cartões. Duplique o `article` adaptado e altere apenas categoria, título, descrição e destino do link para TypeScript e Angular. Envolva os três cartões com `div id="cursos"`.
+
+Neste primeiro momento, não aplique `flex` nem `grid` aos novos contêineres. O objetivo é observar a estrutura ampliada no fluxo normal antes de introduzir os utilitários de layout. O `body` resultante deve seguir esta organização semântica; ao montar sua versão, mantenha nos cartões as classes visuais recuperadas anteriormente:
 
 ```html
 <body>
@@ -126,7 +201,7 @@ Sem `flex` ou `grid`, os blocos aparecem um depois do outro e crescem conforme o
 
 Antes de modificar o exemplo, localize o `header`, a barra de título, o `div#cursos`, seus três `article` e a ordem de leitura que deverá ser preservada.
 
-## 2. Como ler utilitários de layout
+## 3. Como ler utilitários de layout
 
 Saber **em qual elemento aplicar uma classe** é tão importante quanto escolher a classe.
 
@@ -146,7 +221,7 @@ Saber **em qual elemento aplicar uma classe** é tão importante quanto escolher
 
 `flex` e `grid` controlam principalmente os **filhos diretos**. Se a classe não produz o efeito esperado, confirme se está no contêiner correto.
 
-## 3. Fluxo normal antes do layout
+## 4. Fluxo normal antes do layout
 
 Elementos de bloco normalmente iniciam em uma nova linha; elementos inline participam da linha de texto. Essa base:
 
@@ -163,7 +238,7 @@ Antes de alterar `display`, pergunte:
 
 Flexbox e Grid devem organizar uma estrutura lógica, não compensar HTML desordenado.
 
-## 4. Flexbox: relações em uma dimensão
+## 5. Flexbox: relações em uma dimensão
 
 Flexbox distribui os filhos diretos ao longo de um **eixo principal**. Em `flex-row`, esse eixo é horizontal; em `flex-col`, é vertical. O eixo transversal cruza o principal.
 
@@ -209,7 +284,7 @@ Flexbox distribui os filhos diretos ao longo de um **eixo principal**. Em `flex-
 
 O eixo agora é vertical por causa de `flex-col`. `mt-auto` absorve o espaço livre acima do link e o leva ao final. O efeito fica visível quando a grade oferece alturas equivalentes.
 
-## 5. Grid: linhas e colunas
+## 6. Grid: linhas e colunas
 
 Grid é apropriado quando os itens compartilham uma estrutura bidimensional:
 
@@ -237,7 +312,7 @@ Em telas estreitas, três colunas fixas podem esmagar o texto. Uma grade que se 
 
 `auto-fit` cria quantas colunas couberem; `18rem` é a medida mínima desejada; `min(100%,18rem)` evita overflow; e `1fr` distribui o espaço restante. O Encontro 5 aprofundará as variantes responsivas.
 
-## 6. Flexbox ou Grid?
+## 7. Flexbox ou Grid?
 
 | Situação | Escolha inicial | Motivo |
 |---|---|---|
@@ -249,7 +324,7 @@ Em telas estreitas, três colunas fixas podem esmagar o texto. Uma grade que se 
 
 Uma interface pode aninhar os sistemas: Grid organiza cartões; cada cartão usa Flexbox; a navegação usa outro Flexbox.
 
-## 7. Gap e ritmo
+## 8. Gap e ritmo
 
 `gap` pertence ao contêiner e cria espaço **entre** seus itens, sem adicionar espaço às bordas externas.
 
@@ -277,7 +352,7 @@ Uma interface pode aninhar os sistemas: Grid organiza cartões; cada cartão usa
 
 Margens continuam adequadas para separar blocos específicos, como `mt-8` entre a introdução e a grade. `gap` resolve a relação interna de um conjunto.
 
-## 8. Alinhamento e distribuição
+## 9. Alinhamento e distribuição
 
 “Centralizar” é uma descrição incompleta: indique **o que**, **em qual eixo** e **dentro de qual espaço**.
 
@@ -305,7 +380,7 @@ Margens continuam adequadas para separar blocos específicos, como `mt-8` entre 
 
 `items-end` alinha grupo e link pela extremidade transversal; `shrink-0` evita comprimir a ação. Reduza a largura e registre quando a composição deixa de ser confortável.
 
-## 9. Posicionamento e sobreposição
+## 10. Posicionamento e sobreposição
 
 Todo elemento começa com `position: static`. `relative` mantém o elemento no fluxo e cria uma referência para um descendente `absolute`. O absoluto sai do fluxo.
 
@@ -334,7 +409,7 @@ Antes de usá-lo, confirme:
 - o elemento não cobre controles ou indicações de foco?
 - a composição continua utilizável com zoom?
 
-## 10. Exemplo principal completo
+## 11. Exemplo principal completo
 
 ```html
 <!doctype html>
@@ -408,7 +483,7 @@ Antes de usá-lo, confirme:
 - não há posicionamento absoluto na estrutura principal;
 - a ordem de tabulação acompanha o HTML.
 
-## 11. Inspeção e diagnóstico
+## 12. Inspeção e diagnóstico
 
 ### Verificar no DevTools
 
@@ -433,11 +508,12 @@ Antes de usá-lo, confirme:
 
 Reverta cada experimento e explique qual propriedade produziu o comportamento.
 
-## 12. Prática guiada
+## 13. Prática guiada
 
 ### Etapa 1 — Estrutura e fluxo
 
-- insira o HTML sem classes de layout;
+- parta do cartão concluído no Encontro 3 e faça a adaptação semântica para `h2`;
+- amplie o HTML sem classes de layout nos novos contêineres, preservando as classes visuais dos cartões;
 - confira a hierarquia de títulos e o nome da navegação;
 - percorra os links com teclado;
 - descreva a ordem no fluxo normal.
@@ -462,7 +538,7 @@ Reverta cada experimento e explique qual propriedade produziu o comportamento.
 - aumente o texto de um cartão;
 - confirme que nada é cortado.
 
-## 13. Exercício aplicado
+## 14. Exercício aplicado
 
 Crie uma página para eventos, projetos, notícias, produtos ou serviços sem copiar integralmente o exemplo.
 
@@ -483,9 +559,10 @@ Crie uma página para eventos, projetos, notícias, produtos ou serviços sem co
 
 Adicione imagem e selo sobreposto a um cartão. Use `relative` e `absolute`, teste com zoom e confirme que o selo não cobre texto, ação ou foco.
 
-## 14. Critérios de aceite
+## 15. Critérios de aceite
 
 - o projeto executa com `docker compose up` e recompila o CSS após alterações no HTML;
+- o primeiro cartão reutiliza e adapta o componente concluído no Encontro 3;
 - os contêineres e itens de layout são identificáveis;
 - Flexbox e Grid correspondem à relação entre os itens;
 - intervalos do conjunto são controlados pelo contêiner;
@@ -495,7 +572,7 @@ Adicione imagem e selo sobreposto a um cartão. Use `relative` e `absolute`, tes
 - não há rolagem horizontal indevida;
 - o README registra os comandos `docker compose up`, `docker compose up --build` e `docker compose down`, além dos testes e decisões.
 
-## 15. Erros comuns
+## 16. Erros comuns
 
 ### Aplicar `flex` ou `grid` ao elemento errado
 
