@@ -231,23 +231,6 @@ Agora acrescente o cabeçalho, o título geral e dois novos cartões. Duplique o
 </body>
 ```
 
-Neste checkpoint, apenas o código que veio do Encontro 3 possui classes Tailwind: o `body`, o `main` e os cartões. O cabeçalho, a navegação, o título geral, a barra de título e o contêiner `#cursos` foram adicionados sem classes. Assim, é possível observar primeiro a estrutura e o fluxo normal antes de conhecer a solução de layout.
-
-Os cartões aparecem encostados porque elementos de bloco consecutivos não recebem espaçamento automaticamente. Não corrija isso ainda com margens individuais: na seção sobre Grid, o próprio contêiner assumirá essa responsabilidade por meio de `gap`.
-
-### Checkpoint da expansão
-
-Antes de avançar, verifique no navegador:
-
-1. o cabeçalho aparece antes do conteúdo principal;
-2. existe apenas um `h1`, “Cursos em destaque”;
-3. cada cartão possui um `h2`;
-4. as classes visuais do cartão original foram preservadas nas cópias;
-5. os três cartões seguem a ordem do HTML;
-6. ainda não existe `flex`, `grid`, `gap`, `justify-*` ou `items-*` nos novos contêineres.
-
-Antes de modificar o exemplo, localize o `header`, a barra de título, o `div#cursos`, seus três `article` e a ordem de leitura que deverá ser preservada.
-
 ## 3. Como ler utilitários de layout
 
 Saber **em qual elemento aplicar uma classe** é tão importante quanto escolher a classe.
@@ -268,24 +251,7 @@ Saber **em qual elemento aplicar uma classe** é tão importante quanto escolher
 
 `flex` e `grid` controlam principalmente os **filhos diretos**. Se a classe não produz o efeito esperado, confirme se está no contêiner correto.
 
-## 4. Fluxo normal antes do layout
-
-Elementos de bloco normalmente iniciam em uma nova linha; elementos inline participam da linha de texto. Essa base:
-
-- mantém a ordem de leitura ligada ao HTML;
-- permite que a altura acompanhe o conteúdo;
-- oferece apresentação básica mesmo sem os estilos.
-
-Antes de alterar `display`, pergunte:
-
-1. quais elementos precisam ser organizados juntos?
-2. a relação principal é uma linha/coluna ou uma grade?
-3. o conteúdo pode crescer ou quebrar linha?
-4. a ordem visual continuará coerente com teclado e leitor de tela?
-
-Flexbox e Grid devem organizar uma estrutura lógica, não compensar HTML desordenado.
-
-## 5. Flexbox: relações em uma dimensão
+## 4. Flexbox: relações em uma dimensão
 
 Flexbox distribui os filhos diretos ao longo de um **eixo principal**. Em `flex-row`, esse eixo é horizontal; em `flex-col`, é vertical. O eixo transversal cruza o principal.
 
