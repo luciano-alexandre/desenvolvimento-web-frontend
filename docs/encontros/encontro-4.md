@@ -149,39 +149,26 @@ Agora acrescente o cabeçalho, o título geral e dois novos cartões. Duplique o
 
 ```html
 <body class="min-h-screen bg-slate-100 text-slate-900">
-  <header class="border-b border-slate-200 bg-white px-6 py-5">
-    <a class="font-bold text-slate-900" href="#inicio">Frontend IFRN</a>
-    <nav class="mt-3" aria-label="Navegação principal">
-      <a class="mr-4 text-sm font-medium text-slate-600 hover:text-sky-700" href="#cursos">
-        Cursos
-      </a>
-      <a class="mr-4 text-sm font-medium text-slate-600 hover:text-sky-700" href="#agenda">
-        Agenda
-      </a>
-      <a class="text-sm font-medium text-slate-600 hover:text-sky-700" href="#contato">
-        Contato
-      </a>
+  <header>
+    <a href="#inicio">Frontend IFRN</a>
+    <nav aria-label="Navegação principal">
+      <a href="#cursos">Cursos</a>
+      <a href="#agenda">Agenda</a>
+      <a href="#contato">Contato</a>
     </nav>
   </header>
 
-  <main id="inicio" class="mx-auto max-w-6xl p-6">
+  <main id="inicio" class="mx-auto max-w-2xl p-6">
     <section aria-labelledby="titulo-cursos">
       <div>
         <div>
-          <p class="text-sm font-semibold text-sky-700">Formação frontend</p>
-          <h1 id="titulo-cursos" class="mt-2 text-3xl font-bold text-slate-900">
-            Cursos em destaque
-          </h1>
+          <p>Formação frontend</p>
+          <h1 id="titulo-cursos">Cursos em destaque</h1>
         </div>
-        <a
-          class="mt-4 inline-flex rounded-md bg-sky-700 px-4 py-3 font-semibold text-white hover:bg-sky-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-700"
-          href="#todos"
-        >
-          Ver todos
-        </a>
+        <a href="#todos">Ver todos</a>
       </div>
 
-      <div id="cursos" class="mt-8">
+      <div id="cursos">
         <article class="w-full rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
           <p class="text-sm font-semibold text-sky-700">Tailwind CSS</p>
           <h2 class="mt-2 text-xl font-bold text-slate-900">
@@ -201,7 +188,7 @@ Agora acrescente o cabeçalho, o título geral e dois novos cartões. Duplique o
           </a>
         </article>
 
-        <article class="mt-6 w-full rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
+        <article class="w-full rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
           <p class="text-sm font-semibold text-sky-700">TypeScript</p>
           <h2 class="mt-2 text-xl font-bold text-slate-900">
             Tipos para aplicações web
@@ -220,7 +207,7 @@ Agora acrescente o cabeçalho, o título geral e dois novos cartões. Duplique o
           </a>
         </article>
 
-        <article class="mt-6 w-full rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
+        <article class="w-full rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
           <p class="text-sm font-semibold text-sky-700">Angular</p>
           <h2 class="mt-2 text-xl font-bold text-slate-900">
             Aplicações orientadas a componentes
@@ -244,7 +231,20 @@ Agora acrescente o cabeçalho, o título geral e dois novos cartões. Duplique o
 </body>
 ```
 
-As classes de cores, tipografia, espaçamento, largura, borda, raio, sombra e foco foram preservadas ou reaplicadas aos novos conteúdos. Ainda não há `flex` nem `grid`: os cartões aparecem um depois do outro no fluxo normal. As margens `mt-6` dos dois últimos cartões criam um intervalo provisório; quando o contêiner se tornar Grid, elas deverão ser removidas e substituídas por `gap-6`.
+Neste checkpoint, apenas o código que veio do Encontro 3 possui classes Tailwind: o `body`, o `main` e os cartões. O cabeçalho, a navegação, o título geral, a barra de título e o contêiner `#cursos` foram adicionados sem classes. Assim, é possível observar primeiro a estrutura e o fluxo normal antes de conhecer a solução de layout.
+
+Os cartões aparecem encostados porque elementos de bloco consecutivos não recebem espaçamento automaticamente. Não corrija isso ainda com margens individuais: na seção sobre Grid, o próprio contêiner assumirá essa responsabilidade por meio de `gap`.
+
+### Checkpoint da expansão
+
+Antes de avançar, verifique no navegador:
+
+1. o cabeçalho aparece antes do conteúdo principal;
+2. existe apenas um `h1`, “Cursos em destaque”;
+3. cada cartão possui um `h2`;
+4. as classes visuais do cartão original foram preservadas nas cópias;
+5. os três cartões seguem a ordem do HTML;
+6. ainda não existe `flex`, `grid`, `gap`, `justify-*` ou `items-*` nos novos contêineres.
 
 Antes de modificar o exemplo, localize o `header`, a barra de título, o `div#cursos`, seus três `article` e a ordem de leitura que deverá ser preservada.
 
@@ -291,6 +291,72 @@ Flexbox distribui os filhos diretos ao longo de um **eixo principal**. Em `flex-
 
 ### Construir o cabeçalho
 
+Parta do cabeçalho sem classes criado na expansão. Não aplique todas as classes de uma vez.
+
+#### Passo 1 — Recuperar decisões visuais conhecidas
+
+Borda, fundo, tipografia e espaçamento já foram estudados no Encontro 3. Aplique primeiro apenas essas decisões:
+
+```html
+<header class="border-b border-slate-200 bg-white">
+  <div class="px-6 py-5">
+    <a class="font-bold text-slate-900" href="#inicio">Frontend IFRN</a>
+    <nav aria-label="Navegação principal">...</nav>
+  </div>
+</header>
+```
+
+O novo `div` agrupa o conteúdo interno. `px-6 py-5` cria o preenchimento nesse grupo, enquanto a borda e o fundo permanecem no `header` e podem ocupar toda a largura.
+
+#### Passo 2 — Definir largura e centralização
+
+Ainda com utilitários conhecidos, limite o conteúdo do cabeçalho com a mesma lógica de dimensões usada no encontro anterior:
+
+```html
+<div class="mx-auto max-w-6xl px-6 py-5">
+  <!-- identificação e navegação -->
+</div>
+```
+
+- `max-w-6xl` estabelece uma largura máxima maior, adequada ao catálogo;
+- `mx-auto` distribui as margens horizontais quando sobra espaço;
+- `px-6 py-5` mantém o conteúdo afastado das bordas.
+
+Altere também o `main` de `max-w-2xl` para `max-w-6xl`. Essa mudança amplia a área disponível para as colunas que serão criadas com Grid.
+
+#### Passo 3 — Introduzir Flexbox no grupo principal
+
+Agora adicione somente `flex` ao `div` interno:
+
+```html
+<div class="mx-auto flex max-w-6xl px-6 py-5">
+  <a class="font-bold text-slate-900" href="#inicio">Frontend IFRN</a>
+  <nav aria-label="Navegação principal">...</nav>
+</div>
+```
+
+Compare antes e depois. `flex` muda o `display` do contêiner e coloca seus dois filhos diretos — o link de identificação e o `nav` — no eixo principal horizontal. Ele não organiza diretamente os links que estão dentro do `nav`.
+
+#### Passo 4 — Distribuir e alinhar os dois grupos
+
+Acrescente uma classe por vez ao mesmo contêiner:
+
+```html
+<div class="mx-auto flex max-w-6xl items-center justify-between gap-6 px-6 py-5">
+  <!-- identificação e navegação -->
+</div>
+```
+
+- `items-center` alinha os dois filhos no centro do eixo transversal;
+- `justify-between` coloca o espaço livre entre os dois grupos;
+- `gap-6` garante um intervalo mínimo quando o espaço livre diminui.
+
+Após cada classe, salve o arquivo e observe a mudança antes de adicionar a próxima.
+
+#### Passo 5 — Organizar os links da navegação
+
+O `flex` externo não alcança os netos. Para organizar os links, transforme o próprio `nav` em outro contêiner Flexbox:
+
 ```html
 <div class="mx-auto flex max-w-6xl items-center justify-between gap-6 px-6 py-5">
   <a class="font-bold text-slate-900" href="#inicio">Frontend IFRN</a>
@@ -305,10 +371,7 @@ Flexbox distribui os filhos diretos ao longo de um **eixo principal**. Em `flex-
 </div>
 ```
 
-- `flex` coloca a identificação e o `nav` no mesmo eixo;
-- `items-center` alinha os grupos no eixo transversal;
-- `justify-between` distribui o espaço livre entre os extremos;
-- `gap-6` preserva uma distância mínima;
+- o segundo `flex` afeta somente os links, que são filhos diretos do `nav`;
 - `flex-wrap` permite que os links mudem de linha;
 - `gap-x-6` e `gap-y-2` controlam os intervalos após a quebra.
 
@@ -335,6 +398,34 @@ O eixo agora é vertical por causa de `flex-col`. `mt-auto` absorve o espaço li
 
 Grid é apropriado quando os itens compartilham uma estrutura bidimensional:
 
+### Passo 1 — Transformar o contêiner em Grid
+
+Adicione primeiro apenas `grid` ao contêiner dos cartões:
+
+```html
+<div class="grid" id="cursos">
+  <!-- três cartões preservados -->
+</div>
+```
+
+O contêiner passa a usar `display: grid`, mas ainda possui uma única coluna implícita. Por isso, a aparência muda pouco. A inspeção no DevTools confirma que os três `article` agora são itens do Grid.
+
+### Passo 2 — Criar as colunas
+
+Acrescente `grid-cols-3`:
+
+```html
+<div class="grid grid-cols-3" id="cursos">
+  <!-- três cartões preservados -->
+</div>
+```
+
+Agora os cartões ocupam três colunas equivalentes, mas ainda não existe intervalo entre elas.
+
+### Passo 3 — Controlar o intervalo no contêiner
+
+Por último, adicione `gap-6`:
+
 ```html
 <div class="grid grid-cols-3 gap-6" id="cursos">
   <article>...</article>
@@ -342,6 +433,8 @@ Grid é apropriado quando os itens compartilham uma estrutura bidimensional:
   <article>...</article>
 </div>
 ```
+
+`gap-6` cria o espaço entre linhas e colunas sem adicionar margens aos cartões. Caso alguma margem provisória tenha sido adicionada aos `article`, remova-a agora.
 
 `grid-cols-3` cria três colunas equivalentes. Na regra `repeat(3, minmax(0, 1fr))`:
 
