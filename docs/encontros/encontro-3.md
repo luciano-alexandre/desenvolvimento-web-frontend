@@ -4,6 +4,68 @@
 **Carga horária:** 1,5h
 **Entrega prevista:** página de perfil de curso estilizada com utilitários fundamentais
 
+## Antes de começar: Tailwind CSS com Docker
+
+Sim, o Tailwind CSS pode ser usado com Docker. Nesse caso, o contêiner fornece o Node.js, instala as dependências e executa a CLI do Tailwind. Assim, não é necessário instalar Node.js e npm diretamente no computador; basta ter Docker e Docker Compose.
+
+Esta configuração é opcional. Quem já preparou o ambiente no Encontro 2 pode continuar usando `npm install` e `npm run dev` normalmente.
+
+No projeto `encontro-02-tailwind`, crie um arquivo chamado `Dockerfile`:
+
+```dockerfile
+FROM node:22-alpine
+
+WORKDIR /app
+
+COPY package*.json ./
+RUN npm ci
+
+COPY . .
+
+CMD ["npm", "run", "dev"]
+```
+
+Crie também o arquivo `.dockerignore` para não enviar dependências e arquivos gerados ao contexto de construção:
+
+```text
+node_modules
+src/output.css
+.git
+```
+
+Em seguida, crie `compose.yaml`:
+
+```yaml
+services:
+  tailwind:
+    build: .
+    volumes:
+      - .:/app
+      - /app/node_modules
+```
+
+Na raiz do projeto, construa a imagem e inicie o processo de desenvolvimento:
+
+```bash
+docker compose up --build
+```
+
+O diretório do projeto é compartilhado com o contêiner. Portanto, ao editar `src/index.html`, a CLI em execução detecta as classes e atualiza `src/output.css` no próprio projeto. Abra `src/index.html` no navegador e mantenha o terminal ativo durante as alterações.
+
+Para encerrar, pressione `Ctrl+C` e remova o contêiner criado:
+
+```bash
+docker compose down
+```
+
+Nas próximas execuções, quando `package.json` e `package-lock.json` não tiverem mudado, basta usar:
+
+```bash
+docker compose up
+```
+
+Se as dependências forem alteradas, execute novamente `docker compose up --build`. O Docker isola o ambiente de execução, mas não muda o funcionamento do Tailwind: as classes continuam sendo identificadas nos arquivos-fonte e transformadas em CSS pela CLI.
+
 ## Visão geral
 
 No Encontro 2, você configurou o Tailwind CSS, acompanhou a geração do arquivo CSS e aprendeu a ler classes utilitárias por responsabilidade. Agora o mesmo projeto será usado para aprofundar as decisões visuais mais frequentes em uma interface: **cores, tipografia, espaçamento, dimensões, bordas e sombras**.
