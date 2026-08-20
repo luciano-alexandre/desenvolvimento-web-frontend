@@ -10,6 +10,63 @@ Sim, o Tailwind CSS pode ser usado com Docker. Nesse caso, o contêiner fornece 
 
 Esta configuração é opcional. Quem já preparou o ambiente no Encontro 2 pode continuar usando `npm install` e `npm run dev` normalmente.
 
+### Criar um novo projeto usando Node.js com Docker
+
+Caso o projeto do Encontro 2 ainda não exista, crie uma pasta e entre nela:
+
+```bash
+mkdir encontro-02-tailwind
+cd encontro-02-tailwind
+```
+
+Em Linux ou macOS, use um contêiner temporário do Node.js para criar `package.json` sem instalar Node.js na máquina:
+
+```bash
+docker run --rm --user "$(id -u):$(id -g)" \
+  --volume "$PWD:/app" \
+  --workdir /app \
+  node:22-alpine npm init -y
+```
+
+O contêiner é removido depois do comando por causa de `--rm`, mas o arquivo criado permanece na pasta compartilhada. A opção `--user` faz com que os arquivos pertençam ao usuário atual, evitando problemas de permissão.
+
+Instale Tailwind CSS e sua CLI da mesma forma:
+
+```bash
+docker run --rm --user "$(id -u):$(id -g)" \
+  --volume "$PWD:/app" \
+  --workdir /app \
+  node:22-alpine npm install -D tailwindcss @tailwindcss/cli
+```
+
+Crie a pasta `src` e os arquivos iniciais:
+
+```bash
+mkdir src
+touch src/index.html src/input.css
+```
+
+Em `src/input.css`, adicione:
+
+```css
+@import "tailwindcss";
+```
+
+No `package.json`, substitua a seção `scripts` pelos comandos usados no Encontro 2:
+
+```json
+{
+  "scripts": {
+    "dev": "tailwindcss -i ./src/input.css -o ./src/output.css --watch",
+    "build": "tailwindcss -i ./src/input.css -o ./src/output.css --minify"
+  }
+}
+```
+
+Esses passos produzem a estrutura mínima necessária para continuar a configuração com Docker Compose. No Windows, os comandos de volume e identificação do usuário variam conforme PowerShell, Prompt de Comando ou WSL; usando WSL, os comandos anteriores podem ser executados sem alteração.
+
+### Preparar o contêiner de desenvolvimento
+
 No projeto `encontro-02-tailwind`, crie um arquivo chamado `Dockerfile`:
 
 ```dockerfile
