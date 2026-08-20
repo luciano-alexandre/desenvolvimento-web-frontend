@@ -2,7 +2,6 @@
 
 **Unidade:** Unidade 1
 **Carga horária:** 1,5h
-**Entrega prevista:** página de catálogo com cabeçalho, barra de ações e grade de cartões
 
 ## Visão geral
 
@@ -10,9 +9,7 @@ No Encontro 3, você aplicou cores, tipografia, espaçamento, dimensões, bordas
 
 Neste encontro, Flexbox e Grid serão usados de acordo com o problema que resolvem. Flexbox organiza itens principalmente em uma dimensão, como os links de uma navegação. Grid organiza linhas e colunas, como uma coleção de cartões. `gap`, alinhamento e posicionamento complementam esses sistemas, mas não substituem uma estrutura HTML adequada.
 
-O trabalho será incremental: primeiro será analisado o fluxo normal; depois serão construídos o cabeçalho, a barra de ações e a grade. A cada mudança, identifique o contêiner, seus filhos diretos, o eixo ou as trilhas controladas e o resultado esperado.
-
-## Objetivos de aprendizagem
+## Objetivos
 
 - explicar como o fluxo normal organiza os elementos antes de um layout;
 - reconhecer o contêiner e os itens de Flexbox ou Grid;
@@ -39,12 +36,43 @@ O trabalho será incremental: primeiro será analisado o fluxo normal; depois se
 
 ## 1. Ponto de partida
 
-Continue no projeto `encontro-02-tailwind`. Confirme as dependências e mantenha a compilação ativa:
+Continue no projeto `encontro-02-tailwind`, já configurado com Docker no Encontro 3. A raiz do projeto deve conter `Dockerfile`, `compose.yaml`, `package.json` e `package-lock.json`; os arquivos da interface permanecem em `src`.
+
+Se `package.json` e `package-lock.json` não foram alterados desde o encontro anterior, inicie o contêiner com:
 
 ```bash
-npm install
-npm run dev
+docker compose up
 ```
+
+O serviço `tailwind` executa `npm run dev` dentro do contêiner. O volume definido em `compose.yaml` compartilha o diretório do projeto com `/app`; por isso, as alterações feitas em `src/index.html` são detectadas pela CLI e o arquivo `src/output.css` é atualizado no computador.
+
+Se a imagem ainda não tiver sido construída ou se as dependências tiverem mudado, reconstrua antes de iniciar:
+
+```bash
+docker compose up --build
+```
+
+Mantenha esse terminal aberto durante a aula. Uma mensagem de compilação no log indica que a CLI está observando os arquivos. Em outro terminal, confirme o estado do serviço quando necessário:
+
+```bash
+docker compose ps
+```
+
+Abra `src/index.html` no navegador e verifique se ele referencia a folha gerada:
+
+```html
+<link rel="stylesheet" href="./output.css" />
+```
+
+Ao adicionar ou remover uma classe Tailwind, salve o HTML e confirme que a data de modificação de `src/output.css` mudou. Não edite esse arquivo manualmente: ele é um artefato produzido dentro do contêiner.
+
+Ao final do encontro, pressione `Ctrl+C` no terminal que executa o serviço e remova o contêiner:
+
+```bash
+docker compose down
+```
+
+O código e o CSS gerado permanecem no projeto porque estão no diretório compartilhado. O comando `down` remove o contêiner e a rede do Compose, não os arquivos da atividade.
 
 Insira esta estrutura no `body` de `src/index.html`, ainda sem classes:
 
@@ -449,7 +477,7 @@ Crie uma página para eventos, projetos, notícias, produtos ou serviços sem co
 - usar posicionamento somente se houver sobreposição real;
 - manter foco visível e ordem de teclado previsível;
 - não apresentar overflow nem erros de compilação ou console;
-- registrar no README a execução e a escolha entre Flexbox e Grid.
+- registrar no README a execução com Docker Compose e a escolha entre Flexbox e Grid.
 
 ### Desafio adicional
 
@@ -457,7 +485,7 @@ Adicione imagem e selo sobreposto a um cartão. Use `relative` e `absolute`, tes
 
 ## 14. Critérios de aceite
 
-- o projeto executa com `npm run dev`;
+- o projeto executa com `docker compose up` e recompila o CSS após alterações no HTML;
 - os contêineres e itens de layout são identificáveis;
 - Flexbox e Grid correspondem à relação entre os itens;
 - intervalos do conjunto são controlados pelo contêiner;
@@ -465,7 +493,7 @@ Adicione imagem e selo sobreposto a um cartão. Use `relative` e `absolute`, tes
 - a estrutura principal não depende de `absolute`;
 - ordem visual, leitura e teclado permanecem coerentes;
 - não há rolagem horizontal indevida;
-- o README registra execução, testes e decisões.
+- o README registra os comandos `docker compose up`, `docker compose up --build` e `docker compose down`, além dos testes e decisões.
 
 ## 15. Erros comuns
 
