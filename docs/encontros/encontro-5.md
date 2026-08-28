@@ -114,7 +114,7 @@ No `package.json`, configure:
 ```json
 {
   "scripts": {
-    "dev": "tailwindcss -i ./src/input.css -o ./src/output.css --watch",
+    "dev": "tailwindcss -i ./src/input.css -o ./src/output.css --watch=always",
     "build": "tailwindcss -i ./src/input.css -o ./src/output.css --minify"
   }
 }
