@@ -16,7 +16,7 @@ Pré-requisito recomendado: conclusão de Padrões Web ou domínio equivalente d
 | 2 | 1,5h | Tailwind CSS: utility-first, instalação, configuração e build | Projeto Tailwind configurado | [Encontro 2](./encontros/encontro-2.md) |
 | 3 | 1,5h | Tailwind CSS: cores, tipografia, espaçamentos, tamanhos e bordas | Página estilizada | [Encontro 3](./encontros/encontro-3.md) |
 | 4 | 1,5h | Tailwind CSS: Flexbox, Grid, posicionamento e composição | Layout com Tailwind | [Encontro 4](./encontros/encontro-4.md) |
-| 5 | 1,5h | Tailwind CSS responsivo: breakpoints e abordagem mobile-first | Interface responsiva | [Encontro 5](./encontros/encontro-5.md) |
+| 5 | 1,5h | Oficina de revisão Tailwind CSS: construção de interface do zero | Painel de programação construído e revisado | [Encontro 5](./encontros/encontro-5.md) |
 | 6 | 1,5h | Atividade Prática 1: layout responsivo com Tailwind CSS | **Prática 1 — 20 pontos** | [Encontro 6](./encontros/encontro-6.md) |
 | 7 | 1,5h | Estados, `focus-visible`, variantes, dark mode e `motion-safe` | Componente interativo | [Encontro 7](./encontros/encontro-7.md) |
 | 8 | 1,5h | Tema, tokens de design, paleta e tipografia | Tema customizado | [Encontro 8](./encontros/encontro-8.md) |
