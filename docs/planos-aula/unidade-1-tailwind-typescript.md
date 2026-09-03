@@ -1,10 +1,10 @@
-# Plano de Aula — Unidade 1: Revisão, Tailwind CSS e TypeScript
+# Plano de Aula — Unidade 1: Revisão, Tailwind CSS, JavaScript e TypeScript
 
 **Carga horária:** 30h — 20 encontros / 40 aulas.
 
 ## Objetivo da Unidade
 
-Consolidar os fundamentos de Padrões Web, desenvolver interfaces responsivas com Tailwind CSS e construir a base de JavaScript/TypeScript necessária ao início do Angular.
+Consolidar os fundamentos de Padrões Web, desenvolver interfaces com Tailwind CSS e construir progressivamente a base de JavaScript e TypeScript necessária ao início do Angular.
 
 ## Objetivos Específicos
 
@@ -12,7 +12,6 @@ Consolidar os fundamentos de Padrões Web, desenvolver interfaces responsivas co
 - revisar semântica, acessibilidade, CSS e responsividade;
 - compreender benefícios e limites da abordagem utility-first;
 - construir layouts e componentes com Tailwind CSS;
-- configurar tema e tokens de design;
 - utilizar JavaScript moderno em interfaces;
 - aplicar tipagem com TypeScript;
 - preparar o ambiente de desenvolvimento Angular.
@@ -22,9 +21,7 @@ Consolidar os fundamentos de Padrões Web, desenvolver interfaces responsivas co
 - HTML5 semântico, formulários e acessibilidade;
 - cascata, especificidade, box model, Flexbox e Grid;
 - DevTools para inspeção de interfaces;
-- Tailwind CSS: instalação, build, utilitários e variantes;
-- responsividade, estados, dark mode e motion-safe;
-- temas, tokens e componentes;
+- Tailwind CSS: instalação, build, utilitários e layouts;
 - JavaScript: módulos, DOM, eventos e async/await;
 - TypeScript: tipos, interfaces, unions, generics e narrowing;
 - Node.js, npm, Angular CLI e SPA.
@@ -37,22 +34,22 @@ Consolidar os fundamentos de Padrões Web, desenvolver interfaces responsivas co
 - **Conteúdos de CSS:** cascata, herança, especificidade, box model, unidades, fluxo normal, Flexbox, Grid, responsividade e media queries.
 - **Produto:** diagnóstico dos conhecimentos prévios.
 
-### Encontros 2 a 6 — Fundamentos do Tailwind CSS e Prática 1
+### Encontros 2 a 6 — Tailwind CSS e Prática 1
 
-- **Tema:** utility-first, utilitários, layouts, responsividade e estados.
-- **Prática:** construção incremental de uma interface.
-- **Produto:** interface responsiva e interativa.
+- **Tema:** utility-first, configuração, utilitários visuais, Flexbox, Grid e posicionamento.
+- **Prática:** construção incremental, oficina de revisão e avaliação individual com consulta.
+- **Produto:** interface construída e avaliada com Tailwind CSS.
 
-### Encontros 7 a 12 — Sistema visual, Prática 2 e auditoria
+### Encontros 7 a 14 — JavaScript e Prática 2
 
-- **Tema:** tema, tokens, componentes, formulários e auditoria.
-- **Prática:** desafio de reprodução e refatoração.
-- **Produto:** tema próprio, componentes reutilizáveis e interface auditada.
+- **Tema:** execução, tipos, operadores, decisões, funções, coleções, DOM, eventos, módulos e assincronismo.
+- **Prática:** programas incrementais e comportamento de interface com JavaScript.
+- **Produto:** Prática 2 com JavaScript aplicada no Encontro 14.
 
-### Encontros 13 a 20 — JavaScript, TypeScript e estudo de caso
+### Encontros 15 a 20 — TypeScript e estudo de caso
 
-- **Tema:** comportamento, tipagem, DOM, preparação para Angular e estudo de caso.
-- **Prática:** adicionar interação tipada, concluir a Prática 3 no Encontro 16, preparar o ambiente Angular no Encontro 17 e desenvolver o estudo de caso nos encontros 18 a 20.
+- **Tema:** tipagem, modelagem, DOM tipado e aplicação integrada.
+- **Prática:** concluir a Prática 3 no Encontro 18 e desenvolver o estudo de caso nos encontros 19 e 20.
 - **Produto:** Prática 3 e estudo de caso concluído.
 
 ## Estratégias de Ensino
@@ -69,7 +66,7 @@ Consolidar os fundamentos de Padrões Web, desenvolver interfaces responsivas co
 - justificativa das escolhas semânticas e visuais;
 - interface funcional em diferentes larguras;
 - foco visível e navegação por teclado;
-- tema consistente e componentes reutilizáveis;
+- decisões visuais consistentes;
 - ausência de erros de build e console;
 - tipos e contratos compreensíveis;
 - histórico de evolução coerente.
@@ -77,9 +74,9 @@ Consolidar os fundamentos de Padrões Web, desenvolver interfaces responsivas co
 ## Instrumentos de Avaliação
 
 - diagnóstico inicial sem caráter classificatório;
-- Atividade Prática 1 — Tailwind CSS responsivo: 20 pontos;
-- Atividade Prática 2 — interface temática: 20 pontos;
-- Atividade Prática 3 — TypeScript aplicado (Encontro 16): 20 pontos;
+- Atividade Prática 1 — fundamentos e layouts com Tailwind CSS: 20 pontos;
+- Atividade Prática 2 — JavaScript aplicado (Encontro 14): 20 pontos;
+- Atividade Prática 3 — TypeScript aplicado (Encontro 18): 20 pontos;
 - estudo de caso: 40 pontos;
 - total da unidade: 100 pontos.
 

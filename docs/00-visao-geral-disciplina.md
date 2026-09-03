@@ -59,19 +59,17 @@ Ao final da disciplina, espera-se que o estudante seja capaz de:
 
 ## Programa
 
-### Unidade 1 — Revisão, Tailwind CSS e TypeScript
+### Unidade 1 — Revisão, Tailwind CSS, JavaScript e TypeScript
 
 - diagnóstico e revisão de HTML semântico, CSS, acessibilidade e Git;
 - fundamentos da abordagem utility-first;
 - instalação e fluxo de build do Tailwind CSS;
 - cores, tipografia, espaçamento, tamanho, bordas e sombras;
-- Flexbox, Grid e responsividade mobile-first;
-- estados interativos, dark mode e preferências de movimento;
-- tema, tokens de design e componentes visuais;
-- formulários, tabelas e auditoria de interfaces;
-- JavaScript moderno para interfaces;
+- Flexbox, Grid e posicionamento;
+- JavaScript: execução, tipos, operadores, decisões, funções e coleções;
+- DOM, eventos, formulários, módulos e assincronismo;
 - TypeScript: tipos, interfaces, unions, generics e narrowing;
-- preparação do ambiente Angular.
+- estudo de caso integrador.
 
 ### Unidade 2 — Angular e Projeto Final
 
@@ -121,8 +119,8 @@ Ao final da disciplina, espera-se que o estudante seja capaz de:
 
 ### Unidade 1
 
-- Atividade Prática 1 — Tailwind CSS responsivo: 20 pontos;
-- Atividade Prática 2 — interface temática: 20 pontos;
+- Atividade Prática 1 — fundamentos e layouts com Tailwind CSS: 20 pontos;
+- Atividade Prática 2 — JavaScript aplicado: 20 pontos;
 - Atividade Prática 3 — TypeScript aplicado: 20 pontos;
 - estudo de caso: 40 pontos;
 - total da unidade: 100 pontos.

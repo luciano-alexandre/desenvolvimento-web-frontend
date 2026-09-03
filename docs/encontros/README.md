@@ -24,34 +24,37 @@ Após o encontro:
 - responda às questões sem consultar o gabarito oculto;
 - prepare a continuidade indicada pelo cronograma.
 
-## Unidade 1 — Revisão, Tailwind CSS e TypeScript
+## Unidade 1 — Revisão, Tailwind CSS, JavaScript e TypeScript
 
 1. [Revisão integrada de HTML, acessibilidade e CSS](encontro-1.md)
 
-### Tailwind CSS
+### Tailwind CSS — Encontros 2 a 6
 
 2. [Introdução ao Tailwind CSS](encontro-2.md)
 3. [Utilitários fundamentais](encontro-3.md)
 4. [Layouts com Tailwind](encontro-4.md)
 5. [Oficina prática de revisão do Tailwind CSS](encontro-5.md)
 6. [Atividade Prática 1 — interface com Tailwind CSS](encontro-6.md)
-7. [Estados e dark mode](encontro-7.md)
-8. [Tema e tokens de design](encontro-8.md)
-9. [Componentização visual](encontro-9.md)
-10. [Formulários e tabelas](encontro-10.md)
-11. [Atividade Prática 2 — interface temática](encontro-11.md)
-12. [Refatoração e auditoria de interfaces](encontro-12.md)
 
-### JavaScript, TypeScript e avaliação
+### JavaScript — Encontros 7 a 14
 
-13. [JavaScript moderno](encontro-13.md)
-14. [Fundamentos de TypeScript](encontro-14.md)
-15. [TypeScript aplicado ao DOM](encontro-15.md)
-16. [Atividade Prática 3 — TypeScript aplicado](encontro-16.md)
-17. [Preparação para Angular](encontro-17.md)
-18. [Estudo de caso — planejamento](encontro-18.md)
-19. [Estudo de caso — desenvolvimento](encontro-19.md)
-20. [Estudo de caso — entrega](encontro-20.md)
+7. [Execução, variáveis, tipos e operadores](encontro-7.md)
+8. [Decisões e estruturas condicionais](encontro-8.md)
+9. [Repetição, funções e escopo](encontro-9.md)
+10. [Arrays, objetos e coleções](encontro-10.md)
+11. [DOM, seletores e conteúdo](encontro-11.md)
+12. [Eventos, formulários e estados](encontro-12.md)
+13. [Módulos, armazenamento e assincronismo](encontro-13.md)
+14. [Atividade Prática 2 — JavaScript aplicado](encontro-14.md)
+
+### TypeScript e estudo de caso — Encontros 15 a 20
+
+15. [Fundamentos de TypeScript](encontro-15.md)
+16. [Modelagem de dados com TypeScript](encontro-16.md)
+17. [TypeScript aplicado ao DOM](encontro-17.md)
+18. [Atividade Prática 3 — TypeScript aplicado](encontro-18.md)
+19. [Estudo de caso — planejamento e desenvolvimento inicial](encontro-19.md)
+20. [Estudo de caso — conclusão e entrega](encontro-20.md)
 
 ## Unidade 2 — Angular e Projeto Final
 
