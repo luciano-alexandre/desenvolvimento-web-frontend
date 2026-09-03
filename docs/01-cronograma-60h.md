@@ -17,7 +17,7 @@ Pré-requisito recomendado: conclusão de Padrões Web ou domínio equivalente d
 | 3 | 1,5h | Tailwind CSS: cores, tipografia, espaçamentos, tamanhos e bordas | Página estilizada | [Encontro 3](./encontros/encontro-3.md) |
 | 4 | 1,5h | Tailwind CSS: Flexbox, Grid, posicionamento e composição | Layout com Tailwind | [Encontro 4](./encontros/encontro-4.md) |
 | 5 | 1,5h | Oficina de revisão Tailwind CSS: construção de interface do zero | Painel de programação construído e revisado | [Encontro 5](./encontros/encontro-5.md) |
-| 6 | 1,5h | Atividade Prática 1: layout responsivo com Tailwind CSS | **Prática 1 — 20 pontos** | [Encontro 6](./encontros/encontro-6.md) |
+| 6 | 1,5h | Atividade Prática 1: interface com Tailwind CSS | **Prática individual com consulta — 20 pontos** | [Encontro 6](./encontros/encontro-6.md) |
 | 7 | 1,5h | Estados, `focus-visible`, variantes, dark mode e `motion-safe` | Componente interativo | [Encontro 7](./encontros/encontro-7.md) |
 | 8 | 1,5h | Tema, tokens de design, paleta e tipografia | Tema customizado | [Encontro 8](./encontros/encontro-8.md) |
 | 9 | 1,5h | Componentização visual, reutilização e CSS autoral | Biblioteca de componentes | [Encontro 9](./encontros/encontro-9.md) |
@@ -37,7 +37,7 @@ Pré-requisito recomendado: conclusão de Padrões Web ou domínio equivalente d
 
 | Instrumento | Valor |
 |---|---:|
-| Atividade Prática 1 — Tailwind CSS responsivo (Encontro 6) | 20 pontos |
+| Atividade Prática 1 — fundamentos e layouts com Tailwind CSS (Encontro 6) | 20 pontos |
 | Atividade Prática 2 — interface temática (Encontro 11) | 20 pontos |
 | Atividade Prática 3 — TypeScript aplicado (Encontro 16) | 20 pontos |
 | Estudo de caso | 40 pontos |

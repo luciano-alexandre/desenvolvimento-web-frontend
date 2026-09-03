@@ -34,7 +34,7 @@ Após o encontro:
 3. [Utilitários fundamentais](encontro-3.md)
 4. [Layouts com Tailwind](encontro-4.md)
 5. [Oficina prática de revisão do Tailwind CSS](encontro-5.md)
-6. [Atividade Prática 1 — Tailwind responsivo](encontro-6.md)
+6. [Atividade Prática 1 — interface com Tailwind CSS](encontro-6.md)
 7. [Estados e dark mode](encontro-7.md)
 8. [Tema e tokens de design](encontro-8.md)
 9. [Componentização visual](encontro-9.md)

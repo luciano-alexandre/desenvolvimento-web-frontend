@@ -1,175 +1,205 @@
-# Encontro 6 — Atividade Prática 1: Tailwind CSS responsivo
+# Encontro 6 — Atividade Prática 1: interface com Tailwind CSS
 
-**Carga horária:** 1,5h  
-**Entrega prevista:** Atividade Prática 1 — 20 pontos
+**Unidade:** Unidade 1
+**Carga horária:** 1,5h
+**Modalidade:** individual, com consulta
+**Valor:** 20 pontos
+**Entrega prevista:** página de campanha comunitária implementada com Tailwind CSS
 
-## Visão Geral
+## Visão geral
 
-Este encontro desenvolve **atividade prática 1 com Tailwind CSS responsivo** como continuidade direta dos conhecimentos anteriores. A aula parte de um problema observável, apresenta os recursos necessários e termina com uma entrega que pode ser executada e verificada.
+Este encontro é uma avaliação prática dos conhecimentos de Tailwind CSS estudados nos encontros 2 a 5. Cada estudante deverá construir individualmente uma interface a partir dos requisitos fornecidos, executar o projeto com Docker Compose e demonstrar que consegue transformar decisões de estrutura e apresentação em classes utilitárias.
 
-Ao final, o estudante deverá conseguir explicar o propósito de cada recurso, implementar uma solução incremental, testar o comportamento e justificar as decisões adotadas.
+A atividade é **com consulta**: poderão ser usados os materiais da disciplina, anotações pessoais, projetos produzidos anteriormente e a documentação oficial das tecnologias. A consulta serve para recuperar sintaxe e confirmar propriedades; a seleção, combinação e explicação das soluções continua sendo responsabilidade de cada estudante.
 
-## Conceitos Essenciais
 
-- Breakpoints.
-- Variantes responsivas.
-- Larguras fluidas.
-- Ordenação.
-- Testes de viewport.
+## 1. Regras da avaliação
 
-## 1) Contexto do encontro
+- cada estudante deve escrever e entregar seu próprio código;
+- não é permitido enviar ou receber arquivos, trechos prontos ou respostas durante a avaliação;
+- não é permitido editar o projeto de outra pessoa;
+- dúvidas sobre o enunciado devem ser dirigidas ao professor;
+- ferramentas externas de geração automática de código não poderão ser utilizadas.
 
-Uma interface de qualidade precisa combinar estrutura, comportamento, apresentação, acessibilidade e manutenção. O tema deste encontro não deve ser aprendido como uma lista de comandos isolados, mas como resposta a um problema concreto de desenvolvimento frontend.
+Consultar uma classe na documentação é permitido. Copiar a implementação de outra pessoa não é consulta: é compartilhamento de solução.
 
-Durante a aula, use quatro perguntas para orientar as decisões:
 
-- qual problema precisa ser resolvido?
-- em que parte do projeto fica essa responsabilidade?
-- como verificar se a solução funciona?
-- que impacto a escolha produz para usuários e manutenção?
+## 2. Situação-problema
 
-## 2) Conceitos em detalhe
+Uma organização comunitária realizará a campanha **Bairro Verde**, destinada ao plantio de árvores em espaços públicos. Sua tarefa é construir uma página que apresente a campanha, seus indicadores e os pontos de plantio disponíveis.
 
-### 1) Breakpoints
+A interface deve conter:
 
-Breakpoints deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
+1. cabeçalho com nome da campanha e navegação;
+2. apresentação com categoria, título, descrição e ação principal;
+3. resumo com três indicadores;
+4. coleção com três pontos de plantio;
+5. um selo “Vagas limitadas” sobre um dos cartões;
+6. rodapé simples com identificação da organização.
 
-### 2) Variantes responsivas
+## 3. Conteúdo obrigatório
 
-Variantes responsivas deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
+Utilize os textos abaixo. Você pode corrigir quebras de linha, mas não deve remover informações.
 
-### 3) Larguras fluidas
+### Cabeçalho
 
-Larguras fluidas deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
+- nome: **Bairro Verde**;
+- links: **Sobre**, **Pontos de plantio** e **Orientações**.
 
-### 4) Ordenação
+### Apresentação
 
-Ordenação deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
+- categoria: **Mutirão comunitário**;
+- título: **Uma manhã para transformar os espaços do bairro**;
+- descrição: **Participe do plantio coletivo e ajude a criar ruas mais verdes, frescas e acolhedoras.**;
+- ação: **Quero participar**.
 
-### 5) Testes de viewport
+### Indicadores
 
-Testes de viewport deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
+| Termo | Valor |
+|---|---|
+| Data | 26 de setembro |
+| Horário | 8h às 12h |
+| Meta | 120 árvores |
 
-## 3) Exemplo inicial
+### Pontos de plantio
 
-Digite e execute o exemplo antes de modificá-lo. Depois, altere um elemento por vez e observe o efeito no navegador, no terminal ou nos testes.
+| Horário e local | Título | Descrição | Situação |
+|---|---|---|---|
+| 8h · Praça das Mangueiras | Recuperação da praça | Plantio de espécies nativas nas áreas de convivência. | 18 vagas |
+| 9h · Avenida Central | Corredor de sombra | Arborização do percurso entre a escola e o posto de saúde. | Vagas limitadas |
+| 10h · Parque do Riacho | Proteção das margens | Reforço da vegetação próxima ao curso d’água. | 12 vagas |
 
-```html
-<article class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm md:p-8">
-  <h2 class="text-xl font-bold text-slate-900">Interface responsiva</h2>
-  <p class="mt-2 text-slate-600">Componente construído com Tailwind CSS.</p>
-</article>
+Cada cartão deve conter também o link **Ver orientações**.
+
+### Rodapé
+
+- texto: **Associação Comunitária do Bairro · Projeto Bairro Verde**.
+
+## 4. Preparação do projeto
+
+Crie uma pasta independente chamada `atividade-pratica-01`. O projeto deverá conter:
+
+```text
+atividade-pratica-01/
+├── .dockerignore
+├── compose.yaml
+├── Dockerfile
+├── package.json
+├── package-lock.json
+├── README.md
+└── src/
+    ├── index.html
+    ├── input.css
+    └── output.css
 ```
 
-### O que observar
+Você pode consultar a configuração feita nos encontros 3 e 5. O projeto deve iniciar com:
 
-- localize entrada, transformação e saída;
-- relacione cada linha aos conceitos essenciais;
-- provoque um erro intencional e interprete a mensagem;
-- confirme o resultado com as ferramentas adequadas;
-- evite copiar o trecho sem compreender suas partes.
+```bash
+docker compose up
+```
 
-## 4) Demonstração orientada
+Caso a imagem ainda precise ser construída:
 
-1. apresente o requisito antes da solução;
-2. construa a menor versão funcional;
-3. inspecione o resultado e verbalize as decisões;
-4. introduza os conceitos progressivamente;
-5. teste um cenário alternativo ou de erro;
-6. refatore nomes, estrutura e repetição;
-7. registre a versão estável.
+```bash
+docker compose up --build
+```
 
-## 5) Prática guiada
+Antes de estilizar, confirme:
 
-**Proposta:** Criar uma seção responsiva em três faixas.
+- o contêiner está ativo;
+- `src/output.css` foi criado;
+- `src/index.html` referencia `./output.css`;
+- salvar o HTML provoca nova compilação;
+- não existem erros no terminal.
 
-### Etapas
+## 5. Etapa A — Estrutura semântica
 
-1. crie uma pasta ou branch para o encontro;
-2. reproduza o exemplo e confirme que ele funciona;
-3. adapte nomes, conteúdo e dados ao domínio escolhido;
-4. aplique os cinco conceitos essenciais;
-5. teste diferentes larguras e estados aplicáveis;
-6. revise console, compilação, teclado e foco;
-7. prepare a entrega indicada no início da página.
+Construa primeiro o HTML, sem se preocupar com a aparência. A estrutura deverá utilizar:
 
-## 6) Exercício aplicado
+- `header` para o cabeçalho;
+- `nav` com nome acessível para a navegação;
+- `main` para o conteúdo principal;
+- `section` para a campanha;
+- apenas um `h1`;
+- `article` e `h2` para cada ponto de plantio;
+- `dl`, `dt` e `dd` para os indicadores;
+- `time` com `datetime` para data ou horários quando aplicável;
+- `footer` para a identificação final;
+- elementos `a` com `href` para as ações.
 
-Construa uma segunda variação sem acompanhar o exemplo linha a linha. A solução deve ser autoral e compreensível para outra pessoa.
+Não substitua botões ou links por `div`. A ordem do HTML deve continuar compreensível sem CSS.
 
-### Requisitos mínimos
+## 6. Etapa B — Identidade visual
 
-- demonstrar uso consciente de breakpoints;
-- demonstrar uso consciente de variantes responsivas;
-- demonstrar uso consciente de larguras fluidas;
-- demonstrar uso consciente de ordenação;
-- demonstrar uso consciente de testes de viewport;
-- manter nomes claros e organização consistente;
-- não apresentar erros de compilação ou console;
-- explicar no README como executar e testar;
-- registrar evidências e decisões importantes.
+Crie uma identidade coerente usando utilitários do Tailwind. Sua solução precisa demonstrar:
 
-### Desafio adicional
+- cor de fundo da página;
+- cores distintas para texto principal, secundário e destaque;
+- título principal com hierarquia evidente;
+- altura de linha confortável na descrição;
+- largura máxima para evitar linhas excessivamente longas;
+- margens e preenchimentos com funções distinguíveis;
+- cartões com borda e raio;
+- sombra utilizada com moderação;
+- ação principal visualmente identificável.
 
-Implemente um estado alternativo relevante, como vazio, erro, carregamento, tela estreita ou navegação por teclado. Explique como a solução permanece utilizável nessa condição.
+Não existe uma paleta obrigatória. O contraste precisa permitir leitura confortável.
 
-## 7) Critérios de aceite
+## 7. Etapa C — Flexbox
 
-- o projeto executa conforme as instruções;
-- o resultado atende ao objetivo funcional;
-- os recursos do encontro foram usados com intenção;
-- a interface funciona nos cenários testados;
-- a entrega está organizada e pode ser avaliada sem ajustes;
-- o histórico ou registro de trabalho evidencia evolução incremental.
+Use Flexbox em pelo menos duas relações unidimensionais:
 
-## 8) Erros comuns
+- identificação e navegação no cabeçalho;
+- grupos de indicadores ou elementos internos de um cartão.
 
-- começar pela aparência sem interpretar o requisito;
-- copiar o exemplo sem adaptar semântica e dados;
-- reunir responsabilidades diferentes no mesmo bloco;
-- testar apenas o caminho de sucesso;
-- ignorar mensagens do console ou compilador;
-- abstrair antes de existir repetição real;
-- entregar sem instruções de execução.
+A solução deve demonstrar conscientemente:
 
-## 9) Materiais para aprofundamento
+- `flex`;
+- direção do eixo, explícita quando necessário;
+- alinhamento transversal com `items-*`;
+- distribuição ou agrupamento no eixo principal;
+- intervalo mínimo com `gap-*`;
+- quebra com `flex-wrap` quando o conteúdo puder exceder a linha.
 
-- [MDN Web Docs](https://developer.mozilla.org/pt-BR/docs/Web)
-- [Documentação do Tailwind CSS](https://tailwindcss.com/docs)
-- [Documentação do Angular](https://angular.dev/overview)
-- [Manual do TypeScript](https://www.typescriptlang.org/docs/handbook/intro.html)
+O estudante deve conseguir apontar o contêiner e seus filhos diretos. Aplicar `flex` a um elemento sem explicar a relação não garante pontuação integral.
 
-## Checklist de compreensão
+## 8. Etapa D — Grid
 
-- [ ] Consigo explicar e aplicar **breakpoints**.
-- [ ] Consigo explicar e aplicar **variantes responsivas**.
-- [ ] Consigo explicar e aplicar **larguras fluidas**.
-- [ ] Consigo explicar e aplicar **ordenação**.
-- [ ] Consigo explicar e aplicar **testes de viewport**.
-- [ ] Consigo executar e modificar o exemplo.
-- [ ] Consigo realizar a prática sem cópia integral.
-- [ ] Consigo identificar um erro e explicar a correção.
-- [ ] Revisei a entrega pelos critérios de aceite.
+Organize os três pontos de plantio com Grid:
 
-## Resumo final
+- `#pontos-de-plantio` deve ser o contêiner;
+- os três `article` devem ser filhos diretos;
+- a coleção deve possuir três colunas;
+- o intervalo deve ser controlado por `gap`;
+- cartões com textos diferentes não podem ser cortados;
+- as ações devem manter alinhamento visual coerente.
 
-Neste encontro, **atividade prática 1 com Tailwind CSS responsivo** foi tratado como parte de uma solução frontend completa. Conceitos, código, validação e comunicação técnica foram combinados para gerar um resultado reutilizável nos encontros seguintes e no projeto final.
+É permitido usar Flexbox vertical dentro dos cartões. Se utilizar `mt-auto`, explique qual espaço ele absorve e por que `flex-col` é necessário.
 
-## Questões de fixação
 
-1. Como **breakpoints** contribui para a solução desenvolvida?
-<!-- Gabarito: definir breakpoints, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
+## 11. Entrega
 
-2. Como **variantes responsivas** contribui para a solução desenvolvida?
-<!-- Gabarito: definir variantes responsivas, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
+Entregue a pasta completa ou o endereço definido pelo professor. O projeto deverá incluir:
 
-3. Como **larguras fluidas** contribui para a solução desenvolvida?
-<!-- Gabarito: definir larguras fluidas, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
+- configuração Docker reproduzível;
+- arquivos-fonte;
+- CSS gerado;
+- `README.md`;
+- uma captura da interface final.
 
-4. Como **ordenação** contribui para a solução desenvolvida?
-<!-- Gabarito: definir ordenação, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
+O README deve informar:
 
-5. Como **testes de viewport** contribui para a solução desenvolvida?
-<!-- Gabarito: definir testes de viewport, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
+- nome do estudante;
+- como iniciar e encerrar o projeto;
+- onde está o HTML principal;
+- uma decisão em que Flexbox foi escolhido;
+- uma decisão em que Grid foi escolhido;
+- como o posicionamento do selo foi implementado;
+- quais testes foram realizados.
 
-[Voltar ao cronograma](../01-cronograma-60h.md)
+Finalize o serviço com:
+
+```bash
+docker compose down
+```
