@@ -1,205 +1,426 @@
-# Encontro 6 — Atividade Prática 1: interface com Tailwind CSS
+# Encontro 6 — Oficina prática de revisão do Tailwind CSS
 
 **Unidade:** Unidade 1
 **Carga horária:** 1,5h
-**Modalidade:** individual, com consulta
-**Valor:** 20 pontos
-**Entrega prevista:** página de campanha comunitária implementada com Tailwind CSS
+**Entrega prevista:** painel de programação de um festival construído do zero
 
 ## Visão geral
 
-Este encontro é uma avaliação prática dos conhecimentos de Tailwind CSS estudados nos encontros 2 a 5. Cada estudante deverá construir individualmente uma interface a partir dos requisitos fornecidos, executar o projeto com Docker Compose e demonstrar que consegue transformar decisões de estrutura e apresentação em classes utilitárias.
+Nos encontros anteriores, você configurou o Tailwind CSS, aplicou utilitários visuais e organizou uma página com Flexbox e Grid. Neste encontro, esses conhecimentos serão retomados em uma atividade prática integradora, sem continuar o catálogo de cursos e sem fornecer uma interface pronta para copiar.
 
-A atividade é **com consulta**: poderão ser usados os materiais da disciplina, anotações pessoais, projetos produzidos anteriormente e a documentação oficial das tecnologias. A consulta serve para recuperar sintaxe e confirmar propriedades; a seleção, combinação e explicação das soluções continua sendo responsabilidade de cada estudante.
+O novo problema é construir o **painel de programação de um festival cultural**. O projeto começará em uma pasta vazia, terá configuração própria com Docker e utilizará outro conteúdo, outra estrutura e outra composição visual. Cada etapa apresenta um requisito antes de sugerir classes. Você deverá escolher a solução, observar o resultado e registrar a justificativa.
 
+## Objetivos de aprendizagem
 
-## 1. Regras da avaliação
+- preparar do zero um projeto Tailwind executado com Docker Compose;
+- explicar o caminho entre HTML, CSS de entrada, CLI e CSS gerado;
+- escolher utilitários a partir de requisitos visuais;
+- aplicar cores, tipografia, espaçamento, dimensões, bordas e sombras;
+- organizar relações unidimensionais com Flexbox;
+- organizar uma coleção em linhas e colunas com Grid;
+- controlar intervalos com `gap`;
+- diferenciar alinhamento, distribuição e posicionamento;
+- preservar semântica, foco visível e ordem de leitura;
+- inspecionar o CSS gerado e corrigir problemas sem consultar uma solução completa.
 
-- cada estudante deve escrever e entregar seu próprio código;
-- não é permitido enviar ou receber arquivos, trechos prontos ou respostas durante a avaliação;
-- não é permitido editar o projeto de outra pessoa;
-- dúvidas sobre o enunciado devem ser dirigidas ao professor;
-- ferramentas externas de geração automática de código não poderão ser utilizadas.
+## Conceitos revisados
 
-Consultar uma classe na documentação é permitido. Copiar a implementação de outra pessoa não é consulta: é compartilhamento de solução.
-
-
-## 2. Situação-problema
-
-Uma organização comunitária realizará a campanha **Bairro Verde**, destinada ao plantio de árvores em espaços públicos. Sua tarefa é construir uma página que apresente a campanha, seus indicadores e os pontos de plantio disponíveis.
-
-A interface deve conter:
-
-1. cabeçalho com nome da campanha e navegação;
-2. apresentação com categoria, título, descrição e ação principal;
-3. resumo com três indicadores;
-4. coleção com três pontos de plantio;
-5. um selo “Vagas limitadas” sobre um dos cartões;
-6. rodapé simples com identificação da organização.
-
-## 3. Conteúdo obrigatório
-
-Utilize os textos abaixo. Você pode corrigir quebras de linha, mas não deve remover informações.
-
-### Cabeçalho
-
-- nome: **Bairro Verde**;
-- links: **Sobre**, **Pontos de plantio** e **Orientações**.
-
-### Apresentação
-
-- categoria: **Mutirão comunitário**;
-- título: **Uma manhã para transformar os espaços do bairro**;
-- descrição: **Participe do plantio coletivo e ajude a criar ruas mais verdes, frescas e acolhedoras.**;
-- ação: **Quero participar**.
-
-### Indicadores
-
-| Termo | Valor |
+| Encontro | Conhecimentos retomados |
 |---|---|
-| Data | 26 de setembro |
-| Horário | 8h às 12h |
-| Meta | 120 árvores |
+| 2 | utility-first, instalação, CSS de entrada, compilação e artefato gerado |
+| 3 | cores, tipografia, espaçamento, dimensões, bordas, raios e sombras |
+| 4 | fluxo normal, Flexbox, Grid, `gap`, alinhamento e posicionamento |
 
-### Pontos de plantio
+## 1. Situação-problema
 
-| Horário e local | Título | Descrição | Situação |
-|---|---|---|---|
-| 8h · Praça das Mangueiras | Recuperação da praça | Plantio de espécies nativas nas áreas de convivência. | 18 vagas |
-| 9h · Avenida Central | Corredor de sombra | Arborização do percurso entre a escola e o posto de saúde. | Vagas limitadas |
-| 10h · Parque do Riacho | Proteção das margens | Reforço da vegetação próxima ao curso d’água. | 12 vagas |
+### Exemplo de resultado esperado
 
-Cada cartão deve conter também o link **Ver orientações**.
+![Exemplo do painel final do Festival Entre Mundos, com cabeçalho, resumo da programação e três atividades organizadas em cartões](./assets/encontro-5-resultado-esperado.png)
 
-### Rodapé
+Use a imagem como referência para compreender a hierarquia, os agrupamentos e o nível de acabamento esperado. Ela não representa uma solução única: cores, medidas e pequenos detalhes podem variar, desde que a implementação atenda aos requisitos, preserve a semântica e utilize conscientemente os conceitos revisados.
 
-- texto: **Associação Comunitária do Bairro · Projeto Bairro Verde**.
+Um festival cultural precisa publicar a programação de um turno. A interface deverá apresentar:
 
-## 4. Preparação do projeto
+- identificação do evento;
+- navegação para programação, espaços e informações;
+- título e descrição da programação;
+- resumo com data, horário e quantidade de atividades;
+- três atividades, cada uma com horário, local, categoria e descrição;
+- uma ação para consultar detalhes;
+- um selo “Destaque” sobre uma das atividades.
 
-Crie uma pasta independente chamada `atividade-pratica-01`. O projeto deverá conter:
+O resultado não deve reproduzir a página de cursos dos encontros anteriores. Antes de escrever classes, desenhe rapidamente as regiões e responda:
+
+1. qual é o assunto principal da página?
+2. quais conteúdos formam conjuntos?
+3. quais relações são unidimensionais?
+4. qual coleção precisa compartilhar colunas?
+5. onde existe sobreposição intencional?
+
+## 2. Criar um projeto novo
+
+Não continue na pasta `encontro-02-tailwind`. Crie um diretório independente:
+
+```bash
+mkdir encontro-05-revisao
+cd encontro-05-revisao
+mkdir src
+touch src/index.html src/input.css
+```
+
+O projeto deverá chegar a esta estrutura:
 
 ```text
-atividade-pratica-01/
+encontro-05-revisao/
 ├── .dockerignore
 ├── compose.yaml
 ├── Dockerfile
 ├── package.json
 ├── package-lock.json
-├── README.md
 └── src/
     ├── index.html
     ├── input.css
     └── output.css
 ```
 
-Você pode consultar a configuração feita nos encontros 3 e 5. O projeto deve iniciar com:
+### Inicializar o npm pelo contêiner
+
+Use um contêiner temporário para criar `package.json`:
 
 ```bash
-docker compose up
+docker run --rm --user "$(id -u):$(id -g)" \
+  --volume "$PWD:/app" \
+  --workdir /app \
+  node:22-alpine npm init -y
 ```
 
-Caso a imagem ainda precise ser construída:
+Instale Tailwind CSS e sua CLI:
+
+```bash
+docker run --rm --user "$(id -u):$(id -g)" \
+  --volume "$PWD:/app" \
+  --workdir /app \
+  node:22-alpine npm install -D tailwindcss @tailwindcss/cli
+```
+
+Em `src/input.css`, importe o framework:
+
+```css
+@import "tailwindcss";
+```
+
+No `package.json`, configure:
+
+```json
+{
+  "scripts": {
+    "dev": "tailwindcss -i ./src/input.css -o ./src/output.css --watch=always",
+    "build": "tailwindcss -i ./src/input.css -o ./src/output.css --minify"
+  }
+}
+```
+
+### Preparar Docker e Compose
+
+Crie o `Dockerfile`:
+
+```dockerfile
+FROM node:22-alpine
+
+WORKDIR /app
+
+COPY package*.json ./
+RUN npm ci
+
+COPY . .
+
+CMD ["npm", "run", "dev"]
+```
+
+Crie `.dockerignore`:
+
+```text
+node_modules
+src/output.css
+.git
+```
+
+Crie `compose.yaml`:
+
+```yaml
+services:
+  tailwind:
+    build: .
+    volumes:
+      - .:/app
+      - /app/node_modules
+```
+
+Construa a imagem e inicie a observação:
 
 ```bash
 docker compose up --build
 ```
 
-Antes de estilizar, confirme:
+Mantenha o terminal ativo. Nas próximas execuções, enquanto as dependências não mudarem, use `docker compose up`.
 
-- o contêiner está ativo;
-- `src/output.css` foi criado;
-- `src/index.html` referencia `./output.css`;
-- salvar o HTML provoca nova compilação;
-- não existem erros no terminal.
+## 3. Construir primeiro o HTML sem classes
 
-## 5. Etapa A — Estrutura semântica
+Crie o documento completo antes da apresentação:
 
-Construa primeiro o HTML, sem se preocupar com a aparência. A estrutura deverá utilizar:
+```html
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Festival Entre Mundos</title>
+    <link rel="stylesheet" href="./output.css" />
+  </head>
+  <body>
+    <header>
+      <a href="#inicio">Festival Entre Mundos</a>
+      <nav aria-label="Navegação principal">
+        <a href="#programacao" aria-current="page">Programação</a>
+        <a href="#espacos">Espaços</a>
+        <a href="#informacoes">Informações</a>
+      </nav>
+    </header>
 
-- `header` para o cabeçalho;
-- `nav` com nome acessível para a navegação;
-- `main` para o conteúdo principal;
-- `section` para a campanha;
-- apenas um `h1`;
-- `article` e `h2` para cada ponto de plantio;
-- `dl`, `dt` e `dd` para os indicadores;
-- `time` com `datetime` para data ou horários quando aplicável;
-- `footer` para a identificação final;
-- elementos `a` com `href` para as ações.
+    <main id="inicio">
+      <section aria-labelledby="titulo-programacao">
+        <p>Programação de sábado</p>
+        <h1 id="titulo-programacao">Encontros entre música, imagem e movimento</h1>
+        <p>Escolha uma atividade e conheça artistas de diferentes linguagens.</p>
 
-Não substitua botões ou links por `div`. A ordem do HTML deve continuar compreensível sem CSS.
+        <dl>
+          <div><dt>Data</dt><dd>12 de setembro</dd></div>
+          <div><dt>Horário</dt><dd>14h às 21h</dd></div>
+          <div><dt>Atividades</dt><dd>3 atrações</dd></div>
+        </dl>
 
-## 6. Etapa B — Identidade visual
+        <div id="programacao">
+          <article>
+            <p><time datetime="2026-09-12T14:00">14h</time> · Palco Jardim</p>
+            <h2>Corpos em trânsito</h2>
+            <p>Dança</p>
+            <p>Performance que investiga deslocamento, memória e território.</p>
+            <a href="#corpos-em-transito">Consultar detalhes</a>
+          </article>
 
-Crie uma identidade coerente usando utilitários do Tailwind. Sua solução precisa demonstrar:
+          <article>
+            <p><time datetime="2026-09-12T16:30">16h30</time> · Sala Imersiva</p>
+            <h2>Cartografias luminosas</h2>
+            <p>Arte digital</p>
+            <p>Instalação audiovisual criada a partir de dados da cidade.</p>
+            <a href="#cartografias-luminosas">Consultar detalhes</a>
+          </article>
 
-- cor de fundo da página;
-- cores distintas para texto principal, secundário e destaque;
-- título principal com hierarquia evidente;
-- altura de linha confortável na descrição;
-- largura máxima para evitar linhas excessivamente longas;
-- margens e preenchimentos com funções distinguíveis;
-- cartões com borda e raio;
-- sombra utilizada com moderação;
-- ação principal visualmente identificável.
-
-Não existe uma paleta obrigatória. O contraste precisa permitir leitura confortável.
-
-## 7. Etapa C — Flexbox
-
-Use Flexbox em pelo menos duas relações unidimensionais:
-
-- identificação e navegação no cabeçalho;
-- grupos de indicadores ou elementos internos de um cartão.
-
-A solução deve demonstrar conscientemente:
-
-- `flex`;
-- direção do eixo, explícita quando necessário;
-- alinhamento transversal com `items-*`;
-- distribuição ou agrupamento no eixo principal;
-- intervalo mínimo com `gap-*`;
-- quebra com `flex-wrap` quando o conteúdo puder exceder a linha.
-
-O estudante deve conseguir apontar o contêiner e seus filhos diretos. Aplicar `flex` a um elemento sem explicar a relação não garante pontuação integral.
-
-## 8. Etapa D — Grid
-
-Organize os três pontos de plantio com Grid:
-
-- `#pontos-de-plantio` deve ser o contêiner;
-- os três `article` devem ser filhos diretos;
-- a coleção deve possuir três colunas;
-- o intervalo deve ser controlado por `gap`;
-- cartões com textos diferentes não podem ser cortados;
-- as ações devem manter alinhamento visual coerente.
-
-É permitido usar Flexbox vertical dentro dos cartões. Se utilizar `mt-auto`, explique qual espaço ele absorve e por que `flex-col` é necessário.
+          <article>
+            <p><time datetime="2026-09-12T19:00">19h</time> · Palco Central</p>
+            <h2>Ritmos do litoral</h2>
+            <p>Música</p>
+            <p>Concerto que aproxima instrumentos tradicionais e música eletrônica.</p>
+            <a href="#ritmos-do-litoral">Consultar detalhes</a>
+          </article>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
+```
 
 
-## 11. Entrega
+## 4. Rodada 1 — Fundamentos visuais
 
-Entregue a pasta completa ou o endereço definido pelo professor. O projeto deverá incluir:
+Nesta rodada, não use Flexbox, Grid nem posicionamento. Trabalhe somente com os utilitários do Encontro 3.
 
-- configuração Docker reproduzível;
-- arquivos-fonte;
-- CSS gerado;
-- `README.md`;
-- uma captura da interface final.
+### Requisito A — Base da página
 
-O README deve informar:
+A página precisa de fundo neutro, texto legível, altura mínima e conteúdo centralizado com largura limitada.
 
-- nome do estudante;
-- como iniciar e encerrar o projeto;
-- onde está o HTML principal;
-- uma decisão em que Flexbox foi escolhido;
-- uma decisão em que Grid foi escolhido;
-- como o posicionamento do selo foi implementado;
-- quais testes foram realizados.
+Escolha classes das famílias:
 
-Finalize o serviço com:
+```text
+min-h-*  bg-*  text-*  mx-auto  max-w-*  p-*  px-*  py-*
+```
+
+Um ponto de partida possível para o `body` é:
+
+```html
+<body class="min-h-screen bg-slate-950 text-slate-100">
+```
+
+Não copie uma combinação completa. Decida no `main` qual largura máxima e qual preenchimento atendem ao conteúdo.
+
+### Requisito B — Hierarquia da introdução
+
+A categoria deve ter menor tamanho e cor de destaque; o título deve dominar a seção; a descrição precisa ter altura de linha confortável e largura de leitura controlada.
+
+Utilitários a revisar:
+
+- `text-sm`, `text-4xl` e `font-bold`;
+- `leading-7` e `max-w-prose`;
+- `mt-2`, `mt-4` e cores de texto.
+
+Exemplo apenas para a categoria:
+
+```html
+<p class="text-sm font-semibold uppercase tracking-wider text-amber-400">
+  Programação de sábado
+</p>
+```
+
+Explique o efeito de cada classe antes de estilizar o `h1`.
+
+### Requisito C — Superfícies das atividades
+
+Cada atividade precisa ser percebida como uma superfície independente.
+
+```html
+<article class="rounded-xl border border-slate-800 bg-slate-900 p-6 shadow-lg">
+  <!-- preserve todo o conteúdo semântico -->
+</article>
+```
+
+Investigue:
+
+1. qual classe cria espaço interno?
+2. qual classe define a espessura e qual define a cor da borda?
+3. a sombra é necessária sobre esse fundo?
+4. o conteúdo cresce sem ser cortado?
+
+
+## 5. Rodada 2 — Flexbox e alinhamento
+
+Use Flexbox somente quando a relação principal ocorrer em um eixo.
+
+### Requisito A — Cabeçalho
+
+O nome do festival e a navegação devem ocupar o mesmo eixo, com intervalo mínimo. Aplique as classes progressivamente:
+
+1. adicione `flex` e observe os filhos diretos;
+2. adicione `items-center` e identifique o eixo transversal;
+3. adicione `justify-between` e observe o espaço livre;
+4. adicione `gap-6` para garantir distância mínima;
+5. transforme o `nav` em outro Flexbox com `flex gap-5`.
+
+```html
+<header class="flex items-center justify-between gap-6">
+  <a href="#inicio">Festival Entre Mundos</a>
+  <nav class="flex gap-5" aria-label="Navegação principal">...</nav>
+</header>
+```
+
+Estilize textos e foco somente depois de confirmar o layout.
+
+### Requisito B — Resumo
+
+Os três grupos do `dl` devem formar uma sequência horizontal. O `dl` é o contêiner e cada `div` é um item.
+
+```html
+<dl class="flex gap-8">
+  <div>
+    <dt class="text-sm text-slate-400">Data</dt>
+    <dd class="mt-1 font-semibold text-white">12 de setembro</dd>
+  </div>
+  <!-- demais dados -->
+</dl>
+```
+
+Não use `justify-between` automaticamente. Compare `gap-8` com a distribuição do espaço livre e escolha a relação visual mais apropriada.
+
+## 6. Rodada 3 — Grid e gap
+
+O contêiner `#programacao` reúne uma coleção. Aplique uma classe por vez:
+
+```html
+<!-- Passo 1: estabelece o sistema -->
+<div id="programacao" class="grid">
+
+<!-- Passo 2: cria três trilhas equivalentes -->
+<div id="programacao" class="grid grid-cols-3">
+
+<!-- Passo 3: cria intervalo entre as células -->
+<div id="programacao" class="grid grid-cols-3 gap-6">
+```
+
+Após cada passo:
+
+- inspecione a sobreposição de Grid no DevTools;
+- conte as trilhas;
+- confirme quais elementos são itens;
+- verifique que `gap` não cria espaço nas bordas externas;
+- aumente uma descrição e observe a altura da linha.
+
+### Alinhar ações de conteúdos diferentes
+
+Transforme cada `article` em Flexbox vertical:
+
+```html
+<article class="flex h-full flex-col rounded-xl border border-slate-800 bg-slate-900 p-6">
+  <!-- horário, título, categoria e descrição -->
+  <a class="mt-auto pt-6" href="#atividade">Consultar detalhes</a>
+</article>
+```
+
+- `flex-col` muda o eixo principal para vertical;
+- `h-full` permite acompanhar a altura da célula;
+- `mt-auto` absorve o espaço antes da ação;
+- `pt-6` preserva um intervalo mínimo.
+
+## 7. Rodada 4 — Posicionamento com propósito
+
+Somente uma atividade deve receber o selo “Destaque”. Acrescente o selo ao primeiro cartão:
+
+```html
+<article class="relative ...">
+  <span class="absolute right-4 top-4 rounded-full bg-amber-400 px-3 py-1 text-xs font-bold text-slate-950">
+    Destaque
+  </span>
+  <!-- conteúdo existente -->
+</article>
+```
+
+Teste primeiro sem `relative` e descubra qual elemento funciona como referência. Depois restaure a classe. Confirme que o selo não cobre horário, título ou foco. Se cobrir, ajuste o espaço interno ou a posição; não reduza o texto para esconder o problema.
+
+## 8. Rodada 5 — Estados e acessibilidade já conhecidos
+
+Todos os links precisam comunicar interação por mouse e teclado. Construa uma ação e replique a decisão:
+
+```html
+<a
+  class="inline-flex rounded-md bg-amber-400 px-4 py-3 font-semibold text-slate-950 hover:bg-amber-300 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-400"
+  href="#corpos-em-transito"
+>
+  Consultar detalhes
+</a>
+```
+
+Verifique:
+
+- `hover:` não é o único feedback;
+- `focus-visible:` aparece ao navegar com `Tab`;
+- o contraste permanece legível;
+- a ordem do foco acompanha o HTML;
+- nenhuma `div` foi usada como botão ou link.
+
+## 9. Entrega
+
+Entregue a pasta do projeto com:
+
+- arquivos de configuração e código-fonte;
+- `src/index.html` concluído;
+- README com instruções Docker;
+- uma captura da versão sem classes;
+- uma captura da versão final;
+- respostas breves para os dois erros intencionais;
+- lista de três decisões técnicas justificadas.
+
+O README deve incluir:
 
 ```bash
+docker compose up
+docker compose up --build
 docker compose down
 ```
