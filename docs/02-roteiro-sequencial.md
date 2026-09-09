@@ -20,33 +20,33 @@ O tempo pode variar em avaliações, correções e marcos do projeto, preservand
 
 **Produto do bloco:** diagnóstico integrado dos conhecimentos prévios.
 
-### Bloco 2 — Tailwind CSS (Encontros 2 a 6)
+### Bloco 2 — Tailwind CSS (Encontros 2 a 7)
 
 - abordagem utility-first e fluxo de compilação;
 - utilitários de tipografia, cor, espaçamento e tamanho;
 - layouts com Flexbox e Grid;
-- revisão prática dos fundamentos em um projeto iniciado do zero;
-- Atividade Prática 1 no Encontro 6;
+- revisão prática dos fundamentos em um projeto iniciado do zero, distribuída nos Encontros 5 e 6;
+- Atividade Prática 1 no Encontro 7;
 
 **Produto do bloco:** interface construída e avaliada com utilitários e layouts Tailwind CSS.
 
-### Bloco 3 — JavaScript (Encontros 7 a 14)
+### Bloco 3 — JavaScript (Encontros 8 a 15)
 
 - execução, console, variáveis, tipos e operadores;
 - decisões, repetição, funções e escopo;
 - arrays, objetos e métodos de coleção;
 - DOM, eventos, formulários e estados de interface;
 - módulos, armazenamento, assincronismo e Fetch API;
-- Atividade Prática 2 no Encontro 14.
+- Atividade Prática 2 no Encontro 15.
 
 **Produto do bloco:** interface com comportamento implementado em JavaScript.
 
-### Bloco 4 — TypeScript e estudo de caso (Encontros 15 a 20)
+### Bloco 4 — TypeScript e estudo de caso (Encontros 16 a 20)
 
 - tipos, interfaces, unions, generics e narrowing;
 - TypeScript aplicado a seletores, eventos e estados do DOM;
-- Atividade Prática 3 no Encontro 18;
-- estudo de caso desenvolvido nos Encontros 19 e 20.
+- Atividade Prática 3 no Encontro 19;
+- estudo de caso integrado no Encontro 20.
 
 **Produto do bloco:** interface com comportamento tipado e estudo de caso concluído.
 

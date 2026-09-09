@@ -1,8 +1,6 @@
 # Encontro 7 — JavaScript: execução, variáveis, tipos e operadores
 
 **Unidade:** Unidade 1
-**Carga horária:** 1,5h
-**Entrega prevista:** diagnóstico de inscrições executado no navegador
 
 ## Visão geral
 
