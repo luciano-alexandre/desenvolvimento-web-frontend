@@ -37,24 +37,24 @@ Após o encontro:
 6. [Oficina prática de revisão do Tailwind CSS — continuação](encontro-6.md)
 7. [Atividade Prática 1 — interface com Tailwind CSS](encontro-7.md)
 
-### JavaScript — Encontros 8 a 15
+### JavaScript — Encontros 8 a 14
 
 8. [Execução, variáveis, tipos e operadores](encontro-8.md)
 9. [Decisões e estruturas condicionais](encontro-9.md)
 10. [Repetição, funções e escopo](encontro-10.md)
 11. [Arrays, objetos e coleções](encontro-11.md)
-12. [DOM, seletores e conteúdo](encontro-12.md)
-13. [Eventos, formulários e estados](encontro-13.md)
+12. [DOM, eventos, formulários e estados](encontro-12.md)
+13. [Atividade Prática 2 — JavaScript aplicado](encontro-13.md)
 14. [Módulos, armazenamento e assincronismo](encontro-14.md)
-15. [Atividade Prática 2 — JavaScript aplicado](encontro-15.md)
 
-### TypeScript e estudo de caso — Encontros 16 a 20
+### TypeScript e estudo de caso — Encontros 15 a 20
 
-16. [Fundamentos de TypeScript](encontro-16.md)
-17. [Modelagem de dados com TypeScript](encontro-17.md)
-18. [TypeScript aplicado ao DOM](encontro-18.md)
-19. [Atividade Prática 3 — TypeScript aplicado](encontro-19.md)
-20. [Estudo de caso — análise, desenvolvimento e entrega](encontro-20.md)
+15. [Fundamentos de TypeScript](encontro-15.md)
+16. [Modelagem de dados com TypeScript](encontro-16.md)
+17. [TypeScript aplicado ao DOM](encontro-17.md)
+18. [Atividade Prática 3 — TypeScript aplicado](encontro-18.md)
+19. [Estudo de caso — análise e desenvolvimento inicial](encontro-19.md)
+20. [Estudo de caso — conclusão e entrega](encontro-20.md)
 
 ## Unidade 2 — Angular e Projeto Final
 

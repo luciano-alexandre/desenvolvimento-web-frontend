@@ -23,23 +23,23 @@ Pré-requisito recomendado: conclusão de Padrões Web ou domínio equivalente d
 | 9 | 1,5h | JavaScript: decisões, comparações e estruturas condicionais | Regras de negócio implementadas | [Encontro 9](./encontros/encontro-9.md) |
 | 10 | 1,5h | JavaScript: repetição, funções, parâmetros, retorno e escopo | Conjunto de funções reutilizáveis | [Encontro 10](./encontros/encontro-10.md) |
 | 11 | 1,5h | JavaScript: arrays, objetos e métodos de coleção | Dados estruturados e processados | [Encontro 11](./encontros/encontro-11.md) |
-| 12 | 1,5h | JavaScript no navegador: DOM, seletores e atualização de conteúdo | Página atualizada por JavaScript | [Encontro 12](./encontros/encontro-12.md) |
-| 13 | 1,5h | JavaScript no navegador: eventos, formulários e estados de interface | Interface interativa e acessível | [Encontro 13](./encontros/encontro-13.md) |
+| 12 | 1,5h | JavaScript no navegador: DOM, eventos, formulários e estados de interface | Interface interativa e acessível | [Encontro 12](./encontros/encontro-12.md) |
+| 13 | 1,5h | Atividade Prática 2: comportamento de interface com JavaScript | **Prática 2 — 20 pontos** | [Encontro 13](./encontros/encontro-13.md) |
 | 14 | 1,5h | JavaScript moderno: módulos, armazenamento, assincronismo e Fetch API | Aplicação modular consumindo dados | [Encontro 14](./encontros/encontro-14.md) |
-| 15 | 1,5h | Atividade Prática 2: comportamento de interface com JavaScript | **Prática 2 — 20 pontos** | [Encontro 15](./encontros/encontro-15.md) |
-| 16 | 1,5h | TypeScript: configuração, tipos primitivos, inferência e funções | Exercícios TypeScript | [Encontro 16](./encontros/encontro-16.md) |
-| 17 | 1,5h | TypeScript: aliases, interfaces, unions, narrowing e generics | Modelagem tipada | [Encontro 17](./encontros/encontro-17.md) |
-| 18 | 1,5h | TypeScript aplicado ao DOM: seletores, eventos e estados tipados | Interface com comportamento tipado | [Encontro 18](./encontros/encontro-18.md) |
-| 19 | 1,5h | Atividade Prática 3: comportamento de interface com TypeScript | **Prática 3 — 20 pontos** | [Encontro 19](./encontros/encontro-19.md) |
-| 20 | 1,5h | Estudo de caso: análise, desenvolvimento, validação e entrega | **Estudo de caso — 40 pontos** | [Encontro 20](./encontros/encontro-20.md) |
+| 15 | 1,5h | TypeScript: configuração, tipos primitivos, inferência e funções | Exercícios TypeScript | [Encontro 15](./encontros/encontro-15.md) |
+| 16 | 1,5h | TypeScript: aliases, interfaces, unions, narrowing e generics | Modelagem tipada | [Encontro 16](./encontros/encontro-16.md) |
+| 17 | 1,5h | TypeScript aplicado ao DOM: seletores, eventos e estados tipados | Interface com comportamento tipado | [Encontro 17](./encontros/encontro-17.md) |
+| 18 | 1,5h | Atividade Prática 3: comportamento de interface com TypeScript | **Prática 3 — 20 pontos** | [Encontro 18](./encontros/encontro-18.md) |
+| 19 | 1,5h | Estudo de caso: análise, planejamento e desenvolvimento inicial | Planejamento e versão inicial | [Encontro 19](./encontros/encontro-19.md) |
+| 20 | 1,5h | Estudo de caso: conclusão, validação e entrega | **Estudo de caso — 40 pontos** | [Encontro 20](./encontros/encontro-20.md) |
 
 ### Composição da Nota da Unidade 1
 
 | Instrumento | Valor |
 |---|---:|
 | Atividade Prática 1 — fundamentos e layouts com Tailwind CSS (Encontro 7) | 20 pontos |
-| Atividade Prática 2 — JavaScript aplicado a interfaces (Encontro 15) | 20 pontos |
-| Atividade Prática 3 — TypeScript aplicado (Encontro 19) | 20 pontos |
+| Atividade Prática 2 — JavaScript aplicado a interfaces (Encontro 13) | 20 pontos |
+| Atividade Prática 3 — TypeScript aplicado (Encontro 18) | 20 pontos |
 | Estudo de caso | 40 pontos |
 | **Total** | **100 pontos** |
 
