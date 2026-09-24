@@ -23,25 +23,7 @@ Ao final do encontro, espera-se que o estudante consiga:
 - testar caminhos diferentes de uma regra de negócio;
 - usar o Console para comparar resultados esperados e observados.
 
-## 1. Metodologia da correção
-
-Para cada etapa, seguiremos quatro movimentos:
-
-1. reler o requisito;
-2. identificar entradas, processamento e saída;
-3. implementar a menor parte possível;
-4. executar e conferir o resultado antes de continuar.
-
-Antes de substituir seu código, marque nele:
-
-- o que estava correto;
-- o que produzia resultado incorreto;
-- o que estava ausente;
-- o que funcionava, mas poderia ser mais claro.
-
-> Uma solução diferente do exemplo também pode estar correta se cumprir os requisitos e se suas decisões puderem ser explicadas.
-
-## 2. Preparação do projeto
+## 1. Preparação do projeto
 
 Utilize a mesma estrutura solicitada no encontro 12:
 
@@ -68,7 +50,7 @@ Acesse `http://localhost:8080`, abra as ferramentas do desenvolvedor e selecione
 
 Durante a correção, salve o arquivo e recarregue a página após cada etapa.
 
-## 3. Etapa 1 — Representar os dados obrigatórios
+## 2. Etapa 1 — Representar os dados obrigatórios
 
 Cada livro é um objeto. O acervo é um array que reúne esses objetos:
 
@@ -128,7 +110,7 @@ const bibliotecaAberta = true;
 - os dados não devem ser alterados para forçar um resultado;
 - `novasSolicitacoesTexto` é uma string de propósito, pois simula uma entrada textual.
 
-## 4. Etapa 2 — Converter e validar a quantidade
+## 3. Etapa 2 — Converter e validar a quantidade
 
 A conversão deve acontecer antes da validação:
 
@@ -163,9 +145,9 @@ console.log(quantidadeEhValida(Number("")));     // false
 
 A string vazia se transforma em zero. Por isso, verificar apenas se o resultado é um número não seria suficiente.
 
-## 5. Etapa 3 — Criar as funções básicas
+## 4. Etapa 3 — Criar as funções básicas
 
-### 5.1 Calcular os exemplares disponíveis
+### 4.1 Calcular os exemplares disponíveis
 
 A disponibilidade é a diferença entre o total e a quantidade emprestada:
 
@@ -175,7 +157,7 @@ function calcularDisponiveis(livro) {
 }
 ```
 
-### 5.2 Verificar se há exemplares
+### 4.2 Verificar se há exemplares
 
 A função devolve um booleano:
 
@@ -187,7 +169,7 @@ function possuiExemplares(livro) {
 
 Reutilizar `calcularDisponiveis` evita repetir a fórmula.
 
-### 5.3 Verificar se uma reserva é permitida
+### 4.3 Verificar se uma reserva é permitida
 
 ```js
 function podeReservar(livro, quantidade, aberta) {
@@ -203,7 +185,7 @@ function podeReservar(livro, quantidade, aberta) {
 
 A expressão só será verdadeira quando todas as condições forem verdadeiras. A verificação de existência aparece antes de `livro.ativo`; assim, o JavaScript interrompe a expressão caso `livro` seja `undefined`.
 
-### 5.4 Criar um resumo
+### 4.4 Criar um resumo
 
 ```js
 function criarResumo(livro) {
@@ -230,7 +212,7 @@ function criarResumo(livro) {
 
 A ordem importa: o livro de id 3 possui exemplares físicos disponíveis, mas deve ser classificado como inativo.
 
-## 6. Etapa 4 — Localizar o livro com segurança
+## 5. Etapa 4 — Localizar o livro com segurança
 
 Use `find` porque precisamos de um único objeto:
 
@@ -249,7 +231,7 @@ Quando nenhum item atende à condição, `find` retorna `undefined`. Este códig
 
 Primeiro confirme a existência do objeto; somente depois acesse suas propriedades.
 
-## 7. Etapa 5 — Construir o diagnóstico da reserva
+## 6. Etapa 5 — Construir o diagnóstico da reserva
 
 Uma função com retornos antecipados deixa cada regra explícita e garante apenas um resultado:
 
@@ -302,9 +284,9 @@ const diagnostico = diagnosticarReserva(
 );
 ```
 
-## 8. Etapa 6 — Percorrer e transformar o acervo
+## 7. Etapa 6 — Percorrer e transformar o acervo
 
-### 8.1 Exibir todos os livros com `forEach`
+### 7.1 Exibir todos os livros com `forEach`
 
 ```js
 console.log("=== ACERVO ORIGINAL ===");
@@ -318,7 +300,7 @@ livros.forEach((livro) => {
 
 `forEach` executa uma ação para cada item. Ele não é utilizado para criar um novo array.
 
-### 8.2 Filtrar livros disponíveis
+### 7.2 Filtrar livros disponíveis
 
 O requisito considera livros ativos e com exemplares:
 
@@ -330,7 +312,7 @@ const livrosDisponiveis = livros.filter(
 
 Resultado esperado: livros de ids **1, 4 e 5**.
 
-### 8.3 Criar resumos
+### 7.3 Criar resumos
 
 ```js
 const resumos = livros.map(criarResumo);
@@ -338,7 +320,7 @@ const resumos = livros.map(criarResumo);
 
 `map` devolve um novo array com a mesma quantidade de itens, mas com outra representação.
 
-### 8.4 Tratar buscas existentes e inexistentes
+### 7.4 Tratar buscas existentes e inexistentes
 
 ```js
 const livroId99 = livros.find((livro) => livro.id === 99);
@@ -350,7 +332,7 @@ if (livroId99 === undefined) {
 }
 ```
 
-### 8.5 Verificar condições com `some` e `every`
+### 7.5 Verificar condições com `some` e `every`
 
 ```js
 const existeLivroEsgotado = livros.some(
@@ -367,7 +349,7 @@ const todosPossuemTitulo = livros.every(
 
 Para os dados fornecidos, ambos os resultados são `true`.
 
-## 9. Etapa 7 — Calcular os indicadores com `reduce`
+## 8. Etapa 7 — Calcular os indicadores com `reduce`
 
 O acumulador começa com todas as propriedades zeradas:
 
@@ -397,7 +379,7 @@ Resultados esperados:
 
 O valor inicial é obrigatório. Sem ele, o primeiro livro seria usado como acumulador e poderia ser modificado acidentalmente.
 
-## 10. Etapa 8 — Atualizar sem mutar o acervo
+## 9. Etapa 8 — Atualizar sem mutar o acervo
 
 Comece mantendo o acervo original. Só crie a versão atualizada quando a reserva for permitida:
 
@@ -437,7 +419,7 @@ console.log(acervoAtualizado[0].emprestados); // 7
 console.log(livros === acervoAtualizado);     // false no cenário válido
 ```
 
-## 11. Etapa 9 — Organizar as saídas obrigatórias
+## 10. Etapa 9 — Organizar as saídas obrigatórias
 
 Depois de calcular todos os valores, apresente os resultados com rótulos claros:
 
@@ -469,7 +451,7 @@ console.table(acervoAtualizado);
 
 Separar cálculo e apresentação torna o programa mais fácil de ler, testar e adaptar.
 
-## 12. Solução completa do `app.js`
+## 11. Solução completa do `app.js`
 
 Compare esta solução com a sua apenas depois de corrigir cada etapa:
 
@@ -641,7 +623,7 @@ console.log("=== ACERVO ATUALIZADO ===");
 console.table(acervoAtualizado);
 ```
 
-## 13. Testar todos os caminhos
+## 12. Testar todos os caminhos
 
 Altere temporariamente apenas as três entradas da reserva, execute cada cenário e registre o resultado no README:
 
@@ -664,126 +646,3 @@ Depois de cada teste, responda:
 - algum erro aparece no Console?
 
 Ao terminar, restaure os valores originais do enunciado.
-
-## 14. Erros frequentes e como corrigi-los
-
-### Usar a string sem conversão
-
-```js
-// Problema: a entrada continua textual.
-const quantidade = novasSolicitacoesTexto;
-
-// Correção:
-const quantidade = Number(novasSolicitacoesTexto);
-```
-
-### Aceitar qualquer número
-
-```js
-// Problema: aceita negativos e decimais.
-return !Number.isNaN(quantidade);
-
-// Correção:
-return Number.isFinite(quantidade)
-  && Number.isInteger(quantidade)
-  && quantidade > 0;
-```
-
-### Acessar um resultado inexistente
-
-```js
-// Problema:
-const titulo = livros.find((livro) => livro.id === 99).titulo;
-
-// Correção:
-const encontrado = livros.find((livro) => livro.id === 99);
-const titulo = encontrado?.titulo ?? "Livro não encontrado";
-```
-
-### Usar o método de coleção inadequado
-
-- use `find` para obter um item;
-- use `filter` para obter vários itens selecionados;
-- use `map` para transformar todos os itens;
-- use `some` e `every` para obter booleanos;
-- use `reduce` para acumular valores.
-
-### Modificar diretamente o objeto original
-
-```js
-// Problema:
-livroSelecionado.emprestados += novasSolicitacoes;
-
-// Correção:
-const livroAtualizado = {
-  ...livroSelecionado,
-  emprestados: livroSelecionado.emprestados + novasSolicitacoes,
-};
-```
-
-## 15. Revisão orientada pela rubrica
-
-Use a distribuição de 20 pontos do encontro 12 para revisar a entrega. Para cada critério:
-
-1. localize no código a evidência do requisito;
-2. execute um teste que demonstre seu funcionamento;
-3. explique a decisão com suas palavras;
-4. anote o ajuste necessário, caso exista.
-
-Não atribua pontos apenas porque determinada palavra aparece no código. O requisito deve funcionar nos cenários previstos.
-
-## 16. Desafio de refatoração
-
-Após concluir a correção obrigatória, escolha uma melhoria:
-
-- criar uma função para gerar o objeto atualizado;
-- evitar mutação também dentro do acumulador do `reduce`;
-- centralizar os cenários de teste em um array;
-- exibir uma tabela comparando valores originais e atualizados.
-
-Exemplo de `reduce` com novo acumulador a cada volta:
-
-```js
-const indicadoresSemMutacao = livros.reduce(
-  (acumulador, livro) => ({
-    total: acumulador.total + livro.total,
-    emprestados: acumulador.emprestados + livro.emprestados,
-    disponiveis:
-      acumulador.disponiveis + calcularDisponiveis(livro),
-  }),
-  { total: 0, emprestados: 0, disponiveis: 0 },
-);
-```
-
-A melhoria não substitui os requisitos obrigatórios; ela serve para comparar estratégias.
-
-## Checklist final
-
-- [ ] Mantive os dados obrigatórios do enunciado.
-- [ ] Converti a entrada textual com `Number`.
-- [ ] Rejeitei valores não finitos, decimais, zero e negativos.
-- [ ] Implementei as quatro funções solicitadas.
-- [ ] Tratei o resultado de `find` antes de acessar propriedades.
-- [ ] Implementei os sete caminhos do diagnóstico.
-- [ ] Usei corretamente os métodos de coleção pedidos.
-- [ ] Informei valor inicial no `reduce`.
-- [ ] Atualizei o acervo com `map` e spread.
-- [ ] Preservei o array e o objeto originais.
-- [ ] Organizei todas as saídas obrigatórias.
-- [ ] Executei e registrei os oito cenários de teste.
-- [ ] Consigo explicar cada parte da solução.
-
-## Questões de fixação
-
-1. Por que `Number.isInteger` é necessário mesmo depois de usar `Number`?
-2. Por que a existência do livro deve ser verificada antes de `livro.ativo`?
-3. Qual é a diferença entre os resultados de `find` e `filter`?
-4. Por que `map` é adequado para criar o acervo atualizado?
-5. O que o spread preserva no novo objeto?
-6. Por que o `reduce` precisa de um valor inicial explícito?
-7. Em qual cenário a reserva é válida, mas exige uma mensagem especial?
-8. Como provar pelo Console que o objeto original não foi modificado?
-
-## Encerramento
-
-A correção está concluída quando o código atende ao enunciado, produz os resultados previstos e pode ser explicado pelo estudante. No encontro 14, os conhecimentos de JavaScript serão levados à página com DOM, eventos e formulários e serão integrados a módulos, armazenamento, assincronismo e Fetch API.
