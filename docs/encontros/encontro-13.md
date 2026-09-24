@@ -8,9 +8,7 @@
 
 ## Visão geral
 
-Neste encontro, a turma corrigirá passo a passo a atividade sobre o acervo de uma biblioteca comunitária. A intenção não é apenas apresentar um código pronto: cada decisão será relacionada ao enunciado, aos conteúdos dos encontros 8 a 11 e aos critérios de avaliação.
-
-A correção preserva o escopo da atividade. DOM, eventos, formulários, armazenamento e requisições assíncronas ainda não serão utilizados; esses assuntos serão estudados no encontro 14.
+Neste encontro, corrigirá passo a passo a atividade sobre o acervo de uma biblioteca comunitária. A intenção não é apenas apresentar um código pronto: cada decisão será relacionada ao enunciado, aos conteúdos dos encontros 8 a 11 e aos critérios de avaliação.
 
 ## Objetivos
 
