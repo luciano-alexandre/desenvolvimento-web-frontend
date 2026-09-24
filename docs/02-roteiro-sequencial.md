@@ -35,10 +35,9 @@ O tempo pode variar em avaliações, correções e marcos do projeto, preservand
 - execução, console, variáveis, tipos e operadores;
 - decisões, repetição, funções e escopo;
 - arrays, objetos e métodos de coleção;
-- DOM, eventos, formulários e estados de interface;
-- módulos, armazenamento, assincronismo e Fetch API;
-- Atividade Prática 2 no Encontro 13;
-- módulos, armazenamento e assincronismo retomados no Encontro 14.
+- DOM, eventos, formulários e estados de interface no Encontro 13;
+- Atividade Prática 2 no Encontro 12;
+- módulos, armazenamento, assincronismo e Fetch API no Encontro 14.
 
 **Produto do bloco:** interface com comportamento implementado em JavaScript.
 

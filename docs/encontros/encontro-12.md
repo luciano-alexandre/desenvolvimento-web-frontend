@@ -1,195 +1,210 @@
-# Encontro 12 — Refatoração e auditoria de interfaces
+# Encontro 12 — Atividade Prática 2: fundamentos de JavaScript
 
-**Entrega prevista:** interface Tailwind revisada e documentada
+**Unidade:** Unidade 1
+**Carga horária:** 1,5h
+**Modalidade:** individual, com consulta
+**Valor:** 20 pontos
+**Entrega prevista:** programa de análise de acervo executado no navegador
 
 ## Visão geral
 
-Refatorar significa melhorar a estrutura interna sem alterar intencionalmente o comportamento esperado. Auditar significa verificar a solução por critérios explícitos e produzir evidências. Depois das duas primeiras atividades práticas, este encontro consolida Tailwind CSS antes da transição para JavaScript e TypeScript.
+Esta atividade avalia os conteúdos dos encontros 8 a 11: execução no navegador, variáveis, tipos, conversões, operadores, condicionais, funções, escopo, repetição, arrays, objetos e métodos de coleção.
 
-Uma interface visualmente concluída ainda pode conter repetição, classes conflitantes, problemas de foco, excesso de dependências, responsividade frágil ou conteúdo que não suporta variações. A revisão técnica transforma percepções vagas em problemas reproduzíveis e correções justificadas.
+A consulta serve para recuperar sintaxe, não para compartilhar soluções. DOM, eventos, formulários, armazenamento e requisições assíncronas não fazem parte desta avaliação, pois serão estudados a partir do encontro 13.
 
-## Objetivos de aprendizagem
+## Objetivos avaliados
 
-- identificar repetição e complexidade desnecessária;
-- revisar semântica, responsividade e acessibilidade;
-- verificar estados de interação e preferências do usuário;
-- analisar o CSS gerado e o build de produção;
-- documentar problemas, correções e evidências;
-- organizar mudanças em commits coerentes.
+- estruturar dados com arrays e objetos;
+- converter e validar entradas;
+- implementar condicionais e testar limites;
+- criar funções com parâmetros e retorno;
+- empregar repetição com controle correto;
+- selecionar métodos de coleção conforme o resultado;
+- evitar mutações acidentais;
+- separar entrada, processamento e saída;
+- diagnosticar erros com Console e DevTools;
 
-## 1. Refatoração orientada por problema
+## 1. Regras da avaliação
 
-Uma refatoração deve partir de um problema observável. Alterar todo o código apenas por preferência pessoal aumenta risco e dificulta revisão.
+### Consulta permitida
 
-| Sintoma | Causa possível | Refatoração possível |
-|---|---|---|
-| classes repetidas em muitos elementos | padrão visual recorrente | criar componente ou abstração adequada |
-| variações inconsistentes | ausência de tokens | consolidar cores, espaçamentos e tipografia no tema |
-| sobrescritas frequentes | responsabilidades misturadas | reorganizar estrutura e variantes |
-| layout quebra com texto longo | dimensões rígidas | usar limites fluidos e permitir quebra |
-| foco invisível | estado não definido ou removido | aplicar variante `focus-visible` adequada |
+- materiais dos encontros 8 a 11;
+- anotações e códigos próprios;
+- documentação oficial da MDN;
+- professor, para esclarecer o enunciado.
 
-Nem toda repetição precisa ser abstraída. Um componente deve representar uma unidade reconhecível, com responsabilidade e variações claras.
+### Trabalho individual
 
-## 2. Legibilidade de classes utilitárias
+- cada estudante deve escrever e entregar seu código;
+- não é permitido compartilhar arquivos, trechos ou respostas;
+- não é permitido editar o projeto de outra pessoa;
+- ferramentas de geração automática de código não podem ser utilizadas;
+- as decisões adotadas devem ser explicáveis.
 
-Agrupe mentalmente as classes por responsabilidade:
+## 2. Situação-problema
 
-```html
-<article
-  class="
-    grid gap-4
-    rounded-xl border border-slate-200 bg-white p-5 shadow-sm
-    text-slate-900
-    hover:border-blue-400
-    focus-within:ring-2 focus-within:ring-blue-600
-    dark:border-slate-700 dark:bg-slate-900 dark:text-white
-  "
->
-  <!-- conteúdo -->
-</article>
-```
+Uma biblioteca comunitária precisa analisar seu acervo antes de abrir novas reservas. O programa deverá processar livros, identificar disponibilidade, localizar itens, produzir resumos, calcular indicadores e simular uma reserva.
 
-A quebra de linhas pode ajudar durante o estudo, desde que o formatador e o projeto adotem uma convenção consistente. Classes contraditórias, duplicadas ou que não produzem efeito devem ser removidas.
+## 3. Dados obrigatórios
 
-## 3. Auditoria por dimensões
+Crie o array `livros`:
 
-### Estrutura e conteúdo
+| id | título | categoria | total | emprestados | ativo |
+|---:|---|---|---:|---:|---|
+| 1 | JavaScript para iniciantes | Tecnologia | 8 | 5 | true |
+| 2 | Histórias do sertão | Literatura | 5 | 5 | true |
+| 3 | Design para todos | Design | 6 | 2 | false |
+| 4 | Ciência no cotidiano | Ciências | 10 | 4 | true |
+| 5 | Memórias da cidade | História | 4 | 1 | true |
 
-- landmarks e títulos representam a organização;
-- links e botões correspondem à função;
-- textos continuam compreensíveis fora do contexto visual;
-- imagens possuem alternativa e dimensões.
+Cada objeto deve possuir `id`, `titulo`, `categoria`, `total`, `emprestados` e `ativo`.
 
-### Responsividade
-
-- não existe rolagem horizontal indevida;
-- texto ampliado não se sobrepõe;
-- cartões aceitam conteúdo mais longo;
-- breakpoints respondem ao conteúdo;
-- tabelas possuem estratégia para telas estreitas.
-
-### Acessibilidade
-
-- todos os controles funcionam por teclado;
-- o foco é visível;
-- estados não dependem somente de cor;
-- rótulos, instruções e erros estão associados;
-- movimentos respeitam `prefers-reduced-motion`.
-
-### Qualidade técnica
-
-- build conclui sem erros;
-- console não apresenta erros não justificados;
-- apenas classes detectáveis pelo Tailwind são utilizadas;
-- dependências e arquivos gerados estão organizados;
-- README explica instalação, execução e verificação.
-
-## 4. Classes construídas dinamicamente
-
-O Tailwind detecta classes nos arquivos-fonte. Construções parciais podem não ser reconhecidas:
+Use também:
 
 ```js
-// Evite construir fragmentos que não aparecem completos no código-fonte
-const classe = `bg-${cor}-600`;
+const livroSelecionadoId = 1;
+const novasSolicitacoesTexto = "2";
+const bibliotecaAberta = true;
 ```
 
-Prefira mapear valores para classes completas:
+Não altere os dados para facilitar os resultados.
 
-```js
-const variantes = {
-  sucesso: "bg-emerald-600 text-white",
-  alerta: "bg-amber-400 text-slate-950",
-  erro: "bg-red-700 text-white",
-};
-```
+## 4. Preparação
 
-O mesmo princípio será importante em templates Angular: classes completas tornam a geração previsível.
-
-## 5. Matriz de validação
-
-| Cenário | Resultado esperado | Evidência | Situação |
-|---|---|---|---|
-| viewport estreito | conteúdo sem corte |  |  |
-| viewport amplo | hierarquia equilibrada |  |  |
-| teclado | todos os controles operáveis |  |  |
-| foco | indicador sempre perceptível |  |  |
-| tema escuro | contraste e estados preservados |  |  |
-| movimento reduzido | animações não essenciais reduzidas |  |  |
-| conteúdo extenso | layout permanece íntegro |  |  |
-| build | saída sem erro |  |  |
-
-## 6. Relatório de problema e correção
-
-Cada item do relatório deve conter:
+Estrutura:
 
 ```text
-Problema:
-Condição de reprodução:
-Impacto:
-Causa identificada:
-Correção aplicada:
-Evidência após a correção:
-Commit:
+atividade-pratica-02/
+├── compose.yaml
+├── index.html
+├── README.md
+└── js/
+    └── app.js
 ```
 
-Esse registro diferencia uma correção baseada em evidência de uma alteração meramente estética.
+`compose.yaml`:
 
-## 7. Atividade de aplicação
+```yaml
+services:
+  web:
+    image: nginx:alpine
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/usr/share/nginx/html:ro
+```
 
-Audite a interface produzida na Atividade Prática 2. Selecione problemas de pelo menos três dimensões distintas e gere uma versão revisada.
+O HTML deve carregar:
 
-### Critérios de conclusão
+```html
+<script type="module" src="./js/app.js"></script>
+```
 
-- matriz de validação preenchida;
-- correções justificadas por evidências;
-- responsividade verificada de forma contínua;
-- navegação por teclado e foco revisados;
-- build concluído sem erros;
-- README atualizado;
-- commits separados por finalidade.
+Execute `docker compose up`, abra `http://localhost:8080` e confirme uma mensagem no Console.
 
-## 8. Erros frequentes
+## 5. Etapa A — Conversão e validação
 
-- reescrever toda a interface sem definir o problema;
-- abstrair um padrão que ocorre apenas uma vez;
-- avaliar apenas presets de dispositivos;
-- esconder overflow em vez de corrigir a origem;
-- ignorar estados de foco, erro e conteúdo vazio;
-- confiar exclusivamente em auditorias automáticas;
-- alterar aparência e comportamento no mesmo commit sem justificativa.
+Converta `novasSolicitacoesTexto` com `Number` e implemente:
 
-## Checklist de compreensão
+```js
+function quantidadeEhValida(quantidade) {
+  // retorne um booleano
+}
+```
 
-- [ ] Distingo refatoração de alteração de requisito.
-- [ ] Localizo repetição e inconsistência no uso de utilitários.
-- [ ] Verifico semântica, responsividade e acessibilidade.
-- [ ] Evito classes Tailwind construídas por fragmentos dinâmicos.
-- [ ] Registro problemas e correções com evidências.
-- [ ] Organizo o histórico em commits coerentes.
+A quantidade será válida somente se for finita, inteira e maior que zero. Teste:
 
-## Questões de fixação
+| Entrada | Resultado |
+|---|---|
+| `"2"` | válida |
+| `"0"`, `"-1"` | inválida |
+| `"2.5"` | inválida |
+| `"duas"`, `""` | inválida |
 
-1. O que caracteriza uma refatoração?
-<!-- Gabarito: melhoria da estrutura interna sem alteração intencional do comportamento esperado. -->
+A string vazia exige atenção: `Number("")` produz zero.
 
-2. Por que nem toda repetição deve virar componente?
-<!-- Gabarito: abstrações prematuras aumentam complexidade; o padrão precisa ter responsabilidade, recorrência e variações compreensíveis. -->
+## 6. Etapa B — Funções
 
-3. Por que classes Tailwind montadas por fragmentos podem falhar?
-<!-- Gabarito: o mecanismo de detecção pode não encontrar no código-fonte a classe completa que precisa gerar. -->
+Implemente:
 
-4. O que torna uma auditoria reproduzível?
-<!-- Gabarito: critérios explícitos, condição de reprodução, evidências, resultado esperado e registro da correção. -->
+```js
+function calcularDisponiveis(livro) {}
+function possuiExemplares(livro) {}
+function podeReservar(livro, quantidade, bibliotecaAberta) {}
+function criarResumo(livro) {}
+```
 
-5. Por que ferramentas automáticas não bastam para avaliar acessibilidade?
-<!-- Gabarito: elas detectam apenas parte dos problemas e não substituem avaliação de conteúdo, fluxo, teclado e experiência humana. -->
+`criarResumo` deve retornar novo objeto com `id`, `titulo`, `categoria`, `disponiveis` e `situacao`. A situação será `"disponível"`, `"esgotado"` ou `"inativo"`.
 
-## Referências
+As funções devem receber dependências por parâmetros e devolver resultados com `return`.
 
-- [Tailwind CSS — Detecting classes in source files](https://tailwindcss.com/docs/detecting-classes-in-source-files)
-- [Tailwind CSS — Reusing styles](https://tailwindcss.com/docs/styling-with-utility-classes#reusing-styles)
-- [Chrome Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
-- [W3C — Evaluating Web Accessibility](https://www.w3.org/WAI/test-evaluate/)
+## 7. Etapa C — Diagnóstico da reserva
 
-[Voltar ao cronograma](../01-cronograma-60h.md)
+Localize o livro indicado por `livroSelecionadoId` e produza exatamente um caminho:
+
+1. biblioteca fechada;
+2. quantidade inválida;
+3. livro não encontrado;
+4. livro inativo;
+5. quantidade acima da disponibilidade;
+6. reserva que utiliza o último exemplar;
+7. reserva confirmada com exemplares restantes.
+
+Use uma cadeia coerente de `if`, `else if` e `else` ou guard clauses. Não acesse propriedades antes de confirmar que o livro existe.
+
+## 8. Etapa D — Processamento da coleção
+
+A partir de `livros`:
+
+1. use `for...of` ou `forEach` para exibir título e disponibilidade;
+2. crie `livrosDisponiveis` com `filter`;
+3. crie `resumos` com `map` e `criarResumo`;
+4. localize o id selecionado com `find`;
+5. busque o id 99 e trate `undefined`;
+6. verifique com `some` se existe livro esgotado;
+7. verifique com `every` se todos possuem título;
+8. use `reduce` para somar total, emprestados e disponíveis.
+
+Cada `reduce` deve possuir valor inicial explícito.
+
+## 9. Etapa E — Atualização sem mutação
+
+Quando a reserva for válida:
+
+- crie novo objeto para o livro selecionado usando spread;
+- atualize `emprestados` no novo objeto;
+- crie `acervoAtualizado` com `map`;
+- preserve o array e o objeto originais;
+- mostre original e atualizado no Console.
+
+## 10. Saídas obrigatórias
+
+Identifique claramente:
+
+```text
+=== ACERVO ORIGINAL ===
+=== LIVROS DISPONÍVEIS ===
+=== RESUMOS ===
+=== INDICADORES ===
+=== DIAGNÓSTICO DA RESERVA ===
+=== ACERVO ATUALIZADO ===
+```
+
+Use `console.table` para coleções e mensagens adequadas para os diagnósticos.
+
+## 11. Cenários de teste
+
+Registre no README:
+
+| Cenário | Configuração |
+|---|---|
+| sucesso | id 1 e `"2"` |
+| último exemplar | quantidade igual à disponibilidade |
+| excedente | quantidade maior que a disponibilidade |
+| esgotado | id 2 |
+| inativo | id 3 |
+| inexistente | id 99 |
+| inválido | `"duas"` |
+| fechada | `bibliotecaAberta = false` |
+
+Informe resultado esperado e observado.

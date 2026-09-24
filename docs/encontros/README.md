@@ -43,8 +43,8 @@ Após o encontro:
 9. [Decisões e estruturas condicionais](encontro-9.md)
 10. [Repetição, funções e escopo](encontro-10.md)
 11. [Arrays, objetos e coleções](encontro-11.md)
-12. [DOM, eventos, formulários e estados](encontro-12.md)
-13. [Atividade Prática 2 — JavaScript aplicado](encontro-13.md)
+12. [Atividade Prática 2 — fundamentos de JavaScript](encontro-12.md)
+13. [DOM, eventos, formulários e estados](encontro-13.md)
 14. [Módulos, armazenamento e assincronismo](encontro-14.md)
 
 ### TypeScript e estudo de caso — Encontros 15 a 20

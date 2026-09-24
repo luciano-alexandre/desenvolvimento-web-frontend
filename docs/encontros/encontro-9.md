@@ -8,8 +8,6 @@
 
 No Encontro 8, expressões de comparação produziram valores booleanos, mas o programa sempre executou todas as instruções. Agora esses resultados serão usados para escolher caminhos diferentes. O diagnóstico de inscrições passará a informar se uma solicitação pode ser confirmada, se deve entrar em espera ou se contém dados inválidos.
 
-O foco permanece na linguagem e no console. DOM e eventos serão estudados depois. Cada condição será construída a partir de uma regra escrita primeiro em linguagem natural, testada nos limites e simplificada somente quando seu comportamento estiver comprovado.
-
 ## Objetivos de aprendizagem
 
 - relacionar uma regra de negócio a uma expressão booleana;

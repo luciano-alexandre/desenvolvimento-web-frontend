@@ -44,7 +44,7 @@ Consolidar os fundamentos de Padrões Web, desenvolver interfaces com Tailwind C
 
 - **Tema:** execução, tipos, operadores, decisões, funções, coleções, DOM, eventos, módulos e assincronismo.
 - **Prática:** programas incrementais e comportamento de interface com JavaScript.
-- **Produto:** Prática 2 com JavaScript aplicada no Encontro 13 e conteúdo de módulos e assincronismo consolidado no Encontro 14.
+- **Produto:** Prática 2 com JavaScript aplicada no Encontro 12, DOM e eventos no Encontro 13 e conteúdo de módulos e assincronismo consolidado no Encontro 14.
 
 ### Encontros 15 a 20 — TypeScript e estudo de caso
 
@@ -75,7 +75,7 @@ Consolidar os fundamentos de Padrões Web, desenvolver interfaces com Tailwind C
 
 - diagnóstico inicial sem caráter classificatório;
 - Atividade Prática 1 — fundamentos e layouts com Tailwind CSS (Encontro 7): 20 pontos;
-- Atividade Prática 2 — JavaScript aplicado (Encontro 13): 20 pontos;
+- Atividade Prática 2 — fundamentos de JavaScript (Encontro 12): 20 pontos;
 - Atividade Prática 3 — TypeScript aplicado (Encontro 18): 20 pontos;
 - estudo de caso: 40 pontos;
 - total da unidade: 100 pontos.
