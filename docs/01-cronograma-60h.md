@@ -24,8 +24,8 @@ Pré-requisito recomendado: conclusão de Padrões Web ou domínio equivalente d
 | 10 | 1,5h | JavaScript: repetição, funções, parâmetros, retorno e escopo | Conjunto de funções reutilizáveis | [Encontro 10](./encontros/encontro-10.md) |
 | 11 | 1,5h | JavaScript: arrays, objetos e métodos de coleção | Dados estruturados e processados | [Encontro 11](./encontros/encontro-11.md) |
 | 12 | 1,5h | Atividade Prática 2: fundamentos e processamento de dados com JavaScript | **Prática individual com consulta — 20 pontos** | [Encontro 12](./encontros/encontro-12.md) |
-| 13 | 1,5h | JavaScript no navegador: DOM, eventos, formulários e estados de interface | Interface interativa e acessível | [Encontro 13](./encontros/encontro-13.md) |
-| 14 | 1,5h | JavaScript moderno: módulos, armazenamento, assincronismo e Fetch API | Aplicação modular consumindo dados | [Encontro 14](./encontros/encontro-14.md) |
+| 13 | 1,5h | Correção comentada da Atividade Prática 2 | Solução revisada e dúvidas discutidas | [Encontro 13](./encontros/encontro-13.md) |
+| 14 | 1,5h | JavaScript no navegador e moderno: DOM, eventos, formulários, estados, módulos, armazenamento, assincronismo e Fetch API | Aplicação interativa e modular consumindo dados | [Encontro 14](./encontros/encontro-14.md) |
 | 15 | 1,5h | TypeScript: configuração, tipos primitivos, inferência e funções | Exercícios TypeScript | [Encontro 15](./encontros/encontro-15.md) |
 | 16 | 1,5h | TypeScript: aliases, interfaces, unions, narrowing e generics | Modelagem tipada | [Encontro 16](./encontros/encontro-16.md) |
 | 17 | 1,5h | TypeScript aplicado ao DOM: seletores, eventos e estados tipados | Interface com comportamento tipado | [Encontro 17](./encontros/encontro-17.md) |

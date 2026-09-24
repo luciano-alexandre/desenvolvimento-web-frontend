@@ -44,7 +44,7 @@ Consolidar os fundamentos de Padrões Web, desenvolver interfaces com Tailwind C
 
 - **Tema:** execução, tipos, operadores, decisões, funções, coleções, DOM, eventos, módulos e assincronismo.
 - **Prática:** programas incrementais e comportamento de interface com JavaScript.
-- **Produto:** Prática 2 com JavaScript aplicada no Encontro 12, DOM e eventos no Encontro 13 e conteúdo de módulos e assincronismo consolidado no Encontro 14.
+- **Produto:** Prática 2 com JavaScript aplicada no Encontro 12, correção comentada no Encontro 13 e aplicação integrada com DOM, eventos, módulos e assincronismo no Encontro 14.
 
 ### Encontros 15 a 20 — TypeScript e estudo de caso
 
