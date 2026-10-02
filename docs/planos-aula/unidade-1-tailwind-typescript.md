@@ -46,11 +46,11 @@ Consolidar os fundamentos de Padrões Web, desenvolver interfaces com Tailwind C
 - **Prática:** programas incrementais e comportamento de interface com JavaScript.
 - **Produto:** Prática 2 com JavaScript aplicada no Encontro 12, correção comentada no Encontro 13 e aplicação integrada com DOM, eventos, módulos e assincronismo no Encontro 14.
 
-### Encontros 15 a 20 — TypeScript e estudo de caso
+### Encontros 15 a 20 — Projeto em dupla, TypeScript e estudo de caso
 
-- **Tema:** tipagem, modelagem, DOM tipado e aplicação integrada.
-- **Prática:** concluir a Prática 3 no Encontro 18 e desenvolver o estudo de caso nos Encontros 19 e 20.
-- **Produto:** Prática 3 e estudo de caso concluído.
+- **Tema:** projeto em dupla com Tailwind e JavaScript, tipagem, modelagem, DOM tipado e aplicação integrada.
+- **Prática:** iniciar o projeto em dupla no Encontro 15, concluir a Prática 3 no Encontro 18 e desenvolver o estudo de caso nos Encontros 19 e 20.
+- **Produto:** versão inicial do projeto em dupla, Prática 3 e estudo de caso concluído.
 
 ## Estratégias de Ensino
 

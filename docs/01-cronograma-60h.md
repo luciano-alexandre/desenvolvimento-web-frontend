@@ -26,7 +26,7 @@ Pré-requisito recomendado: conclusão de Padrões Web ou domínio equivalente d
 | 12 | 1,5h | Atividade Prática 2: fundamentos e processamento de dados com JavaScript | **Prática individual com consulta — 20 pontos** | [Encontro 12](./encontros/encontro-12.md) |
 | 13 | 1,5h | Correção comentada da Atividade Prática 2 | Solução revisada e dúvidas discutidas | [Encontro 13](./encontros/encontro-13.md) |
 | 14 | 1,5h | JavaScript no navegador e moderno: DOM, eventos, formulários, estados, módulos, armazenamento, assincronismo e Fetch API | Aplicação interativa e modular consumindo dados | [Encontro 14](./encontros/encontro-14.md) |
-| 15 | 1,5h | TypeScript: configuração, tipos primitivos, inferência e funções | Exercícios TypeScript | [Encontro 15](./encontros/encontro-15.md) |
+| 15 | 1,5h | Orientação do projeto em dupla: HTML semântico, Tailwind CSS e fundamentos de JavaScript | Tema definido e versão inicial da interface | [Encontro 15](./encontros/encontro-15.md) |
 | 16 | 1,5h | TypeScript: aliases, interfaces, unions, narrowing e generics | Modelagem tipada | [Encontro 16](./encontros/encontro-16.md) |
 | 17 | 1,5h | TypeScript aplicado ao DOM: seletores, eventos e estados tipados | Interface com comportamento tipado | [Encontro 17](./encontros/encontro-17.md) |
 | 18 | 1,5h | Atividade Prática 3: comportamento de interface com TypeScript | **Prática 3 — 20 pontos** | [Encontro 18](./encontros/encontro-18.md) |

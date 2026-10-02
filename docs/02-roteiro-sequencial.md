@@ -41,14 +41,15 @@ O tempo pode variar em avaliações, correções e marcos do projeto, preservand
 
 **Produto do bloco:** interface com comportamento implementado em JavaScript.
 
-### Bloco 4 — TypeScript e estudo de caso (Encontros 15 a 20)
+### Bloco 4 — Projeto em dupla, TypeScript e estudo de caso (Encontros 15 a 20)
 
+- orientação e início do projeto em dupla com HTML, Tailwind CSS e JavaScript no Encontro 15;
 - tipos, interfaces, unions, generics e narrowing;
 - TypeScript aplicado a seletores, eventos e estados do DOM;
 - Atividade Prática 3 no Encontro 18;
 - estudo de caso desenvolvido nos Encontros 19 e 20.
 
-**Produto do bloco:** interface com comportamento tipado e estudo de caso concluído.
+**Produto do bloco:** versão inicial do projeto em dupla, interface com comportamento tipado e estudo de caso concluído.
 
 ### Bloco 5 — Fundamentos do Angular (Encontros 21 a 27)
 

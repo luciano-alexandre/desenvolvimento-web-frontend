@@ -47,9 +47,9 @@ Após o encontro:
 13. [Correção da Atividade Prática 2](encontro-13.md)
 14. [DOM, eventos, módulos, armazenamento e assincronismo](encontro-14.md)
 
-### TypeScript e estudo de caso — Encontros 15 a 20
+### Projeto em dupla, TypeScript e estudo de caso — Encontros 15 a 20
 
-15. [Fundamentos de TypeScript](encontro-15.md)
+15. [Orientação do Projeto em Dupla](encontro-15.md)
 16. [Modelagem de dados com TypeScript](encontro-16.md)
 17. [TypeScript aplicado ao DOM](encontro-17.md)
 18. [Atividade Prática 3 — TypeScript aplicado](encontro-18.md)
