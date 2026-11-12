@@ -27,11 +27,11 @@ Pré-requisito recomendado: conclusão de Padrões Web ou domínio equivalente d
 | 13 | 1,5h | Correção comentada da Atividade Prática 2 | Solução revisada e dúvidas discutidas | [Encontro 13](./encontros/encontro-13.md) |
 | 14 | 1,5h | JavaScript no navegador e moderno: DOM, eventos, formulários, estados, módulos, armazenamento, assincronismo e Fetch API | Aplicação interativa e modular consumindo dados | [Encontro 14](./encontros/encontro-14.md) |
 | 15 | 1,5h | Orientação do projeto em dupla: HTML semântico, Tailwind CSS e fundamentos de JavaScript | Tema definido e versão inicial da interface | [Encontro 15](./encontros/encontro-15.md) |
-| 16 | 1,5h | TypeScript: aliases, interfaces, unions, narrowing e generics | Modelagem tipada | [Encontro 16](./encontros/encontro-16.md) |
-| 17 | 1,5h | TypeScript aplicado ao DOM: seletores, eventos e estados tipados | Interface com comportamento tipado | [Encontro 17](./encontros/encontro-17.md) |
-| 18 | 1,5h | Atividade Prática 3: comportamento de interface com TypeScript | **Prática 3 — 20 pontos** | [Encontro 18](./encontros/encontro-18.md) |
-| 19 | 1,5h | Estudo de caso: análise, planejamento e desenvolvimento inicial | Planejamento e versão inicial | [Encontro 19](./encontros/encontro-19.md) |
-| 20 | 1,5h | Estudo de caso: conclusão, validação e entrega | **Estudo de caso — 40 pontos** | [Encontro 20](./encontros/encontro-20.md) |
+| 16 | 1,5h | Apresentação dos Trabalhos | Apresentações das duplas | Sem conteúdo |
+| 17 | 1,5h | Apresentação dos Trabalhos | Apresentações das duplas | Sem conteúdo |
+| 18 | 1,5h | Apresentação dos Trabalhos | Apresentações das duplas | Sem conteúdo |
+| 19 | 1,5h | Apresentação dos Trabalhos | Apresentações das duplas | Sem conteúdo |
+| 20 | 1,5h | Apresentação dos Trabalhos | Apresentações das duplas | Sem conteúdo |
 
 ### Composição da Nota da Unidade 1
 
