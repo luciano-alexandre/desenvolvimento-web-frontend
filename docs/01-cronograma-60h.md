@@ -33,15 +33,6 @@ Pré-requisito recomendado: conclusão de Padrões Web ou domínio equivalente d
 | 19 | 1,5h | Apresentação dos Trabalhos | Apresentações das duplas | Sem conteúdo |
 | 20 | 1,5h | Apresentação dos Trabalhos | Apresentações das duplas | Sem conteúdo |
 
-### Composição da Nota da Unidade 1
-
-| Instrumento | Valor |
-|---|---:|
-| Atividade Prática 1 — fundamentos e layouts com Tailwind CSS (Encontro 7) | 20 pontos |
-| Atividade Prática 2 — fundamentos e processamento de dados com JavaScript (Encontro 12) | 20 pontos |
-| Atividade Prática 3 — TypeScript aplicado (Encontro 18) | 20 pontos |
-| Estudo de caso | 40 pontos |
-| **Total** | **100 pontos** |
 
 ## Unidade 2 — Angular e Projeto Final (Encontros 21 a 40)
 
@@ -71,18 +62,6 @@ Pré-requisito recomendado: conclusão de Padrões Web ou domínio equivalente d
 | 38 | 1,5h | Apresentações do Projeto Final — grupo 2 | **Apresentações — semana 1** | [Encontro 38](./encontros/encontro-38.md) |
 | 39 | 1,5h | Apresentações do Projeto Final — grupo 3 | **Apresentações — semana 2** | [Encontro 39](./encontros/encontro-39.md) |
 | 40 | 1,5h | Apresentações do Projeto Final — grupo 4 e fechamento | **Apresentações — semana 2** | [Encontro 40](./encontros/encontro-40.md) |
-
-### Composição da Nota da Unidade 2
-
-| Eixo do Projeto Final | Valor |
-|---|---:|
-| Planejamento, requisitos e arquitetura | 15 pontos |
-| Implementação Angular e TypeScript | 25 pontos |
-| Interface, Tailwind CSS, responsividade e acessibilidade | 20 pontos |
-| Dados, formulários, testes e qualidade | 15 pontos |
-| Versionamento, documentação e publicação | 10 pontos |
-| Apresentação e domínio técnico | 15 pontos |
-| **Total** | **100 pontos** |
 
 ## Síntese da Avaliação
 
