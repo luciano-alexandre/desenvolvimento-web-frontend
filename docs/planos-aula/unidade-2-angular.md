@@ -1,13 +1,15 @@
-# Plano de Aula — Unidade 2: Angular e Projeto Final
+# Plano de Aula — Unidade 2: TypeScript, Angular e Projeto Final
 
 **Carga horária:** 30h — 20 encontros / 40 aulas.
 
 ## Objetivo da Unidade
 
-Desenvolver aplicações frontend com Angular, integrando componentes, rotas, formulários, APIs, estado, Tailwind CSS e testes em um projeto publicado.
+Aprofundar TypeScript e desenvolver aplicações frontend com Angular, integrando componentes, rotas, formulários, APIs, estado, Tailwind CSS e testes em um projeto publicado.
 
 ## Objetivos Específicos
 
+- compreender compilação, inferência e verificação estática com TypeScript;
+- modelar dados com aliases, interfaces, unions, narrowing e generics;
 - organizar aplicações por componentes e responsabilidades;
 - utilizar templates, bindings e control flow;
 - comunicar componentes por inputs e outputs;
@@ -20,6 +22,8 @@ Desenvolver aplicações frontend com Angular, integrando componentes, rotas, fo
 
 ## Conteúdos
 
+- configuração, compilação, tipos primitivos, arrays e funções em TypeScript;
+- aliases, interfaces, propriedades, unions, narrowing e generics;
 - Angular CLI, workspace e componentes standalone;
 - templates, bindings, diretivas, control flow e pipes;
 - comunicação e composição;
@@ -35,7 +39,13 @@ Desenvolver aplicações frontend com Angular, integrando componentes, rotas, fo
 
 ## Roteiro por Faixa de Encontros
 
-### Encontros 21 a 24 — Componentes e templates
+### Encontros 21 e 22 — Fundamentos de TypeScript
+
+- **Tema:** compilação, inferência, tipos primitivos, funções, aliases, interfaces, unions, narrowing e generics.
+- **Prática:** programas incrementais com verificação estática e modelagem de dados.
+- **Produto:** base TypeScript configurada, compilada e modelada.
+
+### Encontros 23 e 24 — Componentes e templates
 
 - **Tema:** workspace, componentes, bindings, control flow e comunicação.
 - **Prática:** decompor uma interface em componentes.

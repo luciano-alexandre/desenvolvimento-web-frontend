@@ -1,175 +1,435 @@
-# Encontro 22 — Componentes e bindings
+# Encontro 22 — TypeScript: modelagem de dados e tipos compostos
 
-**Carga horária:** 1,5h  
-**Entrega prevista:** Componentes básicos
+**Unidade:** Unidade 2
+**Carga horária:** 1,5h
+**Entrega prevista:** catálogo modelado com aliases, interfaces, unions e narrowing
 
-## Visão Geral
+## Visão geral
 
-Este encontro desenvolve **componentes e bindings** como continuidade direta dos conhecimentos anteriores. A aula parte de um problema observável, apresenta os recursos necessários e termina com uma entrega que pode ser executada e verificada.
+No encontro 21, tipos primitivos, arrays e funções foram verificados pelo compilador. Agora o desafio é representar entidades com várias propriedades e estados possíveis. Um contrato nomeado torna explícito quais dados pertencem a uma oficina, quais são opcionais e quais não devem ser alterados.
 
-Ao final, o estudante deverá conseguir explicar o propósito de cada recurso, implementar uma solução incremental, testar o comportamento e justificar as decisões adotadas.
+O projeto anterior será ampliado gradualmente. Começaremos com um objeto, extrairemos um alias, compararemos alias e interface, representaremos estados com unions e usaremos narrowing antes de acessar informações específicas.
 
-## Conceitos Essenciais
+## Objetivos de aprendizagem
 
-- Interpolação.
-- Property binding.
-- Event binding.
-- Estado local.
-- Responsabilidades.
+- modelar objetos com `type` e `interface`;
+- distinguir propriedades obrigatórias, opcionais e `readonly`;
+- criar arrays de objetos tipados;
+- representar alternativas com unions;
+- usar tipos literais para limitar valores;
+- refinar tipos com `typeof` e propriedades discriminantes;
+- criar funções que recebem e devolvem objetos;
+- atualizar objetos sem mutação;
+- reconhecer quando um generic simples é útil;
+- interpretar erros de incompatibilidade estrutural.
 
-## 1) Contexto do encontro
+## 1. Retomar o projeto
 
-Uma interface de qualidade precisa combinar estrutura, comportamento, apresentação, acessibilidade e manutenção. O tema deste encontro não deve ser aprendido como uma lista de comandos isolados, mas como resposta a um problema concreto de desenvolvimento frontend.
+Continue em `encontro-21-typescript`:
 
-Durante a aula, use quatro perguntas para orientar as decisões:
-
-- qual problema precisa ser resolvido?
-- em que parte do projeto fica essa responsabilidade?
-- como verificar se a solução funciona?
-- que impacto a escolha produz para usuários e manutenção?
-
-## 2) Conceitos em detalhe
-
-### 1) Interpolação
-
-Interpolação deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
-
-### 2) Property binding
-
-Property binding deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
-
-### 3) Event binding
-
-Event binding deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
-
-### 4) Estado local
-
-Estado local deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
-
-### 5) Responsabilidades
-
-Responsabilidades deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
-
-## 3) Exemplo inicial
-
-Digite e execute o exemplo antes de modificá-lo. Depois, altere um elemento por vez e observe o efeito no navegador, no terminal ou nos testes.
-
-```html
-<h2>{{ produto.nome }}</h2>
-<button [disabled]="indisponivel" (click)="favoritar()">
-  {{ favorito ? "Remover favorito" : "Favoritar" }}
-</button>
+```bash
+docker compose up
 ```
 
-### O que observar
+Crie `src/encontro-22.ts`. A configuração do encontro anterior já inclui os arquivos TypeScript da pasta `src`.
 
-- localize entrada, transformação e saída;
-- relacione cada linha aos conceitos essenciais;
-- provoque um erro intencional e interprete a mensagem;
-- confirme o resultado com as ferramentas adequadas;
-- evite copiar o trecho sem compreender suas partes.
+Em `index.html`, carregue:
 
-## 4) Demonstração orientada
+```html
+<script type="module" src="./dist/encontro-22.js"></script>
+```
 
-1. apresente o requisito antes da solução;
-2. construa a menor versão funcional;
-3. inspecione o resultado e verbalize as decisões;
-4. introduza os conceitos progressivamente;
-5. teste um cenário alternativo ou de erro;
-6. refatore nomes, estrutura e repetição;
-7. registre a versão estável.
+Confirme:
 
-## 5) Prática guiada
+```ts
+console.log("Encontro 22 conectado.");
+```
 
-**Proposta:** Criar cartão de produto com ação de favoritar.
+## 2. O limite de objetos inferidos
 
-### Etapas
+Comece com um objeto:
 
-1. crie uma pasta ou branch para o encontro;
-2. reproduza o exemplo e confirme que ele funciona;
-3. adapte nomes, conteúdo e dados ao domínio escolhido;
-4. aplique os cinco conceitos essenciais;
-5. teste diferentes larguras e estados aplicáveis;
-6. revise console, compilação, teclado e foco;
-7. prepare a entrega indicada no início da página.
+```ts
+const oficina = {
+  id: 1,
+  titulo: "Fotografia urbana",
+  capacidade: 30,
+  inscritos: 23,
+  ativa: true,
+};
+```
 
-## 6) Exercício aplicado
+TypeScript infere o formato. Esta atribuição falha:
 
-Construa uma segunda variação sem acompanhar o exemplo linha a linha. A solução deve ser autoral e compreensível para outra pessoa.
+```ts
+oficina.capacidade = "trinta";
+```
 
-### Requisitos mínimos
+Se várias funções e objetos precisam do mesmo formato, um tipo nomeado comunica melhor o domínio.
 
-- demonstrar uso consciente de interpolação;
-- demonstrar uso consciente de property binding;
-- demonstrar uso consciente de event binding;
-- demonstrar uso consciente de estado local;
-- demonstrar uso consciente de responsabilidades;
-- manter nomes claros e organização consistente;
-- não apresentar erros de compilação ou console;
-- explicar no README como executar e testar;
-- registrar evidências e decisões importantes.
+## 3. Criar um type alias
 
-### Desafio adicional
+Declare:
 
-Implemente um estado alternativo relevante, como vazio, erro, carregamento, tela estreita ou navegação por teclado. Explique como a solução permanece utilizável nessa condição.
+```ts
+type Oficina = {
+  id: number;
+  titulo: string;
+  capacidade: number;
+  inscritos: number;
+  ativa: boolean;
+};
+```
 
-## 7) Critérios de aceite
+Substitua a declaração anterior do objeto por esta versão com o contrato:
 
-- o projeto executa conforme as instruções;
-- o resultado atende ao objetivo funcional;
-- os recursos do encontro foram usados com intenção;
-- a interface funciona nos cenários testados;
-- a entrega está organizada e pode ser avaliada sem ajustes;
-- o histórico ou registro de trabalho evidencia evolução incremental.
+```ts
+const oficina: Oficina = {
+  id: 1,
+  titulo: "Fotografia urbana",
+  capacidade: 30,
+  inscritos: 23,
+  ativa: true,
+};
+```
 
-## 8) Erros comuns
+Remova uma propriedade, altere um tipo e acrescente uma chave inesperada. Leia cada erro antes de restaurar.
 
-- começar pela aparência sem interpretar o requisito;
-- copiar o exemplo sem adaptar semântica e dados;
-- reunir responsabilidades diferentes no mesmo bloco;
-- testar apenas o caminho de sucesso;
-- ignorar mensagens do console ou compilador;
-- abstrair antes de existir repetição real;
-- entregar sem instruções de execução.
+## 4. Propriedades readonly e opcionais
 
-## 9) Materiais para aprofundamento
+Evolua o contrato:
 
-- [MDN Web Docs](https://developer.mozilla.org/pt-BR/docs/Web)
-- [Documentação do Tailwind CSS](https://tailwindcss.com/docs)
-- [Documentação do Angular](https://angular.dev/overview)
-- [Manual do TypeScript](https://www.typescriptlang.org/docs/handbook/intro.html)
+```ts
+type Oficina = {
+  readonly id: number;
+  titulo: string;
+  capacidade: number;
+  inscritos: number;
+  ativa: boolean;
+  descricao?: string;
+};
+```
+
+- `readonly` impede reatribuição pelo contrato;
+- `?` indica que a propriedade pode estar ausente;
+- opcional não significa texto vazio.
+
+Esta linha produz erro:
+
+```ts
+oficina.id = 2;
+```
+
+Observe o erro e remova a atribuição antes de continuar.
+
+Considere a ausência:
+
+```ts
+const descricao = oficina.descricao ?? "Descrição não informada";
+console.log(descricao);
+```
+
+## 5. Modelar com interface
+
+A entidade também pode ser descrita por interface:
+
+```ts
+interface Oficina {
+  readonly id: number;
+  titulo: string;
+  capacidade: number;
+  inscritos: number;
+  ativa: boolean;
+  descricao?: string;
+}
+```
+
+Para objetos, `type` e `interface` frequentemente atendem ao mesmo objetivo. Mantenha consistência, use unions com `type` e use `interface` quando quiser destacar o contrato de uma entidade.
+
+Não mantenha as duas declarações `Oficina` ao mesmo tempo durante a comparação.
+
+## 6. Array de objetos tipados
+
+Crie:
+
+```ts
+const oficinas: Oficina[] = [
+  {
+    id: 1,
+    titulo: "Fotografia urbana",
+    capacidade: 30,
+    inscritos: 23,
+    ativa: true,
+  },
+  {
+    id: 2,
+    titulo: "Cerâmica manual",
+    capacidade: 20,
+    inscritos: 20,
+    ativa: true,
+  },
+];
+```
+
+Todos os itens respeitam `Oficina`. O editor oferece autocomplete coerente nos métodos de coleção.
+
+## 7. Funções que usam o contrato
+
+Calcule vagas:
+
+```ts
+function calcularVagas(oficina: Oficina): number {
+  return oficina.capacidade - oficina.inscritos;
+}
+```
+
+Filtre as disponíveis:
+
+```ts
+function possuiVagas(oficina: Oficina): boolean {
+  return oficina.ativa && calcularVagas(oficina) > 0;
+}
+
+const disponiveis = oficinas.filter(possuiVagas);
+```
+
+## 8. Union de tipos literais
+
+Uma situação não deve aceitar qualquer texto:
+
+```ts
+type Situacao = "disponivel" | "lotada" | "inativa";
+```
+
+Use no retorno:
+
+```ts
+function obterSituacao(oficina: Oficina): Situacao {
+  if (!oficina.ativa) {
+    return "inativa";
+  }
+
+  if (calcularVagas(oficina) === 0) {
+    return "lotada";
+  }
+
+  return "disponivel";
+}
+```
+
+Retornar `"aberta"` produziria erro porque não pertence à union.
+
+## 9. Union com tipos diferentes
+
+Uma busca pode receber id ou título:
+
+```ts
+function buscarOficina(termo: number | string): Oficina | undefined {
+  if (typeof termo === "number") {
+    return oficinas.find((oficina) => oficina.id === termo);
+  }
+
+  const termoNormalizado = termo.toLowerCase();
+
+  return oficinas.find((oficina) =>
+    oficina.titulo.toLowerCase().includes(termoNormalizado),
+  );
+}
+```
+
+O teste `typeof` realiza narrowing. O retorno inclui `undefined` porque a busca pode falhar.
+
+## 10. Tratar undefined
+
+```ts
+const encontrada = buscarOficina(99);
+```
+
+Refine antes de acessar:
+
+```ts
+if (encontrada === undefined) {
+  console.log("Oficina não encontrada.");
+} else {
+  console.log(encontrada.titulo);
+}
+```
+
+Optional chaining serve para um valor opcional:
+
+```ts
+console.log(encontrada?.titulo);
+```
+
+Ele não substitui a comunicação do estado “não encontrado”.
+
+## 11. Union discriminada
+
+Uma inscrição pode ter estados diferentes:
+
+```ts
+type ResultadoInscricao =
+  | { tipo: "sucesso"; oficina: Oficina; vagasRestantes: number }
+  | { tipo: "erro"; mensagem: string };
+```
+
+Crie a operação:
+
+```ts
+function inscrever(oficina: Oficina): ResultadoInscricao {
+  if (!possuiVagas(oficina)) {
+    return {
+      tipo: "erro",
+      mensagem: "Não há vaga disponível.",
+    };
+  }
+
+  return {
+    tipo: "sucesso",
+    oficina,
+    vagasRestantes: calcularVagas(oficina) - 1,
+  };
+}
+```
+
+Refine pela propriedade:
+
+```ts
+const resultado = inscrever(oficinas[0]);
+
+if (resultado.tipo === "sucesso") {
+  console.log(resultado.vagasRestantes);
+} else {
+  console.log(resultado.mensagem);
+}
+```
+
+O compilador conhece as propriedades de cada caminho.
+
+## 12. Atualização sem mutação
+
+```ts
+function adicionarInscricao(oficina: Oficina): Oficina {
+  return {
+    ...oficina,
+    inscritos: oficina.inscritos + 1,
+  };
+}
+```
+
+Atualize a coleção:
+
+```ts
+const oficinaAtualizada = adicionarInscricao(oficinas[0]);
+
+const catalogoAtualizado = oficinas.map((oficina) =>
+  oficina.id === oficinaAtualizada.id ? oficinaAtualizada : oficina,
+);
+```
+
+## 13. Introdução a generics
+
+Uma função para obter o primeiro item não precisa conhecer o tipo específico:
+
+```ts
+function obterPrimeiro<T>(itens: T[]): T | undefined {
+  return itens[0];
+}
+```
+
+Use com coleções diferentes:
+
+```ts
+const primeiraOficina = obterPrimeiro(oficinas);
+const primeiraNota = obterPrimeiro([8, 9, 10]);
+```
+
+Os retornos são `Oficina | undefined` e `number | undefined`. O generic preserva a relação entre entrada e saída sem `any`.
+
+## 14. Prática guiada
+
+Modele um catálogo de eventos:
+
+1. crie uma `interface Evento`;
+2. use `readonly` no id;
+3. inclua propriedade opcional;
+4. crie uma union para três estados;
+5. armazene três eventos;
+6. crie funções de disponibilidade e busca;
+7. trate `undefined`;
+8. atualize sem mutação.
+
+Verifique:
+
+```bash
+docker compose exec typescript npm run check
+```
+
+## 15. Exercício aplicado
+
+Escolha livros, cursos, filmes ou tarefas e implemente:
+
+- entidade com cinco propriedades;
+- uma propriedade `readonly`;
+- uma propriedade opcional;
+- array com três objetos;
+- union de três estados;
+- busca com retorno opcional;
+- narrowing;
+- atualização sem mutação;
+- função genérica simples.
+
+## 16. Erros comuns
+
+- usar propriedade opcional como obrigatória;
+- usar `as` apenas para silenciar o compilador;
+- criar unions sem narrowing;
+- esquecer que `find` pode retornar `undefined`;
+- alterar propriedade `readonly`;
+- duplicar `type` e `interface` com o mesmo nome;
+- usar `any` onde um generic bastaria;
+- confundir `readonly` com imutabilidade profunda.
+
+## 17. Critérios de aceite
+
+- a entidade possui contrato nomeado;
+- propriedades obrigatórias e opcionais são coerentes;
+- ids usam `readonly`;
+- estados são limitados por union;
+- buscas tratam `undefined`;
+- narrowing precede propriedades específicas;
+- atualizações não modificam o original;
+- o projeto passa em `npm run check`;
+- não há uso injustificado de `any` ou asserções.
 
 ## Checklist de compreensão
 
-- [ ] Consigo explicar e aplicar **interpolação**.
-- [ ] Consigo explicar e aplicar **property binding**.
-- [ ] Consigo explicar e aplicar **event binding**.
-- [ ] Consigo explicar e aplicar **estado local**.
-- [ ] Consigo explicar e aplicar **responsabilidades**.
-- [ ] Consigo executar e modificar o exemplo.
-- [ ] Consigo realizar a prática sem cópia integral.
-- [ ] Consigo identificar um erro e explicar a correção.
-- [ ] Revisei a entrega pelos critérios de aceite.
-
-## Resumo final
-
-Neste encontro, **componentes e bindings** foi tratado como parte de uma solução frontend completa. Conceitos, código, validação e comunicação técnica foram combinados para gerar um resultado reutilizável nos encontros seguintes e no projeto final.
+- [ ] Modelo objetos com `type` ou `interface`.
+- [ ] Distingo propriedade obrigatória de opcional.
+- [ ] Explico o limite de `readonly`.
+- [ ] Crio unions literais.
+- [ ] Uso `typeof` para narrowing.
+- [ ] Trato `undefined`.
+- [ ] Uso uma propriedade discriminante.
+- [ ] Atualizo objetos com spread.
+- [ ] Entendo um generic simples.
 
 ## Questões de fixação
 
-1. Como **interpolação** contribui para a solução desenvolvida?
-<!-- Gabarito: definir interpolação, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
+1. Quando um contrato nomeado melhora o código?
+2. O que `?` significa em uma propriedade?
+3. `readonly` impede alterações no JavaScript executado?
+4. Qual vantagem uma union literal possui sobre `string`?
+5. Como `typeof` refina uma union?
+6. Por que `find` inclui `undefined`?
+7. O que torna uma union discriminada?
+8. Por que `T` é mais seguro que `any`?
 
-2. Como **property binding** contribui para a solução desenvolvida?
-<!-- Gabarito: definir property binding, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
+## Referências
 
-3. Como **event binding** contribui para a solução desenvolvida?
-<!-- Gabarito: definir event binding, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
-
-4. Como **estado local** contribui para a solução desenvolvida?
-<!-- Gabarito: definir estado local, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
-
-5. Como **responsabilidades** contribui para a solução desenvolvida?
-<!-- Gabarito: definir responsabilidades, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
+- [TypeScript — Object Types](https://www.typescriptlang.org/docs/handbook/2/objects.html)
+- [TypeScript — Everyday Types](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html)
+- [TypeScript — Narrowing](https://www.typescriptlang.org/docs/handbook/2/narrowing.html)
+- [TypeScript — Generics](https://www.typescriptlang.org/docs/handbook/2/generics.html)
 
 [Voltar ao cronograma](../01-cronograma-60h.md)

@@ -51,8 +51,10 @@ O tempo pode variar em avaliações, correções e marcos do projeto, preservand
 
 **Produto do bloco:** versão inicial do projeto em dupla, interface com comportamento tipado e estudo de caso concluído.
 
-### Bloco 5 — Fundamentos do Angular (Encontros 21 a 27)
+### Bloco 5 — TypeScript e fundamentos do Angular (Encontros 21 a 27)
 
+- introdução ao TypeScript, compilação, inferência, tipos e funções;
+- aliases, interfaces, unions, narrowing e generics;
 - workspace, CLI e componentes standalone;
 - templates e bindings;
 - control flow, diretivas e pipes;
@@ -61,7 +63,7 @@ O tempo pode variar em avaliações, correções e marcos do projeto, preservand
 - roteamento;
 - formulários reativos.
 
-**Produto do bloco:** aplicação navegável, componentizada e com formulário validado.
+**Produto do bloco:** base TypeScript validada e aplicação Angular navegável, componentizada e com formulário validado.
 
 ### Bloco 6 — Dados, estado e qualidade (Encontros 28 a 32)
 

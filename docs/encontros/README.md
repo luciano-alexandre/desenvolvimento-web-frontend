@@ -56,12 +56,15 @@ Após o encontro:
 19. [Estudo de caso — análise e desenvolvimento inicial](encontro-19.md)
 20. [Estudo de caso — conclusão e entrega](encontro-20.md)
 
-## Unidade 2 — Angular e Projeto Final
+## Unidade 2 — TypeScript, Angular e Projeto Final
 
-### Fundamentos do Angular
+### TypeScript — Encontros 21 e 22
 
-21. [Introdução ao Angular](encontro-21.md)
-22. [Componentes e bindings](encontro-22.md)
+21. [Introdução ao TypeScript](encontro-21.md)
+22. [Modelagem de dados e tipos compostos](encontro-22.md)
+
+### Fundamentos do Angular — Encontros 23 a 27
+
 23. [Control flow, diretivas e pipes](encontro-23.md)
 24. [Comunicação entre componentes](encontro-24.md)
 25. [Serviços e injeção de dependência](encontro-25.md)

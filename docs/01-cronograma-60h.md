@@ -34,16 +34,16 @@ Pré-requisito recomendado: conclusão de Padrões Web ou domínio equivalente d
 | 20 | 1,5h | Apresentação dos Trabalhos | Apresentações das duplas | Sem conteúdo |
 
 
-## Unidade 2 — Angular e Projeto Final (Encontros 21 a 40)
+## Unidade 2 — TypeScript e Projeto Final (Encontros 21 a 40)
 
-**Foco:** desenvolvimento de aplicações Angular e construção de um Projeto Final com Tailwind CSS, integração de dados, testes, publicação e apresentação.
+**Foco:** desenvolvimento de aplicações com TypeScript e construção de um Projeto Final com Tailwind CSS.
 
 **Avaliação:** Projeto Final valendo **100 pontos**, avaliado por processo, produto publicado e apresentação.
 
 | Encontro | Carga | Tema Central | Marco do Projeto Final | Material da Aula |
 |---|---:|---|---|---|
-| 21 | 1,5h | Angular: workspace, CLI, estrutura e componentes standalone | Configuração inicial | [Encontro 21](./encontros/encontro-21.md) |
-| 22 | 1,5h | Componentes, templates, interpolação, property e event binding | Componentes básicos | [Encontro 22](./encontros/encontro-22.md) |
+| 21 | 1,5h | TypeScript: introdução, compilação, configuração, inferência, tipos primitivos, arrays e funções | Primeiro programa TypeScript | [Encontro 21](./encontros/encontro-21.md) |
+| 22 | 1,5h | TypeScript: aliases, interfaces, propriedades, unions, narrowing e generics | Catálogo com dados modelados | [Encontro 22](./encontros/encontro-22.md) |
 | 23 | 1,5h | Control flow, diretivas, pipes e renderização de coleções | Listas e estados | [Encontro 23](./encontros/encontro-23.md) |
 | 24 | 1,5h | Comunicação entre componentes: inputs, outputs e composição | Componentes integrados | [Encontro 24](./encontros/encontro-24.md) |
 | 25 | 1,5h | Serviços, injeção de dependência e responsabilidades | Serviço compartilhado | [Encontro 25](./encontros/encontro-25.md) |

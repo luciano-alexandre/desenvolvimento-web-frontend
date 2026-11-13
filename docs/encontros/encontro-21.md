@@ -1,179 +1,385 @@
-# Encontro 21 — Introdução ao Angular
+# Encontro 21 — Introdução ao TypeScript
 
-**Carga horária:** 1,5h  
-**Entrega prevista:** Primeira aplicação Angular
+**Unidade:** Unidade 2
+**Carga horária:** 1,5h
+**Entrega prevista:** primeiro programa TypeScript configurado, compilado e testado
 
-## Visão Geral
+## Visão geral
 
-Este encontro desenvolve **introdução ao angular** como continuidade direta dos conhecimentos anteriores. A aula parte de um problema observável, apresenta os recursos necessários e termina com uma entrega que pode ser executada e verificada.
+Até aqui, os programas foram escritos em JavaScript. A linguagem aceita que uma variável receba valores de tipos diferentes e muitos problemas só aparecem quando determinada linha é executada. TypeScript acrescenta uma etapa de análise estática: antes de gerar JavaScript, o compilador verifica se os valores são usados de maneira coerente.
 
-Ao final, o estudante deverá conseguir explicar o propósito de cada recurso, implementar uma solução incremental, testar o comportamento e justificar as decisões adotadas.
+Neste encontro, construiremos um projeto pequeno do zero. Cada conceito será apresentado a partir de um problema observável, testado pelo compilador e relacionado ao JavaScript gerado. O objetivo não é adicionar tipos em todas as linhas, mas aprender onde eles tornam o código mais previsível.
 
-## Conceitos Essenciais
+## Objetivos de aprendizagem
 
-- Workspace.
-- Componente standalone.
-- Template.
-- Estilos.
-- Servidor.
+- explicar a relação entre JavaScript e TypeScript;
+- distinguir análise estática de validação em execução;
+- instalar, configurar e executar o compilador;
+- interpretar mensagens de erro;
+- usar inferência e anotações de tipo;
+- trabalhar com tipos primitivos e arrays;
+- tipar parâmetros e retornos;
+- gerar JavaScript para o navegador;
+- evitar o uso desnecessário de `any`.
 
-## 1) Contexto do encontro
+## 1. O problema que TypeScript ajuda a detectar
 
-Uma interface de qualidade precisa combinar estrutura, comportamento, apresentação, acessibilidade e manutenção. O tema deste encontro não deve ser aprendido como uma lista de comandos isolados, mas como resposta a um problema concreto de desenvolvimento frontend.
+Considere este JavaScript:
 
-Durante a aula, use quatro perguntas para orientar as decisões:
+```js
+function calcularTotal(preco, quantidade) {
+  return preco * quantidade;
+}
 
-- qual problema precisa ser resolvido?
-- em que parte do projeto fica essa responsabilidade?
-- como verificar se a solução funciona?
-- que impacto a escolha produz para usuários e manutenção?
+console.log(calcularTotal(25, 2));
+console.log(calcularTotal("vinte e cinco", 2));
+```
 
-## 2) Conceitos em detalhe
+A primeira chamada produz `50`. A segunda produz `NaN`, mas o problema só é percebido durante a execução.
 
-### 1) Workspace
-
-Workspace deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
-
-### 2) Componente standalone
-
-Componente standalone deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
-
-### 3) Template
-
-Template deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
-
-### 4) Estilos
-
-Estilos deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
-
-### 5) Servidor
-
-Servidor deve ser identificado no exemplo, aplicado na prática e relacionado ao resultado observado. Compare uma versão incompleta com a versão corrigida, explique a sintaxe relevante e registre quando esse recurso deve ou não ser utilizado.
-
-## 3) Exemplo inicial
-
-Digite e execute o exemplo antes de modificá-lo. Depois, altere um elemento por vez e observe o efeito no navegador, no terminal ou nos testes.
+Em TypeScript, declaramos o contrato:
 
 ```ts
-@Component({
-  selector: "app-root",
-  standalone: true,
-  template: "<h1>{{ titulo }}</h1>",
-})
-export class AppComponent {
-  titulo = "Desenvolvimento Web Frontend";
+function calcularTotal(preco: number, quantidade: number): number {
+  return preco * quantidade;
 }
 ```
 
-### O que observar
+Agora esta chamada é recusada antes da execução:
 
-- localize entrada, transformação e saída;
-- relacione cada linha aos conceitos essenciais;
-- provoque um erro intencional e interprete a mensagem;
-- confirme o resultado com as ferramentas adequadas;
-- evite copiar o trecho sem compreender suas partes.
+```ts
+calcularTotal("vinte e cinco", 2);
+```
 
-## 4) Demonstração orientada
+O compilador não substitui testes nem valida entradas externas. Ele verifica se o código respeita os tipos conhecidos durante o desenvolvimento.
 
-1. apresente o requisito antes da solução;
-2. construa a menor versão funcional;
-3. inspecione o resultado e verbalize as decisões;
-4. introduza os conceitos progressivamente;
-5. teste um cenário alternativo ou de erro;
-6. refatore nomes, estrutura e repetição;
-7. registre a versão estável.
+## 2. Preparar o projeto com Docker
 
-## 5) Prática guiada
+Crie:
 
-**Proposta:** Criar a primeira aplicação Angular autoral.
+```text
+encontro-21-typescript/
+├── compose.yaml
+├── Dockerfile
+├── package.json
+├── tsconfig.json
+├── index.html
+├── src/
+│   └── app.ts
+└── dist/
+```
 
-### Etapas
+O código será escrito em `src/app.ts`. O compilador criará `dist/app.js`, carregado pelo navegador.
 
-1. crie uma pasta ou branch para o encontro;
-2. reproduza o exemplo e confirme que ele funciona;
-3. adapte nomes, conteúdo e dados ao domínio escolhido;
-4. aplique os cinco conceitos essenciais;
-5. teste diferentes larguras e estados aplicáveis;
-6. revise console, compilação, teclado e foco;
-7. prepare a entrega indicada no início da página.
+### 2.1 Configurar as dependências
 
-## 6) Exercício aplicado
+Crie `package.json`:
 
-Construa uma segunda variação sem acompanhar o exemplo linha a linha. A solução deve ser autoral e compreensível para outra pessoa.
+```json
+{
+  "scripts": {
+    "dev": "tsc --watch",
+    "build": "tsc",
+    "check": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.0"
+  }
+}
+```
 
-### Requisitos mínimos
+- `dev` observa e recompila;
+- `build` gera uma compilação;
+- `check` verifica sem gerar arquivos.
 
-- demonstrar uso consciente de workspace;
-- demonstrar uso consciente de componente standalone;
-- demonstrar uso consciente de template;
-- demonstrar uso consciente de estilos;
-- demonstrar uso consciente de servidor;
-- manter nomes claros e organização consistente;
-- não apresentar erros de compilação ou console;
-- explicar no README como executar e testar;
-- registrar evidências e decisões importantes.
+### 2.2 Criar os serviços
 
-### Desafio adicional
+Crie `Dockerfile`:
 
-Implemente um estado alternativo relevante, como vazio, erro, carregamento, tela estreita ou navegação por teclado. Explique como a solução permanece utilizável nessa condição.
+```dockerfile
+FROM node:22-alpine
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+CMD ["npm", "run", "dev"]
+```
 
-## 7) Critérios de aceite
+Crie `compose.yaml`:
 
-- o projeto executa conforme as instruções;
-- o resultado atende ao objetivo funcional;
-- os recursos do encontro foram usados com intenção;
-- a interface funciona nos cenários testados;
-- a entrega está organizada e pode ser avaliada sem ajustes;
-- o histórico ou registro de trabalho evidencia evolução incremental.
+```yaml
+services:
+  typescript:
+    build: .
+    volumes:
+      - .:/app
+      - /app/node_modules
 
-## 8) Erros comuns
+  web:
+    image: nginx:alpine
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/usr/share/nginx/html:ro
+```
 
-- começar pela aparência sem interpretar o requisito;
-- copiar o exemplo sem adaptar semântica e dados;
-- reunir responsabilidades diferentes no mesmo bloco;
-- testar apenas o caminho de sucesso;
-- ignorar mensagens do console ou compilador;
-- abstrair antes de existir repetição real;
-- entregar sem instruções de execução.
+O serviço `typescript` compila; o serviço `web` disponibiliza os arquivos.
 
-## 9) Materiais para aprofundamento
+## 3. Configurar o compilador
 
-- [MDN Web Docs](https://developer.mozilla.org/pt-BR/docs/Web)
-- [Documentação do Tailwind CSS](https://tailwindcss.com/docs)
-- [Documentação do Angular](https://angular.dev/overview)
-- [Manual do TypeScript](https://www.typescriptlang.org/docs/handbook/intro.html)
+Crie `tsconfig.json`:
+
+```json
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ES2022",
+    "rootDir": "src",
+    "outDir": "dist",
+    "strict": true,
+    "noEmitOnError": true
+  },
+  "include": ["src/**/*.ts"]
+}
+```
+
+- `rootDir`: código TypeScript;
+- `outDir`: JavaScript gerado;
+- `strict`: verificações mais seguras;
+- `noEmitOnError`: não gera código com erros;
+- `include`: arquivos analisados.
+
+Execute:
+
+```bash
+docker compose up --build
+```
+
+## 4. Criar o primeiro programa
+
+Em `src/app.ts`:
+
+```ts
+const mensagem: string = "TypeScript conectado.";
+console.log(mensagem);
+```
+
+Crie `index.html`:
+
+```html
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introdução ao TypeScript</title>
+  </head>
+  <body>
+    <h1>Introdução ao TypeScript</h1>
+    <script type="module" src="./dist/app.js"></script>
+  </body>
+</html>
+```
+
+Acesse `http://localhost:8080`, confirme a mensagem e verifique se `dist/app.js` foi criado. O navegador executa JavaScript, não o arquivo `.ts`.
+
+## 5. Inferência de tipos
+
+TypeScript deduz tipos pelos valores:
+
+```ts
+const nomeCurso = "Desenvolvimento Frontend";
+const cargaHoraria = 60;
+const inscricoesAbertas = true;
+```
+
+Passe o cursor sobre as variáveis. Os tipos inferidos serão `string`, `number` e `boolean`.
+
+```ts
+let quantidadeInscritos = 18;
+quantidadeInscritos = 20;
+```
+
+Agora provoque um erro:
+
+```ts
+quantidadeInscritos = "vinte";
+```
+
+Mesmo sem anotação, a variável foi inferida como `number`. Leia a mensagem e remova a linha inválida antes de continuar.
+
+## 6. Quando escrever uma anotação
+
+Anotações são úteis quando o valor inicial não define o tipo:
+
+```ts
+let mensagemStatus: string;
+
+if (inscricoesAbertas) {
+  mensagemStatus = "Inscrições abertas";
+} else {
+  mensagemStatus = "Inscrições encerradas";
+}
+```
+
+Evite repetir o óbvio: `const cidade = "Fortaleza"` já é inferido como texto.
+
+## 7. Tipos primitivos e arrays
+
+```ts
+const titulo: string = "Interfaces Web";
+const vagas: number = 30;
+const ativo: boolean = true;
+const notas: number[] = [8, 7.5, 9];
+```
+
+Adicionar número é permitido:
+
+```ts
+notas.push(10);
+```
+
+Adicionar texto é recusado:
+
+```ts
+notas.push("dez");
+```
+
+Leia o erro e remova essa chamada. Use `string`, `number` e `boolean` em minúsculas. `String`, `Number` e `Boolean` representam objetos.
+
+## 8. Funções tipadas
+
+Comece pelos parâmetros:
+
+```ts
+function calcularMedia(valores: number[]) {
+  const total = valores.reduce((soma, valor) => soma + valor, 0);
+  return total / valores.length;
+}
+```
+
+O retorno é inferido como `number`. Podemos declarar o contrato:
+
+```ts
+function calcularMedia(valores: number[]): number {
+  const total = valores.reduce((soma, valor) => soma + valor, 0);
+  return total / valores.length;
+}
+```
+
+Uma função que produz efeito, mas não devolve valor útil, retorna `void`:
+
+```ts
+function exibirResumo(nome: string, media: number): void {
+  console.log(`${nome}: média ${media.toFixed(1)}`);
+}
+```
+
+```ts
+const media = calcularMedia(notas);
+exibirResumo(nomeCurso, media);
+```
+
+## 9. Por que evitar any
+
+`any` desativa verificações:
+
+```ts
+function mostrarValor(valor: any): void {
+  console.log(valor.toUpperCase());
+}
+
+mostrarValor(42);
+```
+
+Esse trecho demonstra o risco e não deve permanecer na versão estável.
+
+Com `unknown`, uma verificação é obrigatória:
+
+```ts
+function mostrarValor(valor: unknown): void {
+  if (typeof valor === "string") {
+    console.log(valor.toUpperCase());
+  }
+}
+```
+
+Esse refinamento será aprofundado no encontro 22.
+
+## 10. Prática guiada
+
+Construa o resumo de uma oficina com:
+
+- título textual;
+- capacidade e inscritos numéricos;
+- estado ativo ou inativo;
+- função que calcule vagas;
+- função que devolva a situação;
+- função `void` que apresente o resumo.
+
+Verifique:
+
+```bash
+docker compose exec typescript npm run check
+```
+
+## 11. Exercício aplicado
+
+Crie um programa que analise quatro valores:
+
+1. armazene-os em array tipado;
+2. calcule total e média em funções separadas;
+3. conte quantos atingiram uma referência;
+4. apresente os resultados com uma função `void`;
+5. compile sem erros;
+6. não utilize `any`.
+
+## 12. Erros comuns
+
+- carregar `app.ts` diretamente no navegador;
+- confundir erro de compilação com erro de execução;
+- anotar todas as constantes desnecessariamente;
+- usar `String` em vez de `string`;
+- silenciar problemas com `any`;
+- editar manualmente o arquivo de `dist`.
+
+## 13. Critérios de aceite
+
+- o ambiente inicia com Docker;
+- o modo estrito está ativo;
+- o navegador carrega `dist/app.js`;
+- variáveis e arrays têm tipos coerentes;
+- funções possuem parâmetros tipados;
+- retornos são inferidos ou declarados conscientemente;
+- o projeto passa em `npm run check`;
+- não há uso injustificado de `any`.
 
 ## Checklist de compreensão
 
-- [ ] Consigo explicar e aplicar **workspace**.
-- [ ] Consigo explicar e aplicar **componente standalone**.
-- [ ] Consigo explicar e aplicar **template**.
-- [ ] Consigo explicar e aplicar **estilos**.
-- [ ] Consigo explicar e aplicar **servidor**.
-- [ ] Consigo executar e modificar o exemplo.
-- [ ] Consigo realizar a prática sem cópia integral.
-- [ ] Consigo identificar um erro e explicar a correção.
-- [ ] Revisei a entrega pelos critérios de aceite.
-
-## Resumo final
-
-Neste encontro, **introdução ao angular** foi tratado como parte de uma solução frontend completa. Conceitos, código, validação e comunicação técnica foram combinados para gerar um resultado reutilizável nos encontros seguintes e no projeto final.
+- [ ] Explico por que TypeScript gera JavaScript.
+- [ ] Diferencio compilação e execução.
+- [ ] Interpreto um erro simples do compilador.
+- [ ] Reconheço tipos inferidos.
+- [ ] Sei quando uma anotação é útil.
+- [ ] Tipo arrays, parâmetros e retornos.
+- [ ] Uso `void` quando adequado.
+- [ ] Evito `any`.
 
 ## Questões de fixação
 
-1. Como **workspace** contribui para a solução desenvolvida?
-<!-- Gabarito: definir workspace, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
+1. O navegador executa arquivos TypeScript?
+2. Qual é a diferença entre inferência e anotação?
+3. O que `strict` altera?
+4. Por que `noEmitOnError` é útil?
+5. Qual é a diferença entre `number[]` e `number`?
+6. Quando uma função retorna `void`?
+7. Por que `any` reduz a segurança?
+8. TypeScript valida automaticamente dados de uma API?
 
-2. Como **componente standalone** contribui para a solução desenvolvida?
-<!-- Gabarito: definir componente standalone, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
+## Referências
 
-3. Como **template** contribui para a solução desenvolvida?
-<!-- Gabarito: definir template, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
-
-4. Como **estilos** contribui para a solução desenvolvida?
-<!-- Gabarito: definir estilos, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
-
-5. Como **servidor** contribui para a solução desenvolvida?
-<!-- Gabarito: definir servidor, indicar sua finalidade e relacioná-lo ao exemplo e à prática. -->
+- [TypeScript — The Basics](https://www.typescriptlang.org/docs/handbook/2/basic-types.html)
+- [TypeScript — Everyday Types](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html)
+- [TypeScript — tsconfig.json](https://www.typescriptlang.org/tsconfig/)
 
 [Voltar ao cronograma](../01-cronograma-60h.md)
